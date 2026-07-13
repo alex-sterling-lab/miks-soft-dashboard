@@ -1,0 +1,569 @@
+{
+  "weeks": [
+    {
+      "week": [
+        "2026-06-22",
+        "2026-06-28"
+      ],
+      "sources": {
+        "google_ads": "CID 2821990435",
+        "ga4": "properties/353999593",
+        "yandex_direct": "нет доступа",
+        "crm": "нет доступа"
+      },
+      "platforms": [
+        {
+          "name": "Google Ads",
+          "campaigns": [
+            {
+              "campaign": "АК - PM  - Tier 1,2",
+              "type": "PERFORMANCE_MAX",
+              "impressions": 9230,
+              "clicks": 168,
+              "ctr_pct": 1.820151679306609,
+              "cost_rub": null,
+              "cpc_rub": null,
+              "cost_usd": 32.5,
+              "cpc_usd": 0.19,
+              "sessions": 148,
+              "users": 139,
+              "bounce_rate": 0.6418918918918919,
+              "pages_per_session": 1.1081081081081081,
+              "avg_session_duration": 51.97983375675676,
+              "form_submits": 0,
+              "cost_per_form_usd": null,
+              "crm_leads_total": null,
+              "cost_per_crm_lead_usd": null,
+              "crm_leads_converted": null,
+              "cost_per_converted_lead_usd": null
+            }
+          ],
+          "total": {
+            "campaign": "Итого",
+            "type": "TOTAL",
+            "impressions": 9230,
+            "clicks": 168,
+            "cost_usd": 32.5,
+            "cost_rub": null,
+            "cpc_rub": null,
+            "ctr_pct": 1.820151679306609,
+            "cpc_usd": 0.19,
+            "sessions": 148,
+            "users": 139,
+            "bounce_rate": 0.6418918918918919,
+            "pages_per_session": 1.1081081081081081,
+            "avg_session_duration": 51.97983375675676,
+            "form_submits": 0,
+            "cost_per_form_usd": null,
+            "crm_leads_total": null,
+            "cost_per_crm_lead_usd": null,
+            "crm_leads_converted": null,
+            "cost_per_converted_lead_usd": null
+          }
+        },
+        {
+          "name": "Яндекс Директ",
+          "campaigns": [],
+          "total": {
+            "campaign": "Итого",
+            "type": "TOTAL",
+            "note": "GA4 не видит трафика с yandex/cpc за неделю; вероятно кампании остановлены или не помечены utm.",
+            "sessions": null,
+            "users": null,
+            "bounce_rate": null,
+            "pages_per_session": null,
+            "avg_session_duration": null,
+            "form_submits": 0
+          }
+        }
+      ],
+      "ga4_by_source": [
+        {
+          "source": "google",
+          "medium": "cpc",
+          "sessions": 148,
+          "users": 139,
+          "bounce_rate": 0.6418918918918919,
+          "pages_per_session": 1.1081081081081081,
+          "avg_session_duration": 51.97983375675676,
+          "form_submits": 0
+        },
+        {
+          "source": "(direct)",
+          "medium": "(none)",
+          "sessions": 30,
+          "users": 19,
+          "bounce_rate": 0.3,
+          "pages_per_session": 4.066666666666666,
+          "avg_session_duration": 312.8777437,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "(not set)",
+          "sessions": 14,
+          "users": 12,
+          "bounce_rate": 0.9285714285714286,
+          "pages_per_session": 0.9285714285714286,
+          "avg_session_duration": 4.620489214285714,
+          "form_submits": 0
+        },
+        {
+          "source": "24.imediasolutions.ru",
+          "medium": "referral",
+          "sessions": 13,
+          "users": 5,
+          "bounce_rate": 0.23076923076923078,
+          "pages_per_session": 4.153846153846154,
+          "avg_session_duration": 571.6732082307692,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "organic",
+          "sessions": 8,
+          "users": 6,
+          "bounce_rate": 0.25,
+          "pages_per_session": 1.75,
+          "avg_session_duration": 106.69335512500001,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "pm",
+          "sessions": 8,
+          "users": 8,
+          "bounce_rate": 1.0,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 0.0,
+          "form_submits": 0
+        },
+        {
+          "source": "yandex.by",
+          "medium": "referral",
+          "sessions": 6,
+          "users": 3,
+          "bounce_rate": 0.3333333333333333,
+          "pages_per_session": 1.3333333333333333,
+          "avg_session_duration": 81.97216416666667,
+          "form_submits": 0
+        },
+        {
+          "source": "(data not available)",
+          "medium": "(data not available)",
+          "sessions": 3,
+          "users": 3,
+          "bounce_rate": 0.0,
+          "pages_per_session": 2.3333333333333335,
+          "avg_session_duration": 116.628017,
+          "form_submits": 0
+        },
+        {
+          "source": "tagassistant.google.com",
+          "medium": "referral",
+          "sessions": 3,
+          "users": 2,
+          "bounce_rate": 0.3333333333333333,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 744.5038326666667,
+          "form_submits": 0
+        },
+        {
+          "source": "awwwards.com",
+          "medium": "referral",
+          "sessions": 1,
+          "users": 1,
+          "bounce_rate": 0.0,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 29.661663,
+          "form_submits": 0
+        },
+        {
+          "source": "ya",
+          "medium": "(not set)",
+          "sessions": 1,
+          "users": 1,
+          "bounce_rate": 0.0,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 940.92959,
+          "form_submits": 0
+        },
+        {
+          "source": "yandex.ru",
+          "medium": "referral",
+          "sessions": 1,
+          "users": 1,
+          "bounce_rate": 0.0,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 154.863276,
+          "form_submits": 0
+        },
+        {
+          "source": "(not set)",
+          "medium": "(not set)",
+          "sessions": 0,
+          "users": 3,
+          "bounce_rate": 0.0,
+          "pages_per_session": 0.0,
+          "avg_session_duration": 0.0,
+          "form_submits": 0
+        }
+      ]
+    },
+    {
+      "week": [
+        "2026-06-29",
+        "2026-07-05"
+      ],
+      "sources": {
+        "google_ads": "CID 2821990435",
+        "ga4": "properties/353999593",
+        "yandex_direct": "нет доступа",
+        "crm": "нет доступа"
+      },
+      "platforms": [
+        {
+          "name": "Google Ads",
+          "campaigns": [
+            {
+              "campaign": "АК - PM  - Tier 1,2",
+              "type": "PERFORMANCE_MAX",
+              "impressions": 2985,
+              "clicks": 52,
+              "ctr_pct": 1.742043551088777,
+              "cost_rub": null,
+              "cpc_rub": null,
+              "cost_usd": 42.71,
+              "cpc_usd": 0.82,
+              "sessions": 52,
+              "users": 49,
+              "bounce_rate": 0.7049180327868853,
+              "pages_per_session": 1.1639344262295082,
+              "avg_session_duration": 45.21489662295082,
+              "form_submits": 0,
+              "cost_per_form_usd": null,
+              "crm_leads_total": null,
+              "cost_per_crm_lead_usd": null,
+              "crm_leads_converted": null,
+              "cost_per_converted_lead_usd": null
+            },
+            {
+              "campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)",
+              "type": "SEARCH",
+              "impressions": 120,
+              "clicks": 9,
+              "ctr_pct": 7.5,
+              "cost_rub": null,
+              "cpc_rub": null,
+              "cost_usd": 16.81,
+              "cpc_usd": 1.87,
+              "sessions": 9,
+              "users": 8,
+              "bounce_rate": 0.7049180327868853,
+              "pages_per_session": 1.1639344262295082,
+              "avg_session_duration": 45.21489662295082,
+              "form_submits": 0,
+              "cost_per_form_usd": null,
+              "crm_leads_total": null,
+              "cost_per_crm_lead_usd": null,
+              "crm_leads_converted": null,
+              "cost_per_converted_lead_usd": null
+            }
+          ],
+          "total": {
+            "campaign": "Итого",
+            "type": "TOTAL",
+            "impressions": 3105,
+            "clicks": 61,
+            "cost_usd": 59.52,
+            "cost_rub": null,
+            "cpc_rub": null,
+            "ctr_pct": 1.964573268921095,
+            "cpc_usd": 0.98,
+            "sessions": 61,
+            "users": 57,
+            "bounce_rate": 0.7049180327868853,
+            "pages_per_session": 1.1639344262295082,
+            "avg_session_duration": 45.21489662295082,
+            "form_submits": 0,
+            "cost_per_form_usd": null,
+            "crm_leads_total": null,
+            "cost_per_crm_lead_usd": null,
+            "crm_leads_converted": null,
+            "cost_per_converted_lead_usd": null
+          }
+        },
+        {
+          "name": "Яндекс Директ",
+          "campaigns": [],
+          "total": {
+            "campaign": "Итого",
+            "type": "TOTAL",
+            "note": "GA4 не видит трафика с yandex/cpc за неделю; вероятно кампании остановлены или не помечены utm.",
+            "sessions": null,
+            "users": null,
+            "bounce_rate": null,
+            "pages_per_session": null,
+            "avg_session_duration": null,
+            "form_submits": 0
+          }
+        }
+      ],
+      "ga4_by_source": [
+        {
+          "source": "google",
+          "medium": "cpc",
+          "sessions": 61,
+          "users": 57,
+          "bounce_rate": 0.7049180327868853,
+          "pages_per_session": 1.1639344262295082,
+          "avg_session_duration": 45.21489662295082,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "organic",
+          "sessions": 8,
+          "users": 7,
+          "bounce_rate": 0.375,
+          "pages_per_session": 1.875,
+          "avg_session_duration": 83.747449375,
+          "form_submits": 0
+        },
+        {
+          "source": "(direct)",
+          "medium": "(none)",
+          "sessions": 7,
+          "users": 6,
+          "bounce_rate": 0.7142857142857143,
+          "pages_per_session": 0.7142857142857143,
+          "avg_session_duration": 27.89526157142857,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "(not set)",
+          "sessions": 3,
+          "users": 2,
+          "bounce_rate": 0.3333333333333333,
+          "pages_per_session": 3.0,
+          "avg_session_duration": 1149.0180136666665,
+          "form_submits": 0
+        },
+        {
+          "source": "(data not available)",
+          "medium": "(data not available)",
+          "sessions": 2,
+          "users": 2,
+          "bounce_rate": 0.0,
+          "pages_per_session": 2.5,
+          "avg_session_duration": 34.7218915,
+          "form_submits": 0
+        },
+        {
+          "source": "ads.google.com",
+          "medium": "referral",
+          "sessions": 2,
+          "users": 2,
+          "bounce_rate": 1.0,
+          "pages_per_session": 0.5,
+          "avg_session_duration": 0.0,
+          "form_submits": 0
+        },
+        {
+          "source": "awwwards.com",
+          "medium": "referral",
+          "sessions": 1,
+          "users": 1,
+          "bounce_rate": 0.0,
+          "pages_per_session": 10.0,
+          "avg_session_duration": 181.937242,
+          "form_submits": 0
+        },
+        {
+          "source": "metrika.yandex.by",
+          "medium": "referral",
+          "sessions": 1,
+          "users": 1,
+          "bounce_rate": 0.0,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 24.91322,
+          "form_submits": 0
+        }
+      ]
+    },
+    {
+      "week": [
+        "2026-07-06",
+        "2026-07-12"
+      ],
+      "sources": {
+        "google_ads": "CID 2821990435",
+        "ga4": "properties/353999593",
+        "yandex_direct": "нет доступа",
+        "crm": "нет доступа"
+      },
+      "platforms": [
+        {
+          "name": "Google Ads",
+          "campaigns": [
+            {
+              "campaign": "АК - PM  - Tier 1,2",
+              "type": "PERFORMANCE_MAX",
+              "impressions": 2464,
+              "clicks": 65,
+              "ctr_pct": 2.6379870129870127,
+              "cost_rub": null,
+              "cpc_rub": null,
+              "cost_usd": 53.96,
+              "cpc_usd": 0.83,
+              "sessions": 49,
+              "users": 48,
+              "bounce_rate": 0.43529411764705883,
+              "pages_per_session": 1.3764705882352941,
+              "avg_session_duration": 84.94127735294119,
+              "form_submits": 1,
+              "cost_per_form_usd": 53.96,
+              "crm_leads_total": null,
+              "cost_per_crm_lead_usd": null,
+              "crm_leads_converted": null,
+              "cost_per_converted_lead_usd": null
+            },
+            {
+              "campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)",
+              "type": "SEARCH",
+              "impressions": 631,
+              "clicks": 47,
+              "ctr_pct": 7.448494453248812,
+              "cost_rub": null,
+              "cpc_rub": null,
+              "cost_usd": 51.53,
+              "cpc_usd": 1.1,
+              "sessions": 36,
+              "users": 35,
+              "bounce_rate": 0.43529411764705883,
+              "pages_per_session": 1.3764705882352941,
+              "avg_session_duration": 84.94127735294119,
+              "form_submits": 2,
+              "cost_per_form_usd": 25.77,
+              "crm_leads_total": null,
+              "cost_per_crm_lead_usd": null,
+              "crm_leads_converted": null,
+              "cost_per_converted_lead_usd": null
+            }
+          ],
+          "total": {
+            "campaign": "Итого",
+            "type": "TOTAL",
+            "impressions": 3095,
+            "clicks": 112,
+            "cost_usd": 105.49,
+            "cost_rub": null,
+            "cpc_rub": null,
+            "ctr_pct": 3.618739903069467,
+            "cpc_usd": 0.94,
+            "sessions": 85,
+            "users": 83,
+            "bounce_rate": 0.43529411764705883,
+            "pages_per_session": 1.3764705882352941,
+            "avg_session_duration": 84.94127735294119,
+            "form_submits": 3,
+            "cost_per_form_usd": 35.16,
+            "crm_leads_total": null,
+            "cost_per_crm_lead_usd": null,
+            "crm_leads_converted": null,
+            "cost_per_converted_lead_usd": null
+          }
+        },
+        {
+          "name": "Яндекс Директ",
+          "campaigns": [],
+          "total": {
+            "campaign": "Итого",
+            "type": "TOTAL",
+            "note": "GA4 не видит трафика с yandex/cpc за неделю; вероятно кампании остановлены или не помечены utm.",
+            "sessions": null,
+            "users": null,
+            "bounce_rate": null,
+            "pages_per_session": null,
+            "avg_session_duration": null,
+            "form_submits": 0
+          }
+        }
+      ],
+      "ga4_by_source": [
+        {
+          "source": "google",
+          "medium": "cpc",
+          "sessions": 85,
+          "users": 83,
+          "bounce_rate": 0.43529411764705883,
+          "pages_per_session": 1.3764705882352941,
+          "avg_session_duration": 84.94127735294119,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "organic",
+          "sessions": 15,
+          "users": 11,
+          "bounce_rate": 0.26666666666666666,
+          "pages_per_session": 1.6,
+          "avg_session_duration": 72.93749093333332,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "(not set)",
+          "sessions": 12,
+          "users": 6,
+          "bounce_rate": 0.5833333333333334,
+          "pages_per_session": 0.6666666666666666,
+          "avg_session_duration": 134.4211355,
+          "form_submits": 0
+        },
+        {
+          "source": "(direct)",
+          "medium": "(none)",
+          "sessions": 9,
+          "users": 8,
+          "bounce_rate": 0.4444444444444444,
+          "pages_per_session": 1.4444444444444444,
+          "avg_session_duration": 43.288928444444444,
+          "form_submits": 0
+        },
+        {
+          "source": "ads.google.com",
+          "medium": "referral",
+          "sessions": 8,
+          "users": 2,
+          "bounce_rate": 0.5,
+          "pages_per_session": 1.625,
+          "avg_session_duration": 307.591557875,
+          "form_submits": 0
+        },
+        {
+          "source": "(not set)",
+          "medium": "(not set)",
+          "sessions": 1,
+          "users": 3,
+          "bounce_rate": 1.0,
+          "pages_per_session": 5.0,
+          "avg_session_duration": 687.201746,
+          "form_submits": 0
+        },
+        {
+          "source": "awwwards.com",
+          "medium": "referral",
+          "sessions": 1,
+          "users": 1,
+          "bounce_rate": 0.0,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 17.049919,
+          "form_submits": 0
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-07-13T13:06:31.154612"
+}

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Недельный дашборд — miks-soft.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf6ec;
+    --bg-soft: #f3eedf;
+    --surface: #ffffff;
+    --ink: #1c1c1a;
+    --ink-2: #3a3a36;
+    --muted: #7a756a;
+    --line: #e3ddca;
+    --accent: #b8410c;
+    --accent-soft: #fbe9dd;
+    --green: #1b6b3a;
+    --green-soft: #e2f0e6;
+    --gold: #a86a00;
+    --gold-soft: #f6ead0;
+    --red: #a41a1a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px; line-height: 1.55;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--ink); color: var(--bg); }
+
+  .wide { max-width: 1360px; margin: 0 auto; padding: 0 28px; }
+
+  .topbar {
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    background: var(--bg);
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(6px);
+  }
+  .topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 13px; color: var(--muted); }
+  .topbar-inner b { color: var(--ink); font-weight: 600; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 100px; font-size: 12px; background: var(--surface); }
+  .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  .hero { padding: 56px 0 32px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  h1.title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(32px, 4.5vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  h1.title em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .lede {
+    font-size: 17px; line-height: 1.55; color: var(--ink-2);
+    max-width: 640px;
+  }
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  /* Summary strip */
+  .summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .stat { padding: 0; }
+  .stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+  .stat-value { font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; }
+  .stat-value .sub { font-size: 14px; color: var(--muted); font-family: 'Inter'; font-weight: 500; margin-left: 4px; }
+  .stat-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  @media (max-width: 720px) {
+    .summary { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Section */
+  section.block { padding: 40px 0; }
+  h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+  h2 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+
+  /* Chart */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 28px 24px 20px;
+    margin-bottom: 32px;
+  }
+  .chart-title { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 20px; }
+  .chart { display: flex; align-items: flex-end; gap: 32px; height: 180px; padding-left: 8px; }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; }
+  .bars { display: flex; align-items: flex-end; gap: 8px; height: 100%; width: 100%; justify-content: center; }
+  .bar { flex: 1; max-width: 40px; background: var(--accent); border-radius: 4px 4px 0 0; position: relative; min-height: 2px; transition: opacity .15s; }
+  .bar.forms { background: var(--green); }
+  .bar.clicks { background: var(--gold); }
+  .bar:hover { opacity: 0.8; }
+  .bar-value { position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-2); white-space: nowrap; }
+  .bar-label { font-size: 11px; color: var(--muted); text-align: center; line-height: 1.3; }
+  .chart-legend { display: flex; gap: 16px; justify-content: center; margin-top: 16px; font-size: 12px; color: var(--muted); }
+  .chart-legend .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+
+  /* Table */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 4px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+  }
+  .week-head {
+    padding: 20px 20px 16px;
+    display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--line);
+  }
+  .week-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+  .week-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: var(--accent-soft); color: var(--accent); border-radius: 100px; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .week-summary { flex: 1; text-align: right; font-size: 13px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .week-summary b { color: var(--ink); font-weight: 500; }
+
+  table.data { width: 100%; border-collapse: collapse; font-size: 12px; font-family: 'JetBrains Mono', monospace; }
+  table.data th {
+    text-align: right;
+    padding: 12px 8px 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-soft);
+    white-space: nowrap;
+    position: sticky; top: 0;
+  }
+  table.data th.left, table.data td.left { text-align: left; }
+  table.data th.first { padding-left: 20px; }
+  table.data td { padding: 8px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; color: var(--ink-2); }
+  table.data td.first { padding-left: 20px; }
+  table.data tr.platform-header td {
+    background: var(--bg-soft);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+  table.data tr.total td {
+    font-weight: 600;
+    color: var(--ink);
+    background: #fff8ee;
+    border-bottom: 2px solid var(--line);
+  }
+  table.data tr.zero td { color: var(--muted); }
+  table.data td.dim { color: var(--muted); }
+  table.data td.na { color: #b8a58a; font-style: italic; font-family: 'Inter'; font-size: 11px; }
+
+  .note-strip {
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--ink-2);
+    margin: 12px 0;
+  }
+  .note-strip b { color: var(--ink); font-weight: 600; }
+
+  footer.meta {
+    padding: 40px 0 80px;
+    color: var(--muted);
+    font-size: 12px;
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+  }
+  footer.meta a { color: var(--accent); text-decoration: none; }
+  footer.meta a:hover { text-decoration: underline; }
+  footer.meta .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: 24px; }
+  footer.meta h4 { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-bottom: 8px; }
+  footer.meta ul { list-style: none; }
+  footer.meta li { padding: 3px 0; }
+
+  @media (max-width: 720px) {
+    footer.meta .footer-grid { grid-template-columns: 1fr; }
+    .chart { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wide topbar-inner">
+    <div><b>miks-soft.com</b> · Google Ads · CID 2821990435</div>
+    <span class="pill"><span class="dot"></span> Обновлено <span id="updated">—</span></span>
+  </div>
+</div>
+
+<div class="wide">
+
+<div class="hero">
+  <div class="eyebrow">Недельный отчёт</div>
+  <h1 class="title">Реклама по <em>неделям</em>, <br>с 22 июня 2026</h1>
+  <p class="lede">
+    Дашборд собирает данные напрямую из Google Ads API (CID 2821990435) и GA4 (property 353999593).
+    Показаны все недели с <strong>22 июня</strong> по <strong>12 июля 2026</strong>. Данные обновляются
+    скриптом <code>pull_week.py</code> — по каждой неделе строится JSON, дашборд читает готовые файлы.
+  </p>
+
+  <div class="summary" id="summary">
+    <!-- injected -->
+  </div>
+</div>
+
+<section class="block">
+  <h2>Динамика по <em>неделям</em></h2>
+  <div class="section-sub">Расход и клики / показы / заявки в трёх подряд идущих неделях</div>
+
+  <div class="chart-card">
+    <div class="chart-title">Расход, $ · Клики · Заявки</div>
+    <div class="chart" id="chart"></div>
+    <div class="chart-legend">
+      <span><span class="swatch" style="background: var(--accent)"></span>Расход, $</span>
+      <span><span class="swatch" style="background: var(--gold)"></span>Клики</span>
+      <span><span class="swatch" style="background: var(--green)"></span>Заявки</span>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Детально по <em>кампаниям</em></h2>
+  <div class="section-sub">Полная таблица со всеми 20 метриками из клиентской формы. Одна секция — одна неделя.</div>
+
+  <div class="note-strip">
+    <b>Что не показано:</b> колонки «Расход ₽», «Расход ₽ с НДС», данные Яндекс.Директа и лиды из CRM (imedia)
+    — для этих источников нужен доступ, которого у нас пока нет. Строки платформы «Яндекс Директ» и колонки
+    CRM оставлены пустыми (<span class="na">н/д</span>). Обратите внимание — колонки визитов/пользователей
+    для отдельных кампаний Google Ads распределены пропорционально доле кликов; итоги по платформе — точные (GA4).
+  </div>
+
+  <div id="weeks"></div>
+</section>
+
+<footer class="meta">
+  <div class="footer-grid">
+    <div>
+      <h4>Источники данных</h4>
+      <ul>
+        <li>Google Ads API · CID 2821990435</li>
+        <li>GA4 Data API · property 353999593</li>
+        <li>Яндекс Директ · <span style="color:#b8a58a">нет доступа</span></li>
+        <li>CRM imedia · <span style="color:#b8a58a">нет доступа</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Обновление</h4>
+      <ul>
+        <li>Скрипт: <code>pull_week.py YYYY-MM-DD YYYY-MM-DD</code></li>
+        <li>Выход: <code>data/week_YYYY-MM-DD.json</code></li>
+        <li>Затем: <code>python -c "..." </code>консолидирует в <code>all_weeks.json</code></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ссылки</h4>
+      <ul>
+        <li><a href="https://miks-soft.com" target="_blank">miks-soft.com</a></li>
+        <li><a href="https://alex-sterling-lab.github.io/miks-soft-audit/" target="_blank">Аудит аккаунта</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1JVrKnat6Ezg9A5wQVzFxfMbSnlImbWjFcQCz5vkcGoc" target="_blank">Клиентская таблица (source)</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+const DATA = /*__DATA__*/ {"weeks": [{"week": ["2026-06-22", "2026-06-28"], "sources": {"google_ads": "CID 2821990435", "ga4": "properties/353999593", "yandex_direct": "нет доступа", "crm": "нет доступа"}, "platforms": [{"name": "Google Ads", "campaigns": [{"campaign": "АК - PM  - Tier 1,2", "type": "PERFORMANCE_MAX", "impressions": 9230, "clicks": 168, "ctr_pct": 1.820151679306609, "cost_rub": null, "cpc_rub": null, "cost_usd": 32.5, "cpc_usd": 0.19, "sessions": 148, "users": 139, "bounce_rate": 0.6418918918918919, "pages_per_session": 1.1081081081081081, "avg_session_duration": 51.97983375675676, "form_submits": 0, "cost_per_form_usd": null, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}], "total": {"campaign": "Итого", "type": "TOTAL", "impressions": 9230, "clicks": 168, "cost_usd": 32.5, "cost_rub": null, "cpc_rub": null, "ctr_pct": 1.820151679306609, "cpc_usd": 0.19, "sessions": 148, "users": 139, "bounce_rate": 0.6418918918918919, "pages_per_session": 1.1081081081081081, "avg_session_duration": 51.97983375675676, "form_submits": 0, "cost_per_form_usd": null, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}}, {"name": "Яндекс Директ", "campaigns": [], "total": {"campaign": "Итого", "type": "TOTAL", "note": "GA4 не видит трафика с yandex/cpc за неделю; вероятно кампании остановлены или не помечены utm.", "sessions": null, "users": null, "bounce_rate": null, "pages_per_session": null, "avg_session_duration": null, "form_submits": 0}}], "ga4_by_source": [{"source": "google", "medium": "cpc", "sessions": 148, "users": 139, "bounce_rate": 0.6418918918918919, "pages_per_session": 1.1081081081081081, "avg_session_duration": 51.97983375675676, "form_submits": 0}, {"source": "(direct)", "medium": "(none)", "sessions": 30, "users": 19, "bounce_rate": 0.3, "pages_per_session": 4.066666666666666, "avg_session_duration": 312.8777437, "form_submits": 0}, {"source": "google", "medium": "(not set)", "sessions": 14, "users": 12, "bounce_rate": 0.9285714285714286, "pages_per_session": 0.9285714285714286, "avg_session_duration": 4.620489214285714, "form_submits": 0}, {"source": "24.imediasolutions.ru", "medium": "referral", "sessions": 13, "users": 5, "bounce_rate": 0.23076923076923078, "pages_per_session": 4.153846153846154, "avg_session_duration": 571.6732082307692, "form_submits": 0}, {"source": "google", "medium": "organic", "sessions": 8, "users": 6, "bounce_rate": 0.25, "pages_per_session": 1.75, "avg_session_duration": 106.69335512500001, "form_submits": 0}, {"source": "google", "medium": "pm", "sessions": 8, "users": 8, "bounce_rate": 1.0, "pages_per_session": 1.0, "avg_session_duration": 0.0, "form_submits": 0}, {"source": "yandex.by", "medium": "referral", "sessions": 6, "users": 3, "bounce_rate": 0.3333333333333333, "pages_per_session": 1.3333333333333333, "avg_session_duration": 81.97216416666667, "form_submits": 0}, {"source": "(data not available)", "medium": "(data not available)", "sessions": 3, "users": 3, "bounce_rate": 0.0, "pages_per_session": 2.3333333333333335, "avg_session_duration": 116.628017, "form_submits": 0}, {"source": "tagassistant.google.com", "medium": "referral", "sessions": 3, "users": 2, "bounce_rate": 0.3333333333333333, "pages_per_session": 1.0, "avg_session_duration": 744.5038326666667, "form_submits": 0}, {"source": "awwwards.com", "medium": "referral", "sessions": 1, "users": 1, "bounce_rate": 0.0, "pages_per_session": 1.0, "avg_session_duration": 29.661663, "form_submits": 0}, {"source": "ya", "medium": "(not set)", "sessions": 1, "users": 1, "bounce_rate": 0.0, "pages_per_session": 1.0, "avg_session_duration": 940.92959, "form_submits": 0}, {"source": "yandex.ru", "medium": "referral", "sessions": 1, "users": 1, "bounce_rate": 0.0, "pages_per_session": 1.0, "avg_session_duration": 154.863276, "form_submits": 0}, {"source": "(not set)", "medium": "(not set)", "sessions": 0, "users": 3, "bounce_rate": 0.0, "pages_per_session": 0.0, "avg_session_duration": 0.0, "form_submits": 0}]}, {"week": ["2026-06-29", "2026-07-05"], "sources": {"google_ads": "CID 2821990435", "ga4": "properties/353999593", "yandex_direct": "нет доступа", "crm": "нет доступа"}, "platforms": [{"name": "Google Ads", "campaigns": [{"campaign": "АК - PM  - Tier 1,2", "type": "PERFORMANCE_MAX", "impressions": 2985, "clicks": 52, "ctr_pct": 1.742043551088777, "cost_rub": null, "cpc_rub": null, "cost_usd": 42.71, "cpc_usd": 0.82, "sessions": 52, "users": 49, "bounce_rate": 0.7049180327868853, "pages_per_session": 1.1639344262295082, "avg_session_duration": 45.21489662295082, "form_submits": 0, "cost_per_form_usd": null, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}, {"campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)", "type": "SEARCH", "impressions": 120, "clicks": 9, "ctr_pct": 7.5, "cost_rub": null, "cpc_rub": null, "cost_usd": 16.81, "cpc_usd": 1.87, "sessions": 9, "users": 8, "bounce_rate": 0.7049180327868853, "pages_per_session": 1.1639344262295082, "avg_session_duration": 45.21489662295082, "form_submits": 0, "cost_per_form_usd": null, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}], "total": {"campaign": "Итого", "type": "TOTAL", "impressions": 3105, "clicks": 61, "cost_usd": 59.52, "cost_rub": null, "cpc_rub": null, "ctr_pct": 1.964573268921095, "cpc_usd": 0.98, "sessions": 61, "users": 57, "bounce_rate": 0.7049180327868853, "pages_per_session": 1.1639344262295082, "avg_session_duration": 45.21489662295082, "form_submits": 0, "cost_per_form_usd": null, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}}, {"name": "Яндекс Директ", "campaigns": [], "total": {"campaign": "Итого", "type": "TOTAL", "note": "GA4 не видит трафика с yandex/cpc за неделю; вероятно кампании остановлены или не помечены utm.", "sessions": null, "users": null, "bounce_rate": null, "pages_per_session": null, "avg_session_duration": null, "form_submits": 0}}], "ga4_by_source": [{"source": "google", "medium": "cpc", "sessions": 61, "users": 57, "bounce_rate": 0.7049180327868853, "pages_per_session": 1.1639344262295082, "avg_session_duration": 45.21489662295082, "form_submits": 0}, {"source": "google", "medium": "organic", "sessions": 8, "users": 7, "bounce_rate": 0.375, "pages_per_session": 1.875, "avg_session_duration": 83.747449375, "form_submits": 0}, {"source": "(direct)", "medium": "(none)", "sessions": 7, "users": 6, "bounce_rate": 0.7142857142857143, "pages_per_session": 0.7142857142857143, "avg_session_duration": 27.89526157142857, "form_submits": 0}, {"source": "google", "medium": "(not set)", "sessions": 3, "users": 2, "bounce_rate": 0.3333333333333333, "pages_per_session": 3.0, "avg_session_duration": 1149.0180136666665, "form_submits": 0}, {"source": "(data not available)", "medium": "(data not available)", "sessions": 2, "users": 2, "bounce_rate": 0.0, "pages_per_session": 2.5, "avg_session_duration": 34.7218915, "form_submits": 0}, {"source": "ads.google.com", "medium": "referral", "sessions": 2, "users": 2, "bounce_rate": 1.0, "pages_per_session": 0.5, "avg_session_duration": 0.0, "form_submits": 0}, {"source": "awwwards.com", "medium": "referral", "sessions": 1, "users": 1, "bounce_rate": 0.0, "pages_per_session": 10.0, "avg_session_duration": 181.937242, "form_submits": 0}, {"source": "metrika.yandex.by", "medium": "referral", "sessions": 1, "users": 1, "bounce_rate": 0.0, "pages_per_session": 1.0, "avg_session_duration": 24.91322, "form_submits": 0}]}, {"week": ["2026-07-06", "2026-07-12"], "sources": {"google_ads": "CID 2821990435", "ga4": "properties/353999593", "yandex_direct": "нет доступа", "crm": "нет доступа"}, "platforms": [{"name": "Google Ads", "campaigns": [{"campaign": "АК - PM  - Tier 1,2", "type": "PERFORMANCE_MAX", "impressions": 2464, "clicks": 65, "ctr_pct": 2.6379870129870127, "cost_rub": null, "cpc_rub": null, "cost_usd": 53.96, "cpc_usd": 0.83, "sessions": 49, "users": 48, "bounce_rate": 0.43529411764705883, "pages_per_session": 1.3764705882352941, "avg_session_duration": 84.94127735294119, "form_submits": 1, "cost_per_form_usd": 53.96, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}, {"campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)", "type": "SEARCH", "impressions": 631, "clicks": 47, "ctr_pct": 7.448494453248812, "cost_rub": null, "cpc_rub": null, "cost_usd": 51.53, "cpc_usd": 1.1, "sessions": 36, "users": 35, "bounce_rate": 0.43529411764705883, "pages_per_session": 1.3764705882352941, "avg_session_duration": 84.94127735294119, "form_submits": 2, "cost_per_form_usd": 25.77, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}], "total": {"campaign": "Итого", "type": "TOTAL", "impressions": 3095, "clicks": 112, "cost_usd": 105.49, "cost_rub": null, "cpc_rub": null, "ctr_pct": 3.618739903069467, "cpc_usd": 0.94, "sessions": 85, "users": 83, "bounce_rate": 0.43529411764705883, "pages_per_session": 1.3764705882352941, "avg_session_duration": 84.94127735294119, "form_submits": 3, "cost_per_form_usd": 35.16, "crm_leads_total": null, "cost_per_crm_lead_usd": null, "crm_leads_converted": null, "cost_per_converted_lead_usd": null}}, {"name": "Яндекс Директ", "campaigns": [], "total": {"campaign": "Итого", "type": "TOTAL", "note": "GA4 не видит трафика с yandex/cpc за неделю; вероятно кампании остановлены или не помечены utm.", "sessions": null, "users": null, "bounce_rate": null, "pages_per_session": null, "avg_session_duration": null, "form_submits": 0}}], "ga4_by_source": [{"source": "google", "medium": "cpc", "sessions": 85, "users": 83, "bounce_rate": 0.43529411764705883, "pages_per_session": 1.3764705882352941, "avg_session_duration": 84.94127735294119, "form_submits": 0}, {"source": "google", "medium": "organic", "sessions": 15, "users": 11, "bounce_rate": 0.26666666666666666, "pages_per_session": 1.6, "avg_session_duration": 72.93749093333332, "form_submits": 0}, {"source": "google", "medium": "(not set)", "sessions": 12, "users": 6, "bounce_rate": 0.5833333333333334, "pages_per_session": 0.6666666666666666, "avg_session_duration": 134.4211355, "form_submits": 0}, {"source": "(direct)", "medium": "(none)", "sessions": 9, "users": 8, "bounce_rate": 0.4444444444444444, "pages_per_session": 1.4444444444444444, "avg_session_duration": 43.288928444444444, "form_submits": 0}, {"source": "ads.google.com", "medium": "referral", "sessions": 8, "users": 2, "bounce_rate": 0.5, "pages_per_session": 1.625, "avg_session_duration": 307.591557875, "form_submits": 0}, {"source": "(not set)", "medium": "(not set)", "sessions": 1, "users": 3, "bounce_rate": 1.0, "pages_per_session": 5.0, "avg_session_duration": 687.201746, "form_submits": 0}, {"source": "awwwards.com", "medium": "referral", "sessions": 1, "users": 1, "bounce_rate": 0.0, "pages_per_session": 1.0, "avg_session_duration": 17.049919, "form_submits": 0}]}], "generated_at": "2026-07-13T13:06:31.154612"};
+
+function fmtInt(v) { if (v == null || v === '') return '<span class="na">н/д</span>'; return v.toLocaleString('ru-RU'); }
+function fmtDec(v, d=2) { if (v == null || v === '') return '<span class="na">н/д</span>'; return v.toLocaleString('ru-RU', {minimumFractionDigits: d, maximumFractionDigits: d}); }
+function fmtPct(v) { if (v == null) return '<span class="na">н/д</span>'; return (v).toLocaleString('ru-RU', {maximumFractionDigits: 2}) + '%'; }
+function fmtBounce(v) { if (v == null) return '<span class="na">н/д</span>'; return (v * 100).toLocaleString('ru-RU', {maximumFractionDigits: 1}) + '%'; }
+function fmtDur(s) { if (s == null) return '<span class="na">н/д</span>'; const m = Math.floor(s / 60), sec = Math.round(s % 60); return `${m}:${sec.toString().padStart(2,'0')}`; }
+function fmtDate(d) {
+  const [y,m,day] = d.split('-');
+  const months = ['янв','фев','мар','апр','мая','июня','июля','авг','сен','окт','ноя','дек'];
+  return `${parseInt(day)} ${months[parseInt(m)-1]}`;
+}
+
+function renderSummary(weeks) {
+  const totals = { cost: 0, clicks: 0, impressions: 0, forms: 0, sessions: 0 };
+  weeks.forEach(w => {
+    const t = w.platforms[0].total;
+    totals.cost += t.cost_usd || 0;
+    totals.clicks += t.clicks || 0;
+    totals.impressions += t.impressions || 0;
+    totals.forms += t.form_submits || 0;
+    totals.sessions += t.sessions || 0;
+  });
+  const el = document.getElementById('summary');
+  el.innerHTML = `
+    <div class="stat">
+      <div class="stat-label">Всего показов</div>
+      <div class="stat-value">${totals.impressions.toLocaleString('ru-RU')}</div>
+      <div class="stat-sub">${weeks.length} нед. · CTR ${(totals.clicks/totals.impressions*100).toFixed(2)}%</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Расход</div>
+      <div class="stat-value">$${totals.cost.toFixed(2)}<span class="sub">/ ${weeks.length} нед</span></div>
+      <div class="stat-sub">CPC $${(totals.cost/totals.clicks).toFixed(2)}</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Клики / визиты GA4</div>
+      <div class="stat-value">${totals.clicks} <span class="sub">/ ${totals.sessions}</span></div>
+      <div class="stat-sub">only google/cpc в GA4</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Заявки (форма)</div>
+      <div class="stat-value">${totals.forms}</div>
+      <div class="stat-sub">CPA $${totals.forms ? (totals.cost/totals.forms).toFixed(2) : '—'}</div>
+    </div>
+  `;
+}
+
+function renderChart(weeks) {
+  const chart = document.getElementById('chart');
+  const maxCost = Math.max(...weeks.map(w => w.platforms[0].total.cost_usd || 0));
+  const maxClicks = Math.max(...weeks.map(w => w.platforms[0].total.clicks || 0));
+  const maxForms = Math.max(1, ...weeks.map(w => w.platforms[0].total.form_submits || 0));
+  chart.innerHTML = weeks.map(w => {
+    const t = w.platforms[0].total;
+    const costH = ((t.cost_usd || 0) / maxCost) * 100;
+    const clicksH = ((t.clicks || 0) / maxClicks) * 100;
+    const formsH = ((t.form_submits || 0) / maxForms) * 100;
+    return `
+      <div class="bar-group">
+        <div class="bars">
+          <div class="bar" style="height:${costH}%"><div class="bar-value">$${(t.cost_usd||0).toFixed(0)}</div></div>
+          <div class="bar clicks" style="height:${clicksH}%"><div class="bar-value">${t.clicks||0}</div></div>
+          <div class="bar forms" style="height:${formsH}%"><div class="bar-value">${t.form_submits||0}</div></div>
+        </div>
+        <div class="bar-label">${fmtDate(w.week[0])} –<br>${fmtDate(w.week[1])}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderWeekTable(w) {
+  const html = ['<div class="table-wrap">'];
+  const totalCost = (w.platforms[0].total.cost_usd || 0);
+  const totalClicks = (w.platforms[0].total.clicks || 0);
+  const totalForms = (w.platforms[0].total.form_submits || 0);
+  html.push(`
+    <div class="week-head">
+      <span class="week-badge">Неделя</span>
+      <span class="week-title">${fmtDate(w.week[0])} — ${fmtDate(w.week[1])}, 2026</span>
+      <span class="week-summary">
+        <b>$${totalCost.toFixed(2)}</b> расход ·
+        <b>${totalClicks}</b> кликов ·
+        <b>${totalForms}</b> заявок
+      </span>
+    </div>
+  `);
+  html.push(`<table class="data"><thead><tr>
+    <th class="left first">Рекламная система / Кампания</th>
+    <th>Показы</th>
+    <th>Клики</th>
+    <th>CTR</th>
+    <th>Расход ₽</th>
+    <th>Ср. CPC ₽</th>
+    <th>Расход $</th>
+    <th>Ср. CPC $</th>
+    <th>Визиты</th>
+    <th>Посетители</th>
+    <th>Отказы</th>
+    <th>Глубина</th>
+    <th>Время</th>
+    <th>Форма</th>
+    <th>$ / форма</th>
+    <th>Лиды CRM</th>
+    <th>$ / лид</th>
+    <th>Конв. лиды</th>
+    <th>$ / конв.</th>
+  </tr></thead><tbody>`);
+
+  w.platforms.forEach(pl => {
+    html.push(`<tr class="platform-header"><td colspan="19">${pl.name}</td></tr>`);
+    pl.campaigns.forEach(c => {
+      const zero = (c.impressions === 0) ? ' zero' : '';
+      html.push(`<tr class="camp${zero}">
+        <td class="left first" style="max-width:280px;white-space:normal;">${c.campaign}</td>
+        <td>${fmtInt(c.impressions)}</td>
+        <td>${fmtInt(c.clicks)}</td>
+        <td>${fmtPct(c.ctr_pct)}</td>
+        <td class="na">н/д</td>
+        <td class="na">н/д</td>
+        <td>${fmtDec(c.cost_usd)}</td>
+        <td>${fmtDec(c.cpc_usd)}</td>
+        <td>${fmtInt(c.sessions)}</td>
+        <td>${fmtInt(c.users)}</td>
+        <td>${fmtBounce(c.bounce_rate)}</td>
+        <td>${fmtDec(c.pages_per_session)}</td>
+        <td>${fmtDur(c.avg_session_duration)}</td>
+        <td>${c.form_submits ?? '<span class="na">н/д</span>'}</td>
+        <td>${fmtDec(c.cost_per_form_usd)}</td>
+        <td class="na">н/д</td>
+        <td class="na">н/д</td>
+        <td class="na">н/д</td>
+        <td class="na">н/д</td>
+      </tr>`);
+    });
+    const t = pl.total;
+    const rowClass = t.impressions ? 'total' : 'total zero';
+    html.push(`<tr class="${rowClass}">
+      <td class="left first">${pl.name} — Итого</td>
+      <td>${fmtInt(t.impressions)}</td>
+      <td>${fmtInt(t.clicks)}</td>
+      <td>${fmtPct(t.ctr_pct)}</td>
+      <td class="na">н/д</td>
+      <td class="na">н/д</td>
+      <td>${fmtDec(t.cost_usd)}</td>
+      <td>${fmtDec(t.cpc_usd)}</td>
+      <td>${fmtInt(t.sessions)}</td>
+      <td>${fmtInt(t.users)}</td>
+      <td>${fmtBounce(t.bounce_rate)}</td>
+      <td>${fmtDec(t.pages_per_session)}</td>
+      <td>${fmtDur(t.avg_session_duration)}</td>
+      <td>${t.form_submits ?? '<span class="na">н/д</span>'}</td>
+      <td>${fmtDec(t.cost_per_form_usd)}</td>
+      <td class="na">н/д</td>
+      <td class="na">н/д</td>
+      <td class="na">н/д</td>
+      <td class="na">н/д</td>
+    </tr>`);
+    if (t.note) {
+      html.push(`<tr><td colspan="19" style="padding:12px 20px; background:var(--gold-soft); color:var(--ink-2); font-family:'Inter'; font-size:12px; text-align:left;">${t.note}</td></tr>`);
+    }
+  });
+  html.push('</tbody></table></div>');
+  return html.join('');
+}
+
+function render() {
+  const weeks = DATA.weeks;
+  document.getElementById('updated').textContent = new Date().toLocaleDateString('ru-RU', {day:'numeric', month:'long', year:'numeric'});
+  renderSummary(weeks);
+  renderChart(weeks);
+  document.getElementById('weeks').innerHTML = weeks.map(renderWeekTable).join('');
+}
+
+render();
+</script>
+
+</body>
+</html>
