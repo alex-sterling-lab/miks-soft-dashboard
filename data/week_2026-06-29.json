@@ -38,7 +38,8 @@
           "crm_leads_total": 0,
           "cost_per_crm_lead_usd": null,
           "crm_leads_converted": 0,
-          "cost_per_converted_lead_usd": null
+          "cost_per_converted_lead_usd": null,
+          "comment": "PMax дообучается после чистки YouTube; довели семантику для новой Search до 100 kw/группу."
         },
         {
           "campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)",
@@ -60,7 +61,8 @@
           "crm_leads_total": 0,
           "cost_per_crm_lead_usd": null,
           "crm_leads_converted": 0,
-          "cost_per_converted_lead_usd": null
+          "cost_per_converted_lead_usd": null,
+          "comment": "Создали новую поисковую с 6 группами (01.07), MaxConv $2 макс. клик; активна с 30.06."
         }
       ],
       "total": {

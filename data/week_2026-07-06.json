@@ -38,7 +38,8 @@
           "crm_leads_total": 1,
           "cost_per_crm_lead_usd": 53.96,
           "crm_leads_converted": 1,
-          "cost_per_converted_lead_usd": 53.96
+          "cost_per_converted_lead_usd": 53.96,
+          "comment": "Аудит ассетов (07.07): дозаполнили headlines PMax «Тех. поддержка» 10→15. LOGO/BUSINESS_NAME на уровне кампании."
         },
         {
           "campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)",
@@ -60,7 +61,8 @@
           "crm_leads_total": 2,
           "cost_per_crm_lead_usd": 25.77,
           "crm_leads_converted": 1,
-          "cost_per_converted_lead_usd": 51.53
+          "cost_per_converted_lead_usd": 51.53,
+          "comment": "Добили семантику до 120 kw/группу (06.07, 720 kw всего). Первые 2 конверсии — «Сайт под ключ» и «Лендинг»."
         }
       ],
       "total": {

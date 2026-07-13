@@ -43,6 +43,15 @@ CAMPAIGN_SLUG_MAP = {
     "ak-search": "АК - Поиск (общий)(06/07 макс кликов 2$)",
     "ak-tier-1-2": "АК - PM  - Tier 1,2",
 }
+
+# Комментарий по неделям — из наших weekly-отчётов (наши работы над кампаниями)
+COMMENTS_BY_WEEK = {
+    ("2026-06-22", "АК - PM  - Tier 1,2"): "Исключили YouTube-плейсменты (29.06); PMax обучается с чистого трафика.",
+    ("2026-06-29", "АК - PM  - Tier 1,2"): "PMax дообучается после чистки YouTube; довели семантику для новой Search до 100 kw/группу.",
+    ("2026-06-29", "АК - Поиск (общий)(06/07 макс кликов 2$)"): "Создали новую поисковую с 6 группами (01.07), MaxConv $2 макс. клик; активна с 30.06.",
+    ("2026-07-06", "АК - PM  - Tier 1,2"): "Аудит ассетов (07.07): дозаполнили headlines PMax «Тех. поддержка» 10→15. LOGO/BUSINESS_NAME на уровне кампании.",
+    ("2026-07-06", "АК - Поиск (общий)(06/07 макс кликов 2$)"): "Добили семантику до 120 kw/группу (06.07, 720 kw всего). Первые 2 конверсии — «Сайт под ключ» и «Лендинг».",
+}
 MONTHS_RU = {"января":1,"февраля":2,"марта":3,"апреля":4,"мая":5,"июня":6,
              "июля":7,"августа":8,"сентября":9,"октября":10,"ноября":11,"декабря":12}
 
@@ -277,7 +286,7 @@ def fetch_ga4_by_campaign(start, end):
     return by_camp
 
 
-def build_platform_view(ads_campaigns, ga4_rows, ga4_by_campaign, usd_rate, crm_by_campaign):
+def build_platform_view(ads_campaigns, ga4_rows, ga4_by_campaign, usd_rate, crm_by_campaign, week_start):
     """Собираем в разрез 'платформа → кампания' с 20-колоночной структурой.
 
     Google Ads (импр/клики/CTR/расход/CPC + формы) — из Ads API.
@@ -374,6 +383,7 @@ def build_platform_view(ads_campaigns, ga4_rows, ga4_by_campaign, usd_rate, crm_
         row["cost_per_crm_lead_usd"] = round(cost_usd_val / crm["total"], 2) if crm["total"] else None
         row["crm_leads_converted"] = crm["converted"]
         row["cost_per_converted_lead_usd"] = round(cost_usd_val / crm["converted"], 2) if crm["converted"] else None
+        row["comment"] = COMMENTS_BY_WEEK.get((week_start, name), "")
         google_rows.append(row)
 
     # Google Ads Итого
@@ -473,7 +483,7 @@ def main():
             "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
             "usd_rub": rate_info,
         },
-        **build_platform_view(ads, ga4, ga4_camp, rate_info["rate"], crm),
+        **build_platform_view(ads, ga4, ga4_camp, rate_info["rate"], crm, args.start),
     }
     text = json.dumps(out, ensure_ascii=False, indent=2)
     if args.out:

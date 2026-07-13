@@ -9,8 +9,8 @@
     "yandex_direct": "нет доступа",
     "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
     "usd_rub": {
-      "rate": 74.7738,
-      "date": "2026-06-25",
+      "rate": 77.0611,
+      "date": "2026-06-27",
       "source": "CBR"
     }
   },
@@ -24,8 +24,8 @@
           "impressions": 9230,
           "clicks": 168,
           "ctr_pct": 1.820151679306609,
-          "cost_rub": 2430.21,
-          "cpc_rub": 14.47,
+          "cost_rub": 2504.55,
+          "cpc_rub": 14.91,
           "cost_usd": 32.5,
           "cpc_usd": 0.19,
           "sessions": 132,
@@ -38,7 +38,8 @@
           "crm_leads_total": 0,
           "cost_per_crm_lead_usd": null,
           "crm_leads_converted": 0,
-          "cost_per_converted_lead_usd": null
+          "cost_per_converted_lead_usd": null,
+          "comment": "Исключили YouTube-плейсменты (29.06); PMax обучается с чистого трафика."
         }
       ],
       "total": {
@@ -47,10 +48,10 @@
         "impressions": 9230,
         "clicks": 168,
         "cost_usd": 32.5,
-        "cost_rub": 2430.21,
+        "cost_rub": 2504.55,
         "ctr_pct": 1.820151679306609,
         "cpc_usd": 0.19,
-        "cpc_rub": 14.47,
+        "cpc_rub": 14.91,
         "sessions": 148,
         "users": 139,
         "bounce_rate": 0.6418918918918919,
