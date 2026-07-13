@@ -17,7 +17,7 @@ data = {"weeks": weeks, "generated_at": __import__("datetime").datetime.now().is
 tpl = (D / "index.html").read_text()
 inline = json.dumps(data, ensure_ascii=False)
 new = re.sub(
-    r"const DATA = /\*__DATA__\*/[^;]+;",
+    r"const DATA = /\*__DATA__\*/[^\n]*",
     f"const DATA = /*__DATA__*/ {inline};",
     tpl,
     count=1,

@@ -11,7 +11,9 @@
 import argparse
 import json
 import sys
+import urllib.request
 from collections import defaultdict
+from datetime import date, timedelta
 from pathlib import Path
 
 from google.ads.googleads.client import GoogleAdsClient
@@ -30,6 +32,30 @@ CID = "2821990435"  # miks-soft.com
 # --- GA4 ---
 GA4_KEY = "/home/openclaw/.config/google/service-account.json"
 GA4_PROPERTY = "properties/353999593"  # miks-soft.com main
+
+
+def usd_rub_rate(week_end):
+    """USD→RUB по данным ЦБ РФ на последний рабочий день недели.
+    ЦБ отдаёт архив по URL /archive/YYYY/MM/DD/daily_json.js — если суббота/воскресенье,
+    отскакиваем к пятнице (курс ЦБ на выходные не меняется)."""
+    d = date.fromisoformat(week_end)
+    # ЦБ устанавливает курс на след. рабочий день; в выходные — тот же что в пятницу.
+    for _ in range(7):
+        url = f"https://www.cbr-xml-daily.ru/archive/{d.year}/{d.month:02d}/{d.day:02d}/daily_json.js"
+        try:
+            with urllib.request.urlopen(url, timeout=10) as r:
+                data = json.load(r)
+            return {
+                "rate": data["Valute"]["USD"]["Value"],
+                "date": data["Date"][:10],
+                "source": "CBR",
+            }
+        except Exception:
+            d -= timedelta(days=1)
+    # last resort — сегодняшний курс
+    with urllib.request.urlopen("https://www.cbr-xml-daily.ru/daily_json.js", timeout=10) as r:
+        data = json.load(r)
+    return {"rate": data["Valute"]["USD"]["Value"], "date": data["Date"][:10], "source": "CBR-current"}
 
 
 def ads_client():
@@ -139,7 +165,7 @@ def fetch_ga4_by_source(start, end):
     return rows
 
 
-def build_platform_view(ads_campaigns, ga4_rows):
+def build_platform_view(ads_campaigns, ga4_rows, usd_rate):
     """Собираем в разрез 'платформа → кампания' с 20-колоночной структурой.
 
     Google Ads (импр/клики/CTR/расход/CPC + формы) — из Ads API.
@@ -195,23 +221,27 @@ def build_platform_view(ads_campaigns, ga4_rows):
         share = m["clicks"] / total_clicks if total_clicks else 0
         # Form submits берём из Google Ads (метрика conversions привязана к GA4 form_submit)
         form_submits = int(round(m["conversions"]))
+        cost_usd_val = round(m["cost"], 2)
+        cost_rub_val = round(m["cost"] * usd_rate, 2)
+        cpc_usd_val = round(m["cost"] / m["clicks"], 2) if m["clicks"] else None
+        cpc_rub_val = round(m["cost"] * usd_rate / m["clicks"], 2) if m["clicks"] else None
         row = {
             "campaign": name,
             "type": m["type"],
             "impressions": m["impressions"],
             "clicks": m["clicks"],
             "ctr_pct": (m["clicks"] / m["impressions"] * 100) if m["impressions"] else None,
-            "cost_rub": None,  # Google Ads в USD, RUB не собираем
-            "cpc_rub": None,
-            "cost_usd": round(m["cost"], 2),
-            "cpc_usd": round(m["cost"] / m["clicks"], 2) if m["clicks"] else None,
+            "cost_rub": cost_rub_val,
+            "cpc_rub": cpc_rub_val,
+            "cost_usd": cost_usd_val,
+            "cpc_usd": cpc_usd_val,
             "sessions": int(round(ga["sessions"] * share)) if ga["sessions"] else None,
             "users": int(round(ga["users"] * share)) if ga["users"] else None,
             "bounce_rate": ga["bounce_rate"],
             "pages_per_session": ga["pages_per_session"],
             "avg_session_duration": ga["avg_session_duration"],
             "form_submits": form_submits,
-            "cost_per_form_usd": round(row_cost / form_submits, 2) if form_submits and (row_cost := round(m["cost"], 2)) else None,
+            "cost_per_form_usd": round(cost_usd_val / form_submits, 2) if form_submits else None,
             "crm_leads_total": None,
             "cost_per_crm_lead_usd": None,
             "crm_leads_converted": None,
@@ -226,11 +256,11 @@ def build_platform_view(ads_campaigns, ga4_rows):
         "impressions": sum(r["impressions"] for r in google_rows),
         "clicks": sum(r["clicks"] for r in google_rows),
         "cost_usd": round(sum(r["cost_usd"] for r in google_rows), 2),
-        "cost_rub": None,
-        "cpc_rub": None,
+        "cost_rub": round(sum(r["cost_rub"] for r in google_rows), 2),
     }
     total_ga_row["ctr_pct"] = (total_ga_row["clicks"] / total_ga_row["impressions"] * 100) if total_ga_row["impressions"] else None
     total_ga_row["cpc_usd"] = round(total_ga_row["cost_usd"] / total_ga_row["clicks"], 2) if total_ga_row["clicks"] else None
+    total_ga_row["cpc_rub"] = round(total_ga_row["cost_rub"] / total_ga_row["clicks"], 2) if total_ga_row["clicks"] else None
     total_ga_row["sessions"] = ga["sessions"]
     total_ga_row["users"] = ga["users"]
     total_ga_row["bounce_rate"] = ga["bounce_rate"]
@@ -291,6 +321,10 @@ def main():
     ga4 = fetch_ga4_by_source(args.start, args.end)
     print(f"  -> {len(ga4)} source/medium rows", file=sys.stderr)
 
+    print(f"Fetching USD→RUB rate for {args.end}", file=sys.stderr)
+    rate_info = usd_rub_rate(args.end)
+    print(f"  -> USD={rate_info['rate']:.4f} RUB (по {rate_info['date']}, {rate_info['source']})", file=sys.stderr)
+
     out = {
         "week": [args.start, args.end],
         "sources": {
@@ -298,8 +332,9 @@ def main():
             "ga4": GA4_PROPERTY,
             "yandex_direct": "нет доступа",
             "crm": "нет доступа",
+            "usd_rub": rate_info,
         },
-        **build_platform_view(ads, ga4),
+        **build_platform_view(ads, ga4, rate_info["rate"]),
     }
     text = json.dumps(out, ensure_ascii=False, indent=2)
     if args.out:

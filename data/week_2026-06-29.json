@@ -7,7 +7,12 @@
     "google_ads": "CID 2821990435",
     "ga4": "properties/353999593",
     "yandex_direct": "нет доступа",
-    "crm": "нет доступа"
+    "crm": "нет доступа",
+    "usd_rub": {
+      "rate": 77.2264,
+      "date": "2026-07-04",
+      "source": "CBR"
+    }
   },
   "platforms": [
     {
@@ -19,8 +24,8 @@
           "impressions": 2985,
           "clicks": 52,
           "ctr_pct": 1.742043551088777,
-          "cost_rub": null,
-          "cpc_rub": null,
+          "cost_rub": 3298.3,
+          "cpc_rub": 63.43,
           "cost_usd": 42.71,
           "cpc_usd": 0.82,
           "sessions": 52,
@@ -41,8 +46,8 @@
           "impressions": 120,
           "clicks": 9,
           "ctr_pct": 7.5,
-          "cost_rub": null,
-          "cpc_rub": null,
+          "cost_rub": 1298.18,
+          "cpc_rub": 144.24,
           "cost_usd": 16.81,
           "cpc_usd": 1.87,
           "sessions": 9,
@@ -64,10 +69,10 @@
         "impressions": 3105,
         "clicks": 61,
         "cost_usd": 59.52,
-        "cost_rub": null,
-        "cpc_rub": null,
+        "cost_rub": 4596.48,
         "ctr_pct": 1.964573268921095,
         "cpc_usd": 0.98,
+        "cpc_rub": 75.35,
         "sessions": 61,
         "users": 57,
         "bounce_rate": 0.7049180327868853,
