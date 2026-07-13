@@ -33,6 +33,19 @@ CID = "2821990435"  # miks-soft.com
 GA4_KEY = "/home/openclaw/.config/google/service-account.json"
 GA4_PROPERTY = "properties/353999593"  # miks-soft.com main
 
+# --- Клиентский Google Sheet (imedia CRM экспорт) ---
+LEADS_CSV_URL = (
+    "https://docs.google.com/spreadsheets/d/"
+    "1JVrKnat6Ezg9A5wQVzFxfMbSnlImbWjFcQCz5vkcGoc/export?format=csv&gid=1092315723"
+)
+# Slug кампании из «Источник рекламы» → имя кампании в Google Ads
+CAMPAIGN_SLUG_MAP = {
+    "ak-search": "АК - Поиск (общий)(06/07 макс кликов 2$)",
+    "ak-tier-1-2": "АК - PM  - Tier 1,2",
+}
+MONTHS_RU = {"января":1,"февраля":2,"марта":3,"апреля":4,"мая":5,"июня":6,
+             "июля":7,"августа":8,"сентября":9,"октября":10,"ноября":11,"декабря":12}
+
 
 def usd_rub_rate(week_end):
     """USD→RUB по данным ЦБ РФ на последний рабочий день недели.
@@ -56,6 +69,68 @@ def usd_rub_rate(week_end):
     with urllib.request.urlopen("https://www.cbr-xml-daily.ru/daily_json.js", timeout=10) as r:
         data = json.load(r)
     return {"rate": data["Valute"]["USD"]["Value"], "date": data["Date"][:10], "source": "CBR-current"}
+
+
+def fetch_crm_leads(start, end):
+    """Тянет клиентский лист «Лиды» (imedia CRM экспорт), фильтрует по неделе
+    и Google-источнику, распределяет по кампаниям.
+
+    Классификация:
+      Все лиды из CRM     = все статусы кроме «Мусорная заявка» (спам)
+      Сконв. лиды         = статусы, начинающиеся с «Сконвертирован» (дошли до сделки)"""
+    import csv
+    import re
+
+    with urllib.request.urlopen(LEADS_CSV_URL, timeout=15) as r:
+        text = r.read().decode("utf-8")
+
+    start_d = date.fromisoformat(start)
+    end_d = date.fromisoformat(end)
+
+    by_campaign = defaultdict(lambda: {"total": 0, "converted": 0})
+    unmapped = []
+    for row in csv.reader(text.splitlines()):
+        if len(row) < 10 or row[0] == "Дата":
+            continue
+        m = re.match(r"(\d+) (\w+) (\d+) (\d+):(\d+)", row[0])
+        if not m:
+            continue
+        d, mo, y, h, mi = m.groups()
+        try:
+            dt = date(int(y), MONTHS_RU[mo], int(d))
+        except (KeyError, ValueError):
+            continue
+        if dt < start_d or dt > end_d:
+            continue
+        status = row[3].strip()
+        if status == "Мусорная заявка":
+            continue
+        src = row[9].lower().strip()
+        if "google" not in src:
+            continue
+        # slug кампании — второй/третий сегмент. Форматы:
+        #   "cpc - google - ak-search - kw"
+        #   "pm - google - ak-tier-1-2"
+        #   "google - poisk-eur - kw"
+        tokens = [t.strip() for t in src.split(" - ")]
+        slug = None
+        for t in tokens[1:]:
+            if t == "google":
+                continue
+            if t in CAMPAIGN_SLUG_MAP:
+                slug = t
+                break
+            # запомнить первый непустой не-brand токен как fallback slug
+            if slug is None and t and t != "google":
+                slug = t
+        camp_name = CAMPAIGN_SLUG_MAP.get(slug)
+        if camp_name is None:
+            unmapped.append((row[0], slug, src[:60]))
+            camp_name = f"(unmapped: {slug or 'unknown'})"
+        by_campaign[camp_name]["total"] += 1
+        if status.startswith("Сконвертирован"):
+            by_campaign[camp_name]["converted"] += 1
+    return dict(by_campaign), unmapped
 
 
 def ads_client():
@@ -165,7 +240,7 @@ def fetch_ga4_by_source(start, end):
     return rows
 
 
-def build_platform_view(ads_campaigns, ga4_rows, usd_rate):
+def build_platform_view(ads_campaigns, ga4_rows, usd_rate, crm_by_campaign):
     """Собираем в разрез 'платформа → кампания' с 20-колоночной структурой.
 
     Google Ads (импр/клики/CTR/расход/CPC + формы) — из Ads API.
@@ -242,11 +317,12 @@ def build_platform_view(ads_campaigns, ga4_rows, usd_rate):
             "avg_session_duration": ga["avg_session_duration"],
             "form_submits": form_submits,
             "cost_per_form_usd": round(cost_usd_val / form_submits, 2) if form_submits else None,
-            "crm_leads_total": None,
-            "cost_per_crm_lead_usd": None,
-            "crm_leads_converted": None,
-            "cost_per_converted_lead_usd": None,
         }
+        crm = crm_by_campaign.get(name, {"total": 0, "converted": 0})
+        row["crm_leads_total"] = crm["total"]
+        row["cost_per_crm_lead_usd"] = round(cost_usd_val / crm["total"], 2) if crm["total"] else None
+        row["crm_leads_converted"] = crm["converted"]
+        row["cost_per_converted_lead_usd"] = round(cost_usd_val / crm["converted"], 2) if crm["converted"] else None
         google_rows.append(row)
 
     # Google Ads Итого
@@ -269,10 +345,10 @@ def build_platform_view(ads_campaigns, ga4_rows, usd_rate):
     # Форм по Google Ads = сумма conversions по всем кампаниям (это точнее чем GA4 form_submit по source)
     total_ga_row["form_submits"] = sum(r["form_submits"] for r in google_rows)
     total_ga_row["cost_per_form_usd"] = round(total_ga_row["cost_usd"] / total_ga_row["form_submits"], 2) if total_ga_row["form_submits"] else None
-    total_ga_row["crm_leads_total"] = None
-    total_ga_row["cost_per_crm_lead_usd"] = None
-    total_ga_row["crm_leads_converted"] = None
-    total_ga_row["cost_per_converted_lead_usd"] = None
+    total_ga_row["crm_leads_total"] = sum(r["crm_leads_total"] for r in google_rows)
+    total_ga_row["cost_per_crm_lead_usd"] = round(total_ga_row["cost_usd"] / total_ga_row["crm_leads_total"], 2) if total_ga_row["crm_leads_total"] else None
+    total_ga_row["crm_leads_converted"] = sum(r["crm_leads_converted"] for r in google_rows)
+    total_ga_row["cost_per_converted_lead_usd"] = round(total_ga_row["cost_usd"] / total_ga_row["crm_leads_converted"], 2) if total_ga_row["crm_leads_converted"] else None
 
     yandex_ga = ga4_totals("Яндекс Директ")
     yandex_note = None
@@ -325,16 +401,24 @@ def main():
     rate_info = usd_rub_rate(args.end)
     print(f"  -> USD={rate_info['rate']:.4f} RUB (по {rate_info['date']}, {rate_info['source']})", file=sys.stderr)
 
+    print(f"Fetching CRM leads for {args.start} .. {args.end}", file=sys.stderr)
+    crm, unmapped = fetch_crm_leads(args.start, args.end)
+    total_leads = sum(v["total"] for v in crm.values())
+    total_conv = sum(v["converted"] for v in crm.values())
+    print(f"  -> {total_leads} leads ({total_conv} converted) across {len(crm)} campaigns", file=sys.stderr)
+    if unmapped:
+        print(f"  -> WARN: {len(unmapped)} unmapped rows: {unmapped[:3]}", file=sys.stderr)
+
     out = {
         "week": [args.start, args.end],
         "sources": {
             "google_ads": "CID 2821990435",
             "ga4": GA4_PROPERTY,
             "yandex_direct": "нет доступа",
-            "crm": "нет доступа",
+            "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
             "usd_rub": rate_info,
         },
-        **build_platform_view(ads, ga4, rate_info["rate"]),
+        **build_platform_view(ads, ga4, rate_info["rate"], crm),
     }
     text = json.dumps(out, ensure_ascii=False, indent=2)
     if args.out:

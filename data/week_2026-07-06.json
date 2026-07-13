@@ -7,7 +7,7 @@
     "google_ads": "CID 2821990435",
     "ga4": "properties/353999593",
     "yandex_direct": "нет доступа",
-    "crm": "нет доступа",
+    "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
     "usd_rub": {
       "rate": 76.6647,
       "date": "2026-07-11",
@@ -35,10 +35,10 @@
           "avg_session_duration": 84.94127735294119,
           "form_submits": 1,
           "cost_per_form_usd": 53.96,
-          "crm_leads_total": null,
-          "cost_per_crm_lead_usd": null,
-          "crm_leads_converted": null,
-          "cost_per_converted_lead_usd": null
+          "crm_leads_total": 1,
+          "cost_per_crm_lead_usd": 53.96,
+          "crm_leads_converted": 1,
+          "cost_per_converted_lead_usd": 53.96
         },
         {
           "campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)",
@@ -57,10 +57,10 @@
           "avg_session_duration": 84.94127735294119,
           "form_submits": 2,
           "cost_per_form_usd": 25.77,
-          "crm_leads_total": null,
-          "cost_per_crm_lead_usd": null,
-          "crm_leads_converted": null,
-          "cost_per_converted_lead_usd": null
+          "crm_leads_total": 2,
+          "cost_per_crm_lead_usd": 25.77,
+          "crm_leads_converted": 1,
+          "cost_per_converted_lead_usd": 51.53
         }
       ],
       "total": {
@@ -80,10 +80,10 @@
         "avg_session_duration": 84.94127735294119,
         "form_submits": 3,
         "cost_per_form_usd": 35.16,
-        "crm_leads_total": null,
-        "cost_per_crm_lead_usd": null,
-        "crm_leads_converted": null,
-        "cost_per_converted_lead_usd": null
+        "crm_leads_total": 3,
+        "cost_per_crm_lead_usd": 35.16,
+        "crm_leads_converted": 2,
+        "cost_per_converted_lead_usd": 52.74
       }
     },
     {
