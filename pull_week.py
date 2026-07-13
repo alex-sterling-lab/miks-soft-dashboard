@@ -240,7 +240,44 @@ def fetch_ga4_by_source(start, end):
     return rows
 
 
-def build_platform_view(ads_campaigns, ga4_rows, usd_rate, crm_by_campaign):
+def fetch_ga4_by_campaign(start, end):
+    """Забираем GA4 в разрезе Google Ads campaign name.
+    GA4 имеет встроенную dimension googleAdsCampaignName — сессии автоматически
+    привязаны к Google Ads (через gclid), это точнее чем source/medium + share по кликам."""
+    creds = service_account.Credentials.from_service_account_file(
+        GA4_KEY, scopes=["https://www.googleapis.com/auth/analytics.readonly"]
+    )
+    client = BetaAnalyticsDataClient(credentials=creds)
+
+    req = RunReportRequest(
+        property=GA4_PROPERTY,
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        dimensions=[Dimension(name="sessionGoogleAdsCampaignName")],
+        metrics=[
+            Metric(name="sessions"),
+            Metric(name="totalUsers"),
+            Metric(name="bounceRate"),
+            Metric(name="screenPageViewsPerSession"),
+            Metric(name="averageSessionDuration"),
+        ],
+    )
+    resp = client.run_report(req)
+    by_camp = {}
+    for r in resp.rows:
+        name = r.dimension_values[0].value
+        if not name or name in ("(not set)", "(other)"):
+            continue
+        by_camp[name] = {
+            "sessions": int(r.metric_values[0].value),
+            "users": int(r.metric_values[1].value),
+            "bounce_rate": float(r.metric_values[2].value),
+            "pages_per_session": float(r.metric_values[3].value),
+            "avg_session_duration": float(r.metric_values[4].value),
+        }
+    return by_camp
+
+
+def build_platform_view(ads_campaigns, ga4_rows, ga4_by_campaign, usd_rate, crm_by_campaign):
     """Собираем в разрез 'платформа → кампания' с 20-колоночной структурой.
 
     Google Ads (импр/клики/CTR/расход/CPC + формы) — из Ads API.
@@ -300,6 +337,20 @@ def build_platform_view(ads_campaigns, ga4_rows, usd_rate, crm_by_campaign):
         cost_rub_val = round(m["cost"] * usd_rate, 2)
         cpc_usd_val = round(m["cost"] / m["clicks"], 2) if m["clicks"] else None
         cpc_rub_val = round(m["cost"] * usd_rate / m["clicks"], 2) if m["clicks"] else None
+        # Per-campaign GA4 (точные, через googleAdsCampaignName). Если нет — фолбэк на share.
+        cga = ga4_by_campaign.get(name)
+        if cga and cga["sessions"] > 0:
+            sessions_val = cga["sessions"]
+            users_val = cga["users"]
+            bounce_val = cga["bounce_rate"]
+            pages_val = cga["pages_per_session"]
+            dur_val = cga["avg_session_duration"]
+        else:
+            sessions_val = int(round(ga["sessions"] * share)) if ga["sessions"] else None
+            users_val = int(round(ga["users"] * share)) if ga["users"] else None
+            bounce_val = ga["bounce_rate"]
+            pages_val = ga["pages_per_session"]
+            dur_val = ga["avg_session_duration"]
         row = {
             "campaign": name,
             "type": m["type"],
@@ -310,11 +361,11 @@ def build_platform_view(ads_campaigns, ga4_rows, usd_rate, crm_by_campaign):
             "cpc_rub": cpc_rub_val,
             "cost_usd": cost_usd_val,
             "cpc_usd": cpc_usd_val,
-            "sessions": int(round(ga["sessions"] * share)) if ga["sessions"] else None,
-            "users": int(round(ga["users"] * share)) if ga["users"] else None,
-            "bounce_rate": ga["bounce_rate"],
-            "pages_per_session": ga["pages_per_session"],
-            "avg_session_duration": ga["avg_session_duration"],
+            "sessions": sessions_val,
+            "users": users_val,
+            "bounce_rate": bounce_val,
+            "pages_per_session": pages_val,
+            "avg_session_duration": dur_val,
             "form_submits": form_submits,
             "cost_per_form_usd": round(cost_usd_val / form_submits, 2) if form_submits else None,
         }
@@ -397,6 +448,10 @@ def main():
     ga4 = fetch_ga4_by_source(args.start, args.end)
     print(f"  -> {len(ga4)} source/medium rows", file=sys.stderr)
 
+    print(f"Fetching GA4 by campaign for {args.start} .. {args.end}", file=sys.stderr)
+    ga4_camp = fetch_ga4_by_campaign(args.start, args.end)
+    print(f"  -> {len(ga4_camp)} campaign rows: {list(ga4_camp)[:5]}", file=sys.stderr)
+
     print(f"Fetching USD→RUB rate for {args.end}", file=sys.stderr)
     rate_info = usd_rub_rate(args.end)
     print(f"  -> USD={rate_info['rate']:.4f} RUB (по {rate_info['date']}, {rate_info['source']})", file=sys.stderr)
@@ -418,7 +473,7 @@ def main():
             "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
             "usd_rub": rate_info,
         },
-        **build_platform_view(ads, ga4, rate_info["rate"], crm),
+        **build_platform_view(ads, ga4, ga4_camp, rate_info["rate"], crm),
     }
     text = json.dumps(out, ensure_ascii=False, indent=2)
     if args.out:
