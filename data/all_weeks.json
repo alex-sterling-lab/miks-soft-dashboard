@@ -467,8 +467,8 @@
               "cost_per_form_usd": 25.77,
               "crm_leads_total": 2,
               "cost_per_crm_lead_usd": 25.77,
-              "crm_leads_converted": 1,
-              "cost_per_converted_lead_usd": 51.53,
+              "crm_leads_converted": 2,
+              "cost_per_converted_lead_usd": 25.77,
               "comment": "Добили семантику до 120 kw/группу (06.07, 720 kw всего). Первые 2 конверсии — «Сайт под ключ» и «Лендинг»."
             }
           ],
@@ -491,8 +491,8 @@
             "cost_per_form_usd": 35.16,
             "crm_leads_total": 3,
             "cost_per_crm_lead_usd": 35.16,
-            "crm_leads_converted": 2,
-            "cost_per_converted_lead_usd": 52.74
+            "crm_leads_converted": 3,
+            "cost_per_converted_lead_usd": 35.16
           }
         },
         {
@@ -585,5 +585,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-13T15:21:20.499993"
+  "generated_at": "2026-07-15T07:33:21.932726"
 }
