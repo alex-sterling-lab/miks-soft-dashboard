@@ -21,13 +21,13 @@
         {
           "campaign": "АК - PM  - Tier 1,2",
           "type": "PERFORMANCE_MAX",
-          "impressions": 2464,
-          "clicks": 65,
-          "ctr_pct": 2.6379870129870127,
+          "impressions": 2463,
+          "clicks": 64,
+          "ctr_pct": 2.598457166057653,
           "cost_rub": 4136.79,
-          "cpc_rub": 63.64,
+          "cpc_rub": 64.64,
           "cost_usd": 53.96,
-          "cpc_usd": 0.83,
+          "cpc_usd": 0.84,
           "sessions": 42,
           "users": 40,
           "bounce_rate": 0.5238095238095238,
@@ -42,7 +42,7 @@
           "comment": "Аудит ассетов (07.07): дозаполнили headlines PMax «Тех. поддержка» 10→15. LOGO/BUSINESS_NAME на уровне кампании."
         },
         {
-          "campaign": "АК - Поиск (общий)(06/07 макс кликов 2$)",
+          "campaign": "АК - Поиск (общий)(16.07 макс конв)",
           "type": "SEARCH",
           "impressions": 631,
           "clicks": 47,
@@ -58,23 +58,23 @@
           "avg_session_duration": 156.97602038235294,
           "form_submits": 2,
           "cost_per_form_usd": 25.77,
-          "crm_leads_total": 2,
-          "cost_per_crm_lead_usd": 25.77,
-          "crm_leads_converted": 2,
-          "cost_per_converted_lead_usd": 25.77,
-          "comment": "Добили семантику до 120 kw/группу (06.07, 720 kw всего). Первые 2 конверсии — «Сайт под ключ» и «Лендинг»."
+          "crm_leads_total": 0,
+          "cost_per_crm_lead_usd": null,
+          "crm_leads_converted": 0,
+          "cost_per_converted_lead_usd": null,
+          "comment": ""
         }
       ],
       "total": {
         "campaign": "Итого",
         "type": "TOTAL",
-        "impressions": 3095,
-        "clicks": 112,
+        "impressions": 3094,
+        "clicks": 111,
         "cost_usd": 105.49,
         "cost_rub": 8086.94,
-        "ctr_pct": 3.618739903069467,
-        "cpc_usd": 0.94,
-        "cpc_rub": 72.2,
+        "ctr_pct": 3.5875888817065285,
+        "cpc_usd": 0.95,
+        "cpc_rub": 72.86,
         "sessions": 85,
         "users": 83,
         "bounce_rate": 0.43529411764705883,
@@ -82,10 +82,10 @@
         "avg_session_duration": 84.94127735294119,
         "form_submits": 3,
         "cost_per_form_usd": 35.16,
-        "crm_leads_total": 3,
-        "cost_per_crm_lead_usd": 35.16,
-        "crm_leads_converted": 3,
-        "cost_per_converted_lead_usd": 35.16
+        "crm_leads_total": 1,
+        "cost_per_crm_lead_usd": 105.49,
+        "crm_leads_converted": 1,
+        "cost_per_converted_lead_usd": 105.49
       }
     },
     {
