@@ -607,10 +607,10 @@
             {
               "campaign": "АК - PM  - Tier 1,2",
               "type": "PERFORMANCE_MAX",
-              "impressions": 10743,
+              "impressions": 10742,
               "clicks": 206,
-              "ctr_pct": 1.9175276924508982,
-              "cost_rub": 6939.65,
+              "ctr_pct": 1.917706199962763,
+              "cost_rub": 6939.64,
               "cpc_rub": 33.69,
               "cost_usd": 88.52,
               "cpc_usd": 0.43,
@@ -654,11 +654,11 @@
           "total": {
             "campaign": "Итого",
             "type": "TOTAL",
-            "impressions": 11757,
+            "impressions": 11756,
             "clicks": 274,
             "cost_usd": 178.6,
-            "cost_rub": 14002.19,
-            "ctr_pct": 2.330526494854129,
+            "cost_rub": 14002.18,
+            "ctr_pct": 2.3307247363048655,
             "cpc_usd": 0.65,
             "cpc_rub": 51.1,
             "sessions": 192,
@@ -774,5 +774,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-25T07:34:08.623293"
+  "generated_at": "2026-07-26T07:32:13.897045"
 }
