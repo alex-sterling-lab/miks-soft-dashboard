@@ -796,9 +796,9 @@
             {
               "campaign": "АК - PM  - Tier 1,2",
               "type": "PERFORMANCE_MAX",
-              "impressions": 6741,
+              "impressions": 6740,
               "clicks": 148,
-              "ctr_pct": 2.1955199525292985,
+              "ctr_pct": 2.195845697329377,
               "cost_rub": 11882.56,
               "cpc_rub": 80.29,
               "cost_usd": 152.28,
@@ -807,7 +807,7 @@
               "users": 81,
               "bounce_rate": 0.4883720930232558,
               "pages_per_session": 1.2674418604651163,
-              "avg_session_duration": 47.012244046511626,
+              "avg_session_duration": 47.01224404651163,
               "form_submits": 1,
               "cost_per_form_usd": 152.28,
               "crm_leads_total": 1,
@@ -843,11 +843,11 @@
           "total": {
             "campaign": "Итого",
             "type": "TOTAL",
-            "impressions": 7588,
+            "impressions": 7587,
             "clicks": 208,
             "cost_usd": 309.63,
             "cost_rub": 24160.39,
-            "ctr_pct": 2.7411702688455457,
+            "ctr_pct": 2.741531567154343,
             "cpc_usd": 1.49,
             "cpc_rub": 116.16,
             "sessions": 137,
@@ -983,5 +983,5 @@
       ]
     }
   ],
-  "generated_at": "2026-07-28T07:31:10.584872"
+  "generated_at": "2026-07-29T07:33:19.357854"
 }
