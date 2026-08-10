@@ -1205,7 +1205,7 @@
               "users": 0,
               "bounce_rate": 0.5151515151515151,
               "pages_per_session": 1.4484848484848485,
-              "avg_session_duration": 78.2596492969697,
+              "avg_session_duration": 78.25964929696968,
               "form_submits": 0,
               "cost_per_form_usd": null,
               "crm_leads_total": 0,
@@ -1228,11 +1228,11 @@
               "users": 83,
               "bounce_rate": 0.5581395348837209,
               "pages_per_session": 1.2093023255813953,
-              "avg_session_duration": 30.142602918604652,
+              "avg_session_duration": 30.14260291860465,
               "form_submits": 4,
               "cost_per_form_usd": 34.54,
-              "crm_leads_total": 1,
-              "cost_per_crm_lead_usd": 138.15,
+              "crm_leads_total": 2,
+              "cost_per_crm_lead_usd": 69.08,
               "crm_leads_converted": 0,
               "cost_per_converted_lead_usd": null,
               "comment": ""
@@ -1254,8 +1254,8 @@
               "avg_session_duration": 139.46727409459461,
               "form_submits": 3,
               "cost_per_form_usd": 86.66,
-              "crm_leads_total": 2,
-              "cost_per_crm_lead_usd": 130.0,
+              "crm_leads_total": 3,
+              "cost_per_crm_lead_usd": 86.66,
               "crm_leads_converted": 0,
               "cost_per_converted_lead_usd": null,
               "comment": ""
@@ -1275,11 +1275,11 @@
             "users": 156,
             "bounce_rate": 0.5151515151515151,
             "pages_per_session": 1.4484848484848485,
-            "avg_session_duration": 78.2596492969697,
+            "avg_session_duration": 78.25964929696968,
             "form_submits": 7,
             "cost_per_form_usd": 56.88,
-            "crm_leads_total": 3,
-            "cost_per_crm_lead_usd": 132.71,
+            "crm_leads_total": 5,
+            "cost_per_crm_lead_usd": 79.63,
             "crm_leads_converted": 0,
             "cost_per_converted_lead_usd": null
           }
@@ -1308,7 +1308,7 @@
           "users": 156,
           "bounce_rate": 0.5151515151515151,
           "pages_per_session": 1.4484848484848485,
-          "avg_session_duration": 78.2596492969697,
+          "avg_session_duration": 78.25964929696968,
           "form_submits": 0
         },
         {
@@ -1318,7 +1318,7 @@
           "users": 43,
           "bounce_rate": 0.9302325581395349,
           "pages_per_session": 1.4186046511627908,
-          "avg_session_duration": 55.87438137209302,
+          "avg_session_duration": 55.87438137209303,
           "form_submits": 0
         },
         {
@@ -1454,5 +1454,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-10T07:34:30.124109"
+  "generated_at": "2026-08-10T11:24:36.663544"
 }
