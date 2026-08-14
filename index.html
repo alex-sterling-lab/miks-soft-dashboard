@@ -545,9 +545,13 @@ function applyValues(map) {
   document.querySelectorAll('.manual-input').forEach(inp => {
     const rec = map[`${inp.dataset.period}::${inp.dataset.platform}`];
     const v = rec ? rec[inp.dataset.field] : null;
-    // не затираем поле, в котором человек прямо сейчас печатает
-    if (document.activeElement !== inp) {
-      inp.value = (v === null || v === undefined) ? '' : v;
+    const server = (v === null || v === undefined) ? '' : String(v);
+    // Не трогаем поле, в котором печатают прямо сейчас, и поле с несохранённой
+    // правкой — иначе опрос раз в минуту съест только что введённое.
+    const dirty = inp.value !== inp.dataset.saved;
+    if (document.activeElement !== inp && !dirty) {
+      inp.value = server;
+      inp.dataset.saved = server;
     }
     paintRow(inp);
   });
@@ -568,6 +572,11 @@ async function loadValues() {
 }
 
 async function saveValue(inp) {
+  // Шлём только то, что человек действительно изменил. Без этой проверки blur по
+  // нетронутому полю отправлял null: достаточно было кликнуть в пустую клетку и
+  // уйти, чтобы стереть цифру, введённую коллегой (и создать строку из одних NULL).
+  if (inp.value === inp.dataset.saved) return;
+
   const {period, platform, field} = inp.dataset;
   const raw = inp.value.trim();
   const payload = {period, platform};
@@ -586,6 +595,7 @@ async function saveValue(inp) {
       body: JSON.stringify(payload),
     });
     if (!r.ok) throw new Error('HTTP ' + r.status);
+    inp.dataset.saved = inp.value;   // теперь это и есть серверное значение
     inp.className = 'manual-input saved';
     setSync('online', 'Значения общие для всех');
     setTimeout(() => { inp.className = 'manual-input'; }, 1200);
@@ -598,6 +608,7 @@ async function saveValue(inp) {
 function initManualInputs() {
   document.querySelectorAll('.manual-input').forEach(inp => {
     let timer = null;
+    inp.dataset.saved = inp.value;   // что лежит на сервере; пустая строка = значения нет
     paintRow(inp);
     inp.addEventListener('input', () => {
       paintRow(inp);
