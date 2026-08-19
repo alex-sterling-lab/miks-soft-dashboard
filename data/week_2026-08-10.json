@@ -19,7 +19,7 @@
       "name": "Google Ads",
       "campaigns": [
         {
-          "campaign": "АК - PM  - Tier 1,2",
+          "campaign": "АК - PM  - Tier 1,2 (макс ценность 18.08)",
           "type": "PERFORMANCE_MAX",
           "impressions": 6471,
           "clicks": 406,
@@ -35,8 +35,8 @@
           "avg_session_duration": 50.713490033333336,
           "form_submits": 5,
           "cost_per_form_usd": 27.74,
-          "crm_leads_total": 2,
-          "cost_per_crm_lead_usd": 69.35,
+          "crm_leads_total": 0,
+          "cost_per_crm_lead_usd": null,
           "crm_leads_converted": 0,
           "cost_per_converted_lead_usd": null,
           "comment": ""
@@ -82,8 +82,8 @@
         "avg_session_duration": 54.1463753948718,
         "form_submits": 8,
         "cost_per_form_usd": 79.19,
-        "crm_leads_total": 4,
-        "cost_per_crm_lead_usd": 158.38,
+        "crm_leads_total": 2,
+        "cost_per_crm_lead_usd": 316.77,
         "crm_leads_converted": 0,
         "cost_per_converted_lead_usd": null
       }
