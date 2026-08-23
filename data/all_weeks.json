@@ -1436,9 +1436,9 @@
             {
               "campaign": "АК - PM  - Tier 1,2 (макс ценность 18.08)",
               "type": "PERFORMANCE_MAX",
-              "impressions": 6471,
+              "impressions": 6470,
               "clicks": 406,
-              "ctr_pct": 6.274146190696955,
+              "ctr_pct": 6.275115919629057,
               "cost_rub": 11726.25,
               "cpc_rub": 28.88,
               "cost_usd": 138.7,
@@ -1483,11 +1483,11 @@
           "total": {
             "campaign": "Итого",
             "type": "TOTAL",
-            "impressions": 8110,
+            "impressions": 8109,
             "clicks": 559,
             "cost_usd": 633.54,
             "cost_rub": 53562.42,
-            "ctr_pct": 6.892725030826141,
+            "ctr_pct": 6.893575040078925,
             "cpc_usd": 1.13,
             "cpc_rub": 95.82,
             "sessions": 195,
@@ -2226,7 +2226,7 @@
       "month": "2026-08",
       "period": [
         "2026-08-01",
-        "2026-08-21"
+        "2026-08-22"
       ],
       "partial": true,
       "sources": {
@@ -2235,8 +2235,8 @@
         "yandex_direct": "нет доступа",
         "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
         "usd_rub": {
-          "rate": 83.355,
-          "date": "2026-08-21",
+          "rate": 82.9211,
+          "date": "2026-08-22",
           "source": "CBR"
         }
       },
@@ -2256,9 +2256,9 @@
               "cpc_usd": null,
               "sessions": 0,
               "users": 0,
-              "bounce_rate": 0.4563253012048193,
-              "pages_per_session": 1.4397590361445782,
-              "avg_session_duration": 60.96024839909638,
+              "bounce_rate": 0.47651006711409394,
+              "pages_per_session": 1.4308724832214765,
+              "avg_session_duration": 64.53921562818792,
               "form_submits": 0,
               "cost_per_form_usd": null,
               "crm_leads_total": 0,
@@ -2270,20 +2270,20 @@
             {
               "campaign": "АК - PM  - Tier 1,2 (макс ценность 18.08)",
               "type": "PERFORMANCE_MAX",
-              "impressions": 23361,
-              "clicks": 1212,
-              "ctr_pct": 5.188134069603185,
-              "cost_rub": 33440.55,
-              "cpc_rub": 27.59,
-              "cost_usd": 401.18,
-              "cpc_usd": 0.33,
-              "sessions": 413,
-              "users": 397,
-              "bounce_rate": 0.5036319612590799,
-              "pages_per_session": 1.3099273607748183,
-              "avg_session_duration": 48.230527394673125,
-              "form_submits": 11,
-              "cost_per_form_usd": 36.47,
+              "impressions": 26772,
+              "clicks": 1384,
+              "ctr_pct": 5.169580158374421,
+              "cost_rub": 36066.74,
+              "cpc_rub": 26.06,
+              "cost_usd": 434.95,
+              "cpc_usd": 0.31,
+              "sessions": 480,
+              "users": 464,
+              "bounce_rate": 0.54375,
+              "pages_per_session": 1.3125,
+              "avg_session_duration": 54.32211738958333,
+              "form_submits": 12,
+              "cost_per_form_usd": 36.25,
               "crm_leads_total": 0,
               "cost_per_crm_lead_usd": null,
               "crm_leads_converted": 0,
@@ -2293,48 +2293,48 @@
             {
               "campaign": "АК - Поиск (общий)(16.07 макс конв)",
               "type": "SEARCH",
-              "impressions": 4310,
-              "clicks": 381,
-              "ctr_pct": 8.839907192575406,
-              "cost_rub": 99057.26,
-              "cpc_rub": 259.99,
-              "cost_usd": 1188.38,
-              "cpc_usd": 3.12,
-              "sessions": 242,
-              "users": 225,
-              "bounce_rate": 0.35537190082644626,
-              "pages_per_session": 1.677685950413223,
-              "avg_session_duration": 84.94653121487603,
+              "impressions": 4282,
+              "clicks": 388,
+              "ctr_pct": 9.061186361513311,
+              "cost_rub": 101721.07,
+              "cpc_rub": 262.17,
+              "cost_usd": 1226.72,
+              "cpc_usd": 3.16,
+              "sessions": 252,
+              "users": 234,
+              "bounce_rate": 0.3253968253968254,
+              "pages_per_session": 1.6825396825396826,
+              "avg_session_duration": 87.32445526587303,
               "form_submits": 9,
-              "cost_per_form_usd": 132.04,
+              "cost_per_form_usd": 136.3,
               "crm_leads_total": 8,
-              "cost_per_crm_lead_usd": 148.55,
+              "cost_per_crm_lead_usd": 153.34,
               "crm_leads_converted": 2,
-              "cost_per_converted_lead_usd": 594.19,
+              "cost_per_converted_lead_usd": 613.36,
               "comment": ""
             }
           ],
           "total": {
             "campaign": "Итого",
             "type": "TOTAL",
-            "impressions": 27674,
-            "clicks": 1593,
-            "cost_usd": 1589.56,
-            "cost_rub": 132497.81,
-            "ctr_pct": 5.7563055575630555,
-            "cpc_usd": 1.0,
-            "cpc_rub": 83.18,
-            "sessions": 664,
-            "users": 631,
-            "bounce_rate": 0.4563253012048193,
-            "pages_per_session": 1.4397590361445782,
-            "avg_session_duration": 60.96024839909638,
-            "form_submits": 20,
-            "cost_per_form_usd": 79.48,
+            "impressions": 31057,
+            "clicks": 1772,
+            "cost_usd": 1661.67,
+            "cost_rub": 137787.81,
+            "ctr_pct": 5.705638020414077,
+            "cpc_usd": 0.94,
+            "cpc_rub": 77.76,
+            "sessions": 745,
+            "users": 710,
+            "bounce_rate": 0.47651006711409394,
+            "pages_per_session": 1.4308724832214765,
+            "avg_session_duration": 64.53921562818792,
+            "form_submits": 21,
+            "cost_per_form_usd": 79.13,
             "crm_leads_total": 8,
-            "cost_per_crm_lead_usd": 198.69,
+            "cost_per_crm_lead_usd": 207.71,
             "crm_leads_converted": 2,
-            "cost_per_converted_lead_usd": 794.78
+            "cost_per_converted_lead_usd": 830.84
           }
         },
         {
@@ -2357,11 +2357,31 @@
         {
           "source": "google",
           "medium": "cpc",
-          "sessions": 664,
-          "users": 631,
-          "bounce_rate": 0.4563253012048193,
-          "pages_per_session": 1.4397590361445782,
-          "avg_session_duration": 60.96024839909638,
+          "sessions": 745,
+          "users": 710,
+          "bounce_rate": 0.47651006711409394,
+          "pages_per_session": 1.4308724832214765,
+          "avg_session_duration": 64.53921562818792,
+          "form_submits": 0
+        },
+        {
+          "source": "(data not available)",
+          "medium": "(data not available)",
+          "sessions": 63,
+          "users": 63,
+          "bounce_rate": 0.8571428571428571,
+          "pages_per_session": 1.4444444444444444,
+          "avg_session_duration": 75.44917338095239,
+          "form_submits": 0
+        },
+        {
+          "source": "(not set)",
+          "medium": "(not set)",
+          "sessions": 63,
+          "users": 62,
+          "bounce_rate": 1.0,
+          "pages_per_session": 1.8412698412698412,
+          "avg_session_duration": 663.7234282698413,
           "form_submits": 0
         },
         {
@@ -2379,19 +2399,9 @@
           "medium": "(none)",
           "sessions": 33,
           "users": 24,
-          "bounce_rate": 0.5151515151515151,
+          "bounce_rate": 0.48484848484848486,
           "pages_per_session": 1.8484848484848484,
-          "avg_session_duration": 193.8917527878788,
-          "form_submits": 0
-        },
-        {
-          "source": "(not set)",
-          "medium": "(not set)",
-          "sessions": 29,
-          "users": 29,
-          "bounce_rate": 1.0,
-          "pages_per_session": 0.27586206896551724,
-          "avg_session_duration": 104.32930406896553,
+          "avg_session_duration": 193.8954759090909,
           "form_submits": 0
         },
         {
@@ -2405,16 +2415,6 @@
           "form_submits": 0
         },
         {
-          "source": "(data not available)",
-          "medium": "(data not available)",
-          "sessions": 23,
-          "users": 23,
-          "bounce_rate": 0.6956521739130435,
-          "pages_per_session": 1.7391304347826086,
-          "avg_session_duration": 45.138568478260865,
-          "form_submits": 0
-        },
-        {
           "source": "imedia24.atlassian.net",
           "medium": "referral",
           "sessions": 12,
@@ -2422,6 +2422,26 @@
           "bounce_rate": 0.08333333333333333,
           "pages_per_session": 5.083333333333333,
           "avg_session_duration": 1066.5941129999999,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "pm",
+          "sessions": 7,
+          "users": 6,
+          "bounce_rate": 0.8571428571428571,
+          "pages_per_session": 0.8571428571428571,
+          "avg_session_duration": 61.64045685714286,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
+          "medium": "",
+          "sessions": 3,
+          "users": 3,
+          "bounce_rate": 1.0,
+          "pages_per_session": 0.3333333333333333,
+          "avg_session_duration": 20.668395,
           "form_submits": 0
         },
         {
@@ -2446,12 +2466,12 @@
         },
         {
           "source": "google",
-          "medium": "pm",
+          "medium": "(none)",
           "sessions": 2,
-          "users": 1,
-          "bounce_rate": 0.5,
+          "users": 2,
+          "bounce_rate": 1.0,
           "pages_per_session": 0.5,
-          "avg_session_duration": 57.580675,
+          "avg_session_duration": 127.540177,
           "form_submits": 0
         },
         {
@@ -2506,16 +2526,6 @@
         },
         {
           "source": "google",
-          "medium": "",
-          "sessions": 1,
-          "users": 1,
-          "bounce_rate": 1.0,
-          "pages_per_session": 3.0,
-          "avg_session_duration": 1086.910518,
-          "form_submits": 0
-        },
-        {
-          "source": "google",
           "medium": "referral",
           "sessions": 1,
           "users": 1,
@@ -2527,5 +2537,5 @@
       ]
     }
   ],
-  "generated_at": "2026-08-22T07:34:32.913394"
+  "generated_at": "2026-08-23T07:34:04.124390"
 }
