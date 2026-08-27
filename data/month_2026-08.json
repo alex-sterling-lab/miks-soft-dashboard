@@ -2,7 +2,7 @@
   "month": "2026-08",
   "period": [
     "2026-08-01",
-    "2026-08-25"
+    "2026-08-26"
   ],
   "partial": true,
   "sources": {
@@ -11,8 +11,8 @@
     "yandex_direct": "нет доступа",
     "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
     "usd_rub": {
-      "rate": 83.2878,
-      "date": "2026-08-25",
+      "rate": 84.4635,
+      "date": "2026-08-26",
       "source": "CBR"
     }
   },
@@ -46,11 +46,11 @@
         {
           "campaign": "АК - PM  - Tier 1,2 (макс ценность 18.08)",
           "type": "PERFORMANCE_MAX",
-          "impressions": 27974,
+          "impressions": 27973,
           "clicks": 1496,
-          "ctr_pct": 5.347822978480017,
-          "cost_rub": 40546.03,
-          "cpc_rub": 27.1,
+          "ctr_pct": 5.348014156508062,
+          "cost_rub": 41118.39,
+          "cpc_rub": 27.49,
           "cost_usd": 486.82,
           "cpc_usd": 0.33,
           "sessions": 611,
@@ -72,8 +72,8 @@
           "impressions": 4874,
           "clicks": 431,
           "ctr_pct": 8.84283955683217,
-          "cost_rub": 114998.32,
-          "cpc_rub": 266.82,
+          "cost_rub": 116621.65,
+          "cpc_rub": 270.58,
           "cost_usd": 1380.73,
           "cpc_usd": 3.2,
           "sessions": 289,
@@ -93,13 +93,13 @@
       "total": {
         "campaign": "Итого",
         "type": "TOTAL",
-        "impressions": 32851,
+        "impressions": 32850,
         "clicks": 1927,
         "cost_usd": 1867.55,
-        "cost_rub": 155544.35,
-        "ctr_pct": 5.865879273081489,
+        "cost_rub": 157740.04,
+        "ctr_pct": 5.866057838660579,
         "cpc_usd": 0.97,
-        "cpc_rub": 80.72,
+        "cpc_rub": 81.86,
         "sessions": 915,
         "users": 864,
         "bounce_rate": 0.45901639344262296,
@@ -141,6 +141,16 @@
       "form_submits": 0
     },
     {
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 41,
+      "users": 31,
+      "bounce_rate": 0.5365853658536586,
+      "pages_per_session": 1.7804878048780488,
+      "avg_session_duration": 183.07473068292683,
+      "form_submits": 0
+    },
+    {
       "source": "google",
       "medium": "(not set)",
       "sessions": 41,
@@ -148,16 +158,6 @@
       "bounce_rate": 0.4634146341463415,
       "pages_per_session": 1.2439024390243902,
       "avg_session_duration": 47.7710163902439,
-      "form_submits": 0
-    },
-    {
-      "source": "(direct)",
-      "medium": "(none)",
-      "sessions": 39,
-      "users": 30,
-      "bounce_rate": 0.5128205128205128,
-      "pages_per_session": 1.7435897435897436,
-      "avg_session_duration": 187.96367548717947,
       "form_submits": 0
     },
     {
@@ -171,6 +171,16 @@
       "form_submits": 0
     },
     {
+      "source": "(not set)",
+      "medium": "(not set)",
+      "sessions": 24,
+      "users": 27,
+      "bounce_rate": 1.0,
+      "pages_per_session": 0.5416666666666666,
+      "avg_session_duration": 97.56377312500001,
+      "form_submits": 0
+    },
+    {
       "source": "24.imediasolutions.ru",
       "medium": "referral",
       "sessions": 24,
@@ -178,16 +188,6 @@
       "bounce_rate": 0.25,
       "pages_per_session": 5.791666666666667,
       "avg_session_duration": 738.3367263333333,
-      "form_submits": 0
-    },
-    {
-      "source": "(not set)",
-      "medium": "(not set)",
-      "sessions": 23,
-      "users": 26,
-      "bounce_rate": 1.0,
-      "pages_per_session": 0.5217391304347826,
-      "avg_session_duration": 98.8245555652174,
       "form_submits": 0
     },
     {
