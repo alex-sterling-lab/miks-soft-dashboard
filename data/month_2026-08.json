@@ -2,7 +2,7 @@
   "month": "2026-08",
   "period": [
     "2026-08-01",
-    "2026-08-29"
+    "2026-08-30"
   ],
   "partial": true,
   "sources": {
@@ -57,7 +57,7 @@
           "users": 591,
           "bounce_rate": 0.49432739059967584,
           "pages_per_session": 1.4991896272285252,
-          "avg_session_duration": 62.558579797406814,
+          "avg_session_duration": 62.5585797974068,
           "form_submits": 15,
           "cost_per_form_usd": 32.3,
           "crm_leads_total": 0,
