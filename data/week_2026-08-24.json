@@ -126,6 +126,16 @@
       "form_submits": 0
     },
     {
+      "source": "google",
+      "medium": "(not set)",
+      "sessions": 7,
+      "users": 4,
+      "bounce_rate": 0.42857142857142855,
+      "pages_per_session": 1.4285714285714286,
+      "avg_session_duration": 94.835869,
+      "form_submits": 0
+    },
+    {
       "source": "ads.google.com",
       "medium": "referral",
       "sessions": 6,
@@ -146,16 +156,6 @@
       "form_submits": 0
     },
     {
-      "source": "google",
-      "medium": "(not set)",
-      "sessions": 5,
-      "users": 3,
-      "bounce_rate": 0.4,
-      "pages_per_session": 0.8,
-      "avg_session_duration": 48.8928438,
-      "form_submits": 0
-    },
-    {
       "source": "(data not available)",
       "medium": "(data not available)",
       "sessions": 2,
@@ -163,16 +163,6 @@
       "bounce_rate": 0.5,
       "pages_per_session": 1.5,
       "avg_session_duration": 188.0568705,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "",
-      "sessions": 2,
-      "users": 1,
-      "bounce_rate": 1.0,
-      "pages_per_session": 2.5,
-      "avg_session_duration": 506.3755615,
       "form_submits": 0
     },
     {
@@ -186,26 +176,6 @@
       "form_submits": 0
     },
     {
-      "source": "(not set)",
-      "medium": "(not set)",
-      "sessions": 1,
-      "users": 3,
-      "bounce_rate": 1.0,
-      "pages_per_session": 0.0,
-      "avg_session_duration": 122.821281,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "(none)",
-      "sessions": 1,
-      "users": 1,
-      "bounce_rate": 1.0,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 353.898274,
-      "form_submits": 0
-    },
-    {
       "source": "ltyping.amocrm.ru",
       "medium": "referral",
       "sessions": 1,
@@ -213,6 +183,16 @@
       "bounce_rate": 1.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 6.525574,
+      "form_submits": 0
+    },
+    {
+      "source": "(not set)",
+      "medium": "(not set)",
+      "sessions": 0,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "pages_per_session": 0.0,
+      "avg_session_duration": 0.0,
       "form_submits": 0
     }
   ]
