@@ -123,6 +123,16 @@
       "form_submits": 0
     },
     {
+      "source": "google",
+      "medium": "(not set)",
+      "sessions": 17,
+      "users": 6,
+      "bounce_rate": 0.5882352941176471,
+      "pages_per_session": 1.1176470588235294,
+      "avg_session_duration": 38.01013394117647,
+      "form_submits": 0
+    },
+    {
       "source": "tagassistant.google.com",
       "medium": "referral",
       "sessions": 13,
@@ -130,26 +140,6 @@
       "bounce_rate": 0.15384615384615385,
       "pages_per_session": 6.538461538461538,
       "avg_session_duration": 1391.6590017692308,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "(not set)",
-      "sessions": 12,
-      "users": 5,
-      "bounce_rate": 0.5,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 48.46681066666667,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "",
-      "sessions": 5,
-      "users": 2,
-      "bounce_rate": 0.8,
-      "pages_per_session": 1.4,
-      "avg_session_duration": 12.9141098,
       "form_submits": 0
     },
     {
