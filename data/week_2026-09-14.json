@@ -35,10 +35,10 @@
           "avg_session_duration": 75.97136333870968,
           "form_submits": 0,
           "cost_per_form_usd": null,
-          "crm_leads_total": 0,
-          "cost_per_crm_lead_usd": null,
-          "crm_leads_converted": 0,
-          "cost_per_converted_lead_usd": null,
+          "crm_leads_total": 1,
+          "cost_per_crm_lead_usd": 166.63,
+          "crm_leads_converted": 1,
+          "cost_per_converted_lead_usd": 166.63,
           "comment": ""
         }
       ],
@@ -59,10 +59,10 @@
         "avg_session_duration": 69.83975330882353,
         "form_submits": 0,
         "cost_per_form_usd": null,
-        "crm_leads_total": 0,
-        "cost_per_crm_lead_usd": null,
-        "crm_leads_converted": 0,
-        "cost_per_converted_lead_usd": null
+        "crm_leads_total": 1,
+        "cost_per_crm_lead_usd": 166.63,
+        "crm_leads_converted": 1,
+        "cost_per_converted_lead_usd": 166.63
       }
     },
     {
