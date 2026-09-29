@@ -32,7 +32,7 @@
           "users": 108,
           "bounce_rate": 0.34782608695652173,
           "pages_per_session": 1.617391304347826,
-          "avg_session_duration": 118.57588786086957,
+          "avg_session_duration": 118.57588786086956,
           "form_submits": 0,
           "cost_per_form_usd": null,
           "crm_leads_total": 0,
@@ -125,11 +125,11 @@
     {
       "source": "google",
       "medium": "(not set)",
-      "sessions": 16,
+      "sessions": 19,
       "users": 8,
-      "bounce_rate": 0.3125,
-      "pages_per_session": 1.5,
-      "avg_session_duration": 300.0792216875,
+      "bounce_rate": 0.42105263157894735,
+      "pages_per_session": 1.4210526315789473,
+      "avg_session_duration": 252.69829194736843,
       "form_submits": 0
     },
     {
@@ -160,16 +160,6 @@
       "bounce_rate": 0.5,
       "pages_per_session": 1.25,
       "avg_session_duration": 69.1412365,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "",
-      "sessions": 3,
-      "users": 1,
-      "bounce_rate": 1.0,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 0.0,
       "form_submits": 0
     },
     {
