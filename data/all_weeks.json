@@ -3800,7 +3800,7 @@
               "users": 368,
               "bounce_rate": 0.42857142857142855,
               "pages_per_session": 2.1948051948051948,
-              "avg_session_duration": 103.58269083896103,
+              "avg_session_duration": 103.58269083896104,
               "form_submits": 4,
               "cost_per_form_usd": 40.61,
               "crm_leads_total": 0,
@@ -4089,7 +4089,7 @@
       "month": "2026-10",
       "period": [
         "2026-10-01",
-        "2026-10-01"
+        "2026-10-02"
       ],
       "partial": true,
       "sources": {
@@ -4098,8 +4098,8 @@
         "yandex_direct": "нет доступа",
         "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
         "usd_rub": {
-          "rate": 83.5588,
-          "date": "2026-10-01",
+          "rate": 83.2454,
+          "date": "2026-10-02",
           "source": "CBR"
         }
       },
@@ -4117,11 +4117,11 @@
             "ctr_pct": null,
             "cpc_usd": null,
             "cpc_rub": null,
-            "sessions": 5,
-            "users": 3,
-            "bounce_rate": 0.6,
+            "sessions": 7,
+            "users": 4,
+            "bounce_rate": 0.7142857142857143,
             "pages_per_session": 1.0,
-            "avg_session_duration": 20.900141599999998,
+            "avg_session_duration": 15.815823999999997,
             "form_submits": 0,
             "cost_per_form_usd": null,
             "crm_leads_total": 0,
@@ -4150,31 +4150,61 @@
         {
           "source": "(direct)",
           "medium": "(none)",
-          "sessions": 5,
-          "users": 5,
-          "bounce_rate": 0.0,
-          "pages_per_session": 4.0,
-          "avg_session_duration": 654.1417868000001,
+          "sessions": 11,
+          "users": 10,
+          "bounce_rate": 0.2727272727272727,
+          "pages_per_session": 3.4545454545454546,
+          "avg_session_duration": 681.3263689090909,
           "form_submits": 0
         },
         {
           "source": "google",
           "medium": "cpc",
-          "sessions": 5,
-          "users": 3,
-          "bounce_rate": 0.6,
+          "sessions": 7,
+          "users": 4,
+          "bounce_rate": 0.7142857142857143,
           "pages_per_session": 1.0,
-          "avg_session_duration": 20.900141599999998,
+          "avg_session_duration": 15.815823999999997,
           "form_submits": 0
         },
         {
           "source": "google",
           "medium": "organic",
-          "sessions": 3,
+          "sessions": 5,
+          "users": 2,
+          "bounce_rate": 0.4,
+          "pages_per_session": 1.6,
+          "avg_session_duration": 52.32251020000001,
+          "form_submits": 0
+        },
+        {
+          "source": "imedia24.atlassian.net",
+          "medium": "referral",
+          "sessions": 2,
           "users": 1,
-          "bounce_rate": 0.3333333333333333,
+          "bounce_rate": 0.5,
+          "pages_per_session": 1.5,
+          "avg_session_duration": 1350.1979105,
+          "form_submits": 0
+        },
+        {
+          "source": "web.telegram.org",
+          "medium": "referral",
+          "sessions": 2,
+          "users": 1,
+          "bounce_rate": 0.5,
           "pages_per_session": 1.0,
-          "avg_session_duration": 64.28526966666668,
+          "avg_session_duration": 49.67206,
+          "form_submits": 0
+        },
+        {
+          "source": "sterling.company",
+          "medium": "referral",
+          "sessions": 1,
+          "users": 1,
+          "bounce_rate": 0.0,
+          "pages_per_session": 2.0,
+          "avg_session_duration": 833.42346,
           "form_submits": 0
         },
         {
@@ -4185,16 +4215,6 @@
           "bounce_rate": 0.0,
           "pages_per_session": 1.0,
           "avg_session_duration": 62.112975,
-          "form_submits": 0
-        },
-        {
-          "source": "web.telegram.org",
-          "medium": "referral",
-          "sessions": 1,
-          "users": 1,
-          "bounce_rate": 1.0,
-          "pages_per_session": 1.0,
-          "avg_session_duration": 0.0,
           "form_submits": 0
         },
         {
@@ -4210,5 +4230,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-02T07:30:39.723823"
+  "generated_at": "2026-10-03T07:30:47.720544"
 }
