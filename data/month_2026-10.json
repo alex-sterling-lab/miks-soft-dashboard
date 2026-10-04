@@ -2,7 +2,7 @@
   "month": "2026-10",
   "period": [
     "2026-10-01",
-    "2026-10-02"
+    "2026-10-03"
   ],
   "partial": true,
   "sources": {
@@ -11,8 +11,8 @@
     "yandex_direct": "нет доступа",
     "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
     "usd_rub": {
-      "rate": 83.2454,
-      "date": "2026-10-02",
+      "rate": 83.4839,
+      "date": "2026-10-03",
       "source": "CBR"
     }
   },
@@ -30,11 +30,11 @@
         "ctr_pct": null,
         "cpc_usd": null,
         "cpc_rub": null,
-        "sessions": 7,
-        "users": 4,
-        "bounce_rate": 0.7142857142857143,
-        "pages_per_session": 1.0,
-        "avg_session_duration": 15.815823999999997,
+        "sessions": 9,
+        "users": 5,
+        "bounce_rate": 0.6666666666666666,
+        "pages_per_session": 1.1111111111111112,
+        "avg_session_duration": 64.82640344444445,
         "form_submits": 0,
         "cost_per_form_usd": null,
         "crm_leads_total": 0,
@@ -73,11 +73,11 @@
     {
       "source": "google",
       "medium": "cpc",
-      "sessions": 7,
-      "users": 4,
-      "bounce_rate": 0.7142857142857143,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 15.815823999999997,
+      "sessions": 9,
+      "users": 5,
+      "bounce_rate": 0.6666666666666666,
+      "pages_per_session": 1.1111111111111112,
+      "avg_session_duration": 64.82640344444445,
       "form_submits": 0
     },
     {
@@ -87,7 +87,7 @@
       "users": 2,
       "bounce_rate": 0.4,
       "pages_per_session": 1.6,
-      "avg_session_duration": 52.32251020000001,
+      "avg_session_duration": 52.322510199999996,
       "form_submits": 0
     },
     {
@@ -108,6 +108,16 @@
       "bounce_rate": 0.5,
       "pages_per_session": 1.0,
       "avg_session_duration": 49.67206,
+      "form_submits": 0
+    },
+    {
+      "source": "google",
+      "medium": "",
+      "sessions": 1,
+      "users": 1,
+      "bounce_rate": 1.0,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 0.000966,
       "form_submits": 0
     },
     {
