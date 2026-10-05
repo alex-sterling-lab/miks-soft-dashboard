@@ -2,7 +2,7 @@
   "month": "2026-10",
   "period": [
     "2026-10-01",
-    "2026-10-03"
+    "2026-10-04"
   ],
   "partial": true,
   "sources": {
@@ -30,11 +30,11 @@
         "ctr_pct": null,
         "cpc_usd": null,
         "cpc_rub": null,
-        "sessions": 9,
-        "users": 5,
-        "bounce_rate": 0.6666666666666666,
-        "pages_per_session": 1.1111111111111112,
-        "avg_session_duration": 64.82640344444445,
+        "sessions": 14,
+        "users": 6,
+        "bounce_rate": 0.5,
+        "pages_per_session": 1.3571428571428572,
+        "avg_session_duration": 308.2007361428572,
         "form_submits": 0,
         "cost_per_form_usd": null,
         "crm_leads_total": 0,
@@ -61,23 +61,33 @@
   ],
   "ga4_by_source": [
     {
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 14,
+      "users": 6,
+      "bounce_rate": 0.5,
+      "pages_per_session": 1.3571428571428572,
+      "avg_session_duration": 308.2007361428572,
+      "form_submits": 0
+    },
+    {
       "source": "(direct)",
       "medium": "(none)",
-      "sessions": 11,
-      "users": 10,
-      "bounce_rate": 0.2727272727272727,
-      "pages_per_session": 3.4545454545454546,
-      "avg_session_duration": 681.3263689090909,
+      "sessions": 12,
+      "users": 11,
+      "bounce_rate": 0.3333333333333333,
+      "pages_per_session": 3.25,
+      "avg_session_duration": 624.8957196666667,
       "form_submits": 0
     },
     {
       "source": "google",
-      "medium": "cpc",
-      "sessions": 9,
-      "users": 5,
-      "bounce_rate": 0.6666666666666666,
-      "pages_per_session": 1.1111111111111112,
-      "avg_session_duration": 64.82640344444445,
+      "medium": "",
+      "sessions": 7,
+      "users": 7,
+      "bounce_rate": 0.8571428571428571,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 4.362039571428571,
       "form_submits": 0
     },
     {
@@ -93,11 +103,11 @@
     {
       "source": "imedia24.atlassian.net",
       "medium": "referral",
-      "sessions": 2,
+      "sessions": 3,
       "users": 1,
-      "bounce_rate": 0.5,
-      "pages_per_session": 1.5,
-      "avg_session_duration": 1350.1979105,
+      "bounce_rate": 0.3333333333333333,
+      "pages_per_session": 1.6666666666666667,
+      "avg_session_duration": 940.2662406666667,
       "form_submits": 0
     },
     {
@@ -112,12 +122,22 @@
     },
     {
       "source": "google",
-      "medium": "",
+      "medium": "(not set)",
       "sessions": 1,
       "users": 1,
       "bounce_rate": 1.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 0.000966,
+      "form_submits": 0
+    },
+    {
+      "source": "google_paid",
+      "medium": "cpc",
+      "sessions": 1,
+      "users": 1,
+      "bounce_rate": 1.0,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 0.0,
       "form_submits": 0
     },
     {
