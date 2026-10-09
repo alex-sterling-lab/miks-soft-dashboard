@@ -4305,7 +4305,7 @@
       "month": "2026-10",
       "period": [
         "2026-10-01",
-        "2026-10-07"
+        "2026-10-08"
       ],
       "partial": true,
       "sources": {
@@ -4314,8 +4314,8 @@
         "yandex_direct": "нет доступа",
         "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
         "usd_rub": {
-          "rate": 85.7116,
-          "date": "2026-10-07",
+          "rate": 85.4811,
+          "date": "2026-10-08",
           "source": "CBR"
         }
       },
@@ -4333,11 +4333,11 @@
             "ctr_pct": null,
             "cpc_usd": null,
             "cpc_rub": null,
-            "sessions": 22,
+            "sessions": 26,
             "users": 9,
-            "bounce_rate": 0.5909090909090909,
-            "pages_per_session": 1.1818181818181819,
-            "avg_session_duration": 255.62385013636364,
+            "bounce_rate": 0.5769230769230769,
+            "pages_per_session": 1.1538461538461537,
+            "avg_session_duration": 222.38044438461537,
             "form_submits": 0,
             "cost_per_form_usd": null,
             "crm_leads_total": 0,
@@ -4364,53 +4364,73 @@
       ],
       "ga4_by_source": [
         {
-          "source": "google",
-          "medium": "cpc",
-          "sessions": 22,
-          "users": 9,
-          "bounce_rate": 0.5909090909090909,
-          "pages_per_session": 1.1818181818181819,
-          "avg_session_duration": 255.62385013636364,
+          "source": "(direct)",
+          "medium": "(none)",
+          "sessions": 28,
+          "users": 24,
+          "bounce_rate": 0.4642857142857143,
+          "pages_per_session": 2.0357142857142856,
+          "avg_session_duration": 293.4732451785714,
           "form_submits": 0
         },
         {
-          "source": "(direct)",
-          "medium": "(none)",
-          "sessions": 21,
-          "users": 18,
-          "bounce_rate": 0.47619047619047616,
-          "pages_per_session": 2.238095238095238,
-          "avg_session_duration": 374.5214453333333,
+          "source": "google",
+          "medium": "cpc",
+          "sessions": 26,
+          "users": 9,
+          "bounce_rate": 0.5769230769230769,
+          "pages_per_session": 1.1538461538461537,
+          "avg_session_duration": 222.38044438461537,
+          "form_submits": 0
+        },
+        {
+          "source": "chatgpt",
+          "medium": "cpc",
+          "sessions": 16,
+          "users": 14,
+          "bounce_rate": 0.4375,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 126.2339009375,
           "form_submits": 0
         },
         {
           "source": "google",
           "medium": "organic",
-          "sessions": 11,
-          "users": 7,
-          "bounce_rate": 0.18181818181818182,
-          "pages_per_session": 2.5454545454545454,
-          "avg_session_duration": 590.5180061818181,
+          "sessions": 12,
+          "users": 8,
+          "bounce_rate": 0.16666666666666666,
+          "pages_per_session": 3.0,
+          "avg_session_duration": 553.2529190833334,
           "form_submits": 0
         },
         {
           "source": "imedia24.atlassian.net",
           "medium": "referral",
-          "sessions": 10,
+          "sessions": 12,
           "users": 2,
-          "bounce_rate": 0.5,
-          "pages_per_session": 1.6,
-          "avg_session_duration": 505.7425867,
+          "bounce_rate": 0.4166666666666667,
+          "pages_per_session": 1.8333333333333333,
+          "avg_session_duration": 447.2204345,
           "form_submits": 0
         },
         {
           "source": "chatgpt",
           "medium": "paid",
-          "sessions": 9,
+          "sessions": 11,
           "users": 8,
-          "bounce_rate": 0.3333333333333333,
+          "bounce_rate": 0.45454545454545453,
           "pages_per_session": 1.0,
-          "avg_session_duration": 36.02883688888889,
+          "avg_session_duration": 30.28865218181818,
+          "form_submits": 0
+        },
+        {
+          "source": "sterling.company",
+          "medium": "referral",
+          "sessions": 10,
+          "users": 1,
+          "bounce_rate": 0.2,
+          "pages_per_session": 2.3,
+          "avg_session_duration": 849.6259131,
           "form_submits": 0
         },
         {
@@ -4424,16 +4444,6 @@
           "form_submits": 0
         },
         {
-          "source": "sterling.company",
-          "medium": "referral",
-          "sessions": 7,
-          "users": 1,
-          "bounce_rate": 0.14285714285714285,
-          "pages_per_session": 2.7142857142857144,
-          "avg_session_duration": 1161.9883487142856,
-          "form_submits": 0
-        },
-        {
           "source": "web.telegram.org",
           "medium": "referral",
           "sessions": 5,
@@ -4444,13 +4454,13 @@
           "form_submits": 0
         },
         {
-          "source": "chatgpt",
-          "medium": "cpc",
-          "sessions": 4,
-          "users": 4,
-          "bounce_rate": 0.25,
+          "source": "(data not available)",
+          "medium": "(data not available)",
+          "sessions": 3,
+          "users": 3,
+          "bounce_rate": 0.3333333333333333,
           "pages_per_session": 1.0,
-          "avg_session_duration": 41.34564325,
+          "avg_session_duration": 70.24468766666666,
           "form_submits": 0
         },
         {
@@ -4516,5 +4526,5 @@
       ]
     }
   ],
-  "generated_at": "2026-10-08T07:32:24.976639"
+  "generated_at": "2026-10-09T07:34:27.009981"
 }
