@@ -2,7 +2,7 @@
   "month": "2026-10",
   "period": [
     "2026-10-01",
-    "2026-10-10"
+    "2026-10-11"
   ],
   "partial": true,
   "sources": {
@@ -30,11 +30,11 @@
         "ctr_pct": null,
         "cpc_usd": null,
         "cpc_rub": null,
-        "sessions": 33,
-        "users": 13,
-        "bounce_rate": 0.6060606060606061,
-        "pages_per_session": 1.1515151515151516,
-        "avg_session_duration": 178.7557982121212,
+        "sessions": 38,
+        "users": 14,
+        "bounce_rate": 0.6052631578947368,
+        "pages_per_session": 1.105263157894737,
+        "avg_session_duration": 158.69409944736842,
         "form_submits": 0,
         "cost_per_form_usd": null,
         "crm_leads_total": 0,
@@ -61,33 +61,33 @@
   ],
   "ga4_by_source": [
     {
-      "source": "(direct)",
-      "medium": "(none)",
-      "sessions": 36,
-      "users": 30,
-      "bounce_rate": 0.5277777777777778,
-      "pages_per_session": 1.9166666666666667,
-      "avg_session_duration": 242.6739019166667,
+      "source": "google",
+      "medium": "cpc",
+      "sessions": 38,
+      "users": 14,
+      "bounce_rate": 0.6052631578947368,
+      "pages_per_session": 1.105263157894737,
+      "avg_session_duration": 158.69409944736842,
       "form_submits": 0
     },
     {
-      "source": "google",
-      "medium": "cpc",
-      "sessions": 33,
-      "users": 13,
-      "bounce_rate": 0.6060606060606061,
-      "pages_per_session": 1.1515151515151516,
-      "avg_session_duration": 178.7557982121212,
+      "source": "(direct)",
+      "medium": "(none)",
+      "sessions": 37,
+      "users": 30,
+      "bounce_rate": 0.5135135135135135,
+      "pages_per_session": 1.8918918918918919,
+      "avg_session_duration": 239.34039316216217,
       "form_submits": 0
     },
     {
       "source": "chatgpt",
       "medium": "cpc",
-      "sessions": 30,
+      "sessions": 31,
       "users": 24,
-      "bounce_rate": 0.3333333333333333,
+      "bounce_rate": 0.3548387096774194,
       "pages_per_session": 1.0,
-      "avg_session_duration": 114.2703688,
+      "avg_session_duration": 110.7839266451613,
       "form_submits": 0
     },
     {
