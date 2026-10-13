@@ -2,7 +2,7 @@
   "month": "2026-10",
   "period": [
     "2026-10-01",
-    "2026-10-11"
+    "2026-10-12"
   ],
   "partial": true,
   "sources": {
@@ -19,22 +19,46 @@
   "platforms": [
     {
       "name": "Google Ads",
-      "campaigns": [],
+      "campaigns": [
+        {
+          "campaign": "АК - Поиск (общий)(16.07 макс конв)",
+          "type": "SEARCH",
+          "impressions": 215,
+          "clicks": 20,
+          "ctr_pct": 9.30232558139535,
+          "cost_rub": 4537.31,
+          "cpc_rub": 226.87,
+          "cost_usd": 53.44,
+          "cpc_usd": 2.67,
+          "sessions": 39,
+          "users": 15,
+          "bounce_rate": 0.48717948717948717,
+          "pages_per_session": 1.1538461538461537,
+          "avg_session_duration": 157.73347248717948,
+          "form_submits": 0,
+          "cost_per_form_usd": null,
+          "crm_leads_total": 0,
+          "cost_per_crm_lead_usd": null,
+          "crm_leads_converted": 0,
+          "cost_per_converted_lead_usd": null,
+          "comment": ""
+        }
+      ],
       "total": {
         "campaign": "Итого",
         "type": "TOTAL",
-        "impressions": 0,
-        "clicks": 0,
-        "cost_usd": 0,
-        "cost_rub": 0,
-        "ctr_pct": null,
-        "cpc_usd": null,
-        "cpc_rub": null,
-        "sessions": 38,
-        "users": 14,
-        "bounce_rate": 0.6052631578947368,
-        "pages_per_session": 1.105263157894737,
-        "avg_session_duration": 158.69409944736842,
+        "impressions": 215,
+        "clicks": 20,
+        "cost_usd": 53.44,
+        "cost_rub": 4537.31,
+        "ctr_pct": 9.30232558139535,
+        "cpc_usd": 2.67,
+        "cpc_rub": 226.87,
+        "sessions": 45,
+        "users": 21,
+        "bounce_rate": 0.5555555555555556,
+        "pages_per_session": 1.1333333333333333,
+        "avg_session_duration": 136.86520037777777,
         "form_submits": 0,
         "cost_per_form_usd": null,
         "crm_leads_total": 0,
@@ -63,31 +87,31 @@
     {
       "source": "google",
       "medium": "cpc",
-      "sessions": 38,
-      "users": 14,
-      "bounce_rate": 0.6052631578947368,
-      "pages_per_session": 1.105263157894737,
-      "avg_session_duration": 158.69409944736842,
+      "sessions": 45,
+      "users": 21,
+      "bounce_rate": 0.5555555555555556,
+      "pages_per_session": 1.1333333333333333,
+      "avg_session_duration": 136.86520037777777,
       "form_submits": 0
     },
     {
       "source": "(direct)",
       "medium": "(none)",
-      "sessions": 37,
-      "users": 30,
-      "bounce_rate": 0.5135135135135135,
-      "pages_per_session": 1.8918918918918919,
-      "avg_session_duration": 239.34039316216217,
+      "sessions": 38,
+      "users": 31,
+      "bounce_rate": 0.5,
+      "pages_per_session": 1.9473684210526316,
+      "avg_session_duration": 235.15339268421053,
       "form_submits": 0
     },
     {
       "source": "chatgpt",
       "medium": "cpc",
-      "sessions": 31,
-      "users": 24,
-      "bounce_rate": 0.3548387096774194,
+      "sessions": 32,
+      "users": 25,
+      "bounce_rate": 0.34375,
       "pages_per_session": 1.0,
-      "avg_session_duration": 110.7839266451613,
+      "avg_session_duration": 108.41982653125001,
       "form_submits": 0
     },
     {
@@ -161,6 +185,16 @@
       "form_submits": 0
     },
     {
+      "source": "yandex.ru",
+      "medium": "referral",
+      "sessions": 3,
+      "users": 1,
+      "bounce_rate": 0.3333333333333333,
+      "pages_per_session": 1.3333333333333333,
+      "avg_session_duration": 224.06628466666666,
+      "form_submits": 0
+    },
+    {
       "source": "usepastel.com",
       "medium": "referral",
       "sessions": 2,
@@ -168,6 +202,16 @@
       "bounce_rate": 0.0,
       "pages_per_session": 2.0,
       "avg_session_duration": 1060.282341,
+      "form_submits": 0
+    },
+    {
+      "source": "(data not available)",
+      "medium": "(data not available)",
+      "sessions": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "pages_per_session": 3.0,
+      "avg_session_duration": 53.295602,
       "form_submits": 0
     },
     {
@@ -181,6 +225,16 @@
       "form_submits": 0
     },
     {
+      "source": "awwwards.com",
+      "medium": "referral",
+      "sessions": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 18.522725,
+      "form_submits": 0
+    },
+    {
       "source": "tagassistant.google.com",
       "medium": "referral",
       "sessions": 1,
@@ -188,16 +242,6 @@
       "bounce_rate": 0.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 62.112975,
-      "form_submits": 0
-    },
-    {
-      "source": "yandex.ru",
-      "medium": "referral",
-      "sessions": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 500.093442,
       "form_submits": 0
     }
   ]
