@@ -1,0 +1,1969 @@
+{
+ "property": "properties/353999593",
+ "start": "2026-07-01",
+ "end": "2026-10-13",
+ "segments": {
+  "all": {
+   "2026-07-01": {
+    "sessions": 12,
+    "users": 11,
+    "avg_duration": 23.6185535,
+    "pages_per_session": 1.0833333333333333,
+    "bounce_rate": 0.5833333333333334,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-02": {
+    "sessions": 20,
+    "users": 18,
+    "avg_duration": 224.67716944999998,
+    "pages_per_session": 2.15,
+    "bounce_rate": 0.6,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-03": {
+    "sessions": 7,
+    "users": 7,
+    "avg_duration": 130.38666285714285,
+    "pages_per_session": 2.2857142857142856,
+    "bounce_rate": 0.7142857142857143,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-04": {
+    "sessions": 10,
+    "users": 10,
+    "avg_duration": 51.572456,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.6,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-05": {
+    "sessions": 7,
+    "users": 6,
+    "avg_duration": 29.13781757142857,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.5714285714285714,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-06": {
+    "sessions": 26,
+    "users": 26,
+    "avg_duration": 16.17203234615385,
+    "pages_per_session": 1.0384615384615385,
+    "bounce_rate": 0.7307692307692307,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-07": {
+    "sessions": 23,
+    "users": 19,
+    "avg_duration": 139.990944,
+    "pages_per_session": 1.608695652173913,
+    "bounce_rate": 0.34782608695652173,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-08": {
+    "sessions": 22,
+    "users": 18,
+    "avg_duration": 218.0127624090909,
+    "pages_per_session": 1.6363636363636365,
+    "bounce_rate": 0.4090909090909091,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-09": {
+    "sessions": 20,
+    "users": 17,
+    "avg_duration": 118.69665309999998,
+    "pages_per_session": 1.35,
+    "bounce_rate": 0.35,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-10": {
+    "sessions": 20,
+    "users": 20,
+    "avg_duration": 72.35629019999999,
+    "pages_per_session": 1.45,
+    "bounce_rate": 0.35,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-11": {
+    "sessions": 12,
+    "users": 11,
+    "avg_duration": 51.55032258333333,
+    "pages_per_session": 1.0833333333333333,
+    "bounce_rate": 0.4166666666666667,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-12": {
+    "sessions": 9,
+    "users": 9,
+    "avg_duration": 67.27788733333334,
+    "pages_per_session": 1.3333333333333333,
+    "bounce_rate": 0.2222222222222222,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-13": {
+    "sessions": 29,
+    "users": 28,
+    "avg_duration": 107.67750272413795,
+    "pages_per_session": 1.7241379310344827,
+    "bounce_rate": 0.2413793103448276,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-14": {
+    "sessions": 41,
+    "users": 36,
+    "avg_duration": 74.4226394390244,
+    "pages_per_session": 1.3170731707317074,
+    "bounce_rate": 0.5365853658536586,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-15": {
+    "sessions": 57,
+    "users": 60,
+    "avg_duration": 158.15613657894735,
+    "pages_per_session": 2.263157894736842,
+    "bounce_rate": 0.47368421052631576,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-16": {
+    "sessions": 24,
+    "users": 20,
+    "avg_duration": 116.138538375,
+    "pages_per_session": 1.25,
+    "bounce_rate": 0.5416666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-17": {
+    "sessions": 48,
+    "users": 44,
+    "avg_duration": 177.88747210416668,
+    "pages_per_session": 1.6875,
+    "bounce_rate": 0.4166666666666667,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-18": {
+    "sessions": 14,
+    "users": 14,
+    "avg_duration": 134.97988242857141,
+    "pages_per_session": 1.5714285714285714,
+    "bounce_rate": 0.5,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-19": {
+    "sessions": 37,
+    "users": 35,
+    "avg_duration": 25.850306567567568,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.6756756756756757,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-20": {
+    "sessions": 23,
+    "users": 22,
+    "avg_duration": 118.309075,
+    "pages_per_session": 1.173913043478261,
+    "bounce_rate": 0.5217391304347826,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-07-21": {
+    "sessions": 10,
+    "users": 8,
+    "avg_duration": 75.86346749999998,
+    "pages_per_session": 1.3,
+    "bounce_rate": 0.4,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-22": {
+    "sessions": 24,
+    "users": 21,
+    "avg_duration": 88.97186750000002,
+    "pages_per_session": 1.2916666666666667,
+    "bounce_rate": 0.4583333333333333,
+    "key_events": 3,
+    "events": {
+     "Отправка формы": 2,
+     "Отправка формы по партнерской программе": 1
+    }
+   },
+   "2026-07-23": {
+    "sessions": 26,
+    "users": 24,
+    "avg_duration": 61.133899692307686,
+    "pages_per_session": 1.1153846153846154,
+    "bounce_rate": 0.46153846153846156,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-24": {
+    "sessions": 28,
+    "users": 25,
+    "avg_duration": 91.85447464285713,
+    "pages_per_session": 1.9642857142857142,
+    "bounce_rate": 0.35714285714285715,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-25": {
+    "sessions": 56,
+    "users": 50,
+    "avg_duration": 25.530221446428573,
+    "pages_per_session": 1.1607142857142858,
+    "bounce_rate": 0.5357142857142857,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-26": {
+    "sessions": 13,
+    "users": 12,
+    "avg_duration": 99.46470446153846,
+    "pages_per_session": 2.1538461538461537,
+    "bounce_rate": 0.23076923076923078,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-27": {
+    "sessions": 28,
+    "users": 24,
+    "avg_duration": 160.09431632142858,
+    "pages_per_session": 1.1785714285714286,
+    "bounce_rate": 0.39285714285714285,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-28": {
+    "sessions": 30,
+    "users": 27,
+    "avg_duration": 250.79099743333333,
+    "pages_per_session": 1.6333333333333333,
+    "bounce_rate": 0.3333333333333333,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-29": {
+    "sessions": 87,
+    "users": 84,
+    "avg_duration": 106.49221614942529,
+    "pages_per_session": 1.5172413793103448,
+    "bounce_rate": 0.5632183908045977,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-30": {
+    "sessions": 36,
+    "users": 33,
+    "avg_duration": 197.79317841666668,
+    "pages_per_session": 1.8055555555555556,
+    "bounce_rate": 0.4166666666666667,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-31": {
+    "sessions": 80,
+    "users": 75,
+    "avg_duration": 156.2706047125,
+    "pages_per_session": 1.925,
+    "bounce_rate": 0.3375,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-01": {
+    "sessions": 112,
+    "users": 111,
+    "avg_duration": 56.660158669642854,
+    "pages_per_session": 1.625,
+    "bounce_rate": 0.44642857142857145,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-08-02": {
+    "sessions": 88,
+    "users": 85,
+    "avg_duration": 47.758424306818185,
+    "pages_per_session": 1.25,
+    "bounce_rate": 0.5227272727272727,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-03": {
+    "sessions": 49,
+    "users": 45,
+    "avg_duration": 103.25650981632654,
+    "pages_per_session": 1.3673469387755102,
+    "bounce_rate": 0.4489795918367347,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-08-04": {
+    "sessions": 23,
+    "users": 23,
+    "avg_duration": 19.872402782608695,
+    "pages_per_session": 1.3043478260869565,
+    "bounce_rate": 0.43478260869565216,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-05": {
+    "sessions": 18,
+    "users": 18,
+    "avg_duration": 183.4364007222222,
+    "pages_per_session": 2.0,
+    "bounce_rate": 0.2777777777777778,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-06": {
+    "sessions": 20,
+    "users": 19,
+    "avg_duration": 34.447727,
+    "pages_per_session": 1.35,
+    "bounce_rate": 0.35,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-07": {
+    "sessions": 50,
+    "users": 48,
+    "avg_duration": 80.99896245999999,
+    "pages_per_session": 1.58,
+    "bounce_rate": 0.44,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-08": {
+    "sessions": 30,
+    "users": 30,
+    "avg_duration": 19.994962400000002,
+    "pages_per_session": 1.0333333333333334,
+    "bounce_rate": 0.6666666666666666,
+    "key_events": 3,
+    "events": {
+     "Отправка формы": 3
+    }
+   },
+   "2026-08-09": {
+    "sessions": 57,
+    "users": 55,
+    "avg_duration": 48.38661410526316,
+    "pages_per_session": 1.631578947368421,
+    "bounce_rate": 0.47368421052631576,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-10": {
+    "sessions": 79,
+    "users": 71,
+    "avg_duration": 145.09164134177215,
+    "pages_per_session": 1.6075949367088607,
+    "bounce_rate": 0.45569620253164556,
+    "key_events": 4,
+    "events": {
+     "Отправка формы": 4
+    }
+   },
+   "2026-08-11": {
+    "sessions": 53,
+    "users": 38,
+    "avg_duration": 100.86742852830189,
+    "pages_per_session": 1.7169811320754718,
+    "bounce_rate": 0.33962264150943394,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-12": {
+    "sessions": 45,
+    "users": 34,
+    "avg_duration": 428.0471348,
+    "pages_per_session": 4.088888888888889,
+    "bounce_rate": 0.3111111111111111,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-13": {
+    "sessions": 36,
+    "users": 33,
+    "avg_duration": 226.82120244444445,
+    "pages_per_session": 2.0555555555555554,
+    "bounce_rate": 0.25,
+    "key_events": 4,
+    "events": {
+     "Отправка формы": 4
+    }
+   },
+   "2026-08-14": {
+    "sessions": 29,
+    "users": 28,
+    "avg_duration": 57.51563089655172,
+    "pages_per_session": 1.1724137931034482,
+    "bounce_rate": 0.5172413793103449,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-15": {
+    "sessions": 15,
+    "users": 14,
+    "avg_duration": 57.21484253333333,
+    "pages_per_session": 1.3333333333333333,
+    "bounce_rate": 0.13333333333333333,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-16": {
+    "sessions": 14,
+    "users": 14,
+    "avg_duration": 38.3162695,
+    "pages_per_session": 1.7857142857142858,
+    "bounce_rate": 0.2857142857142857,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-17": {
+    "sessions": 8,
+    "users": 8,
+    "avg_duration": 38.621195625000006,
+    "pages_per_session": 1.375,
+    "bounce_rate": 0.375,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-18": {
+    "sessions": 6,
+    "users": 6,
+    "avg_duration": 74.20566133333334,
+    "pages_per_session": 2.0,
+    "bounce_rate": 0.16666666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-19": {
+    "sessions": 19,
+    "users": 19,
+    "avg_duration": 229.5079537368421,
+    "pages_per_session": 1.6842105263157894,
+    "bounce_rate": 0.15789473684210525,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-20": {
+    "sessions": 11,
+    "users": 11,
+    "avg_duration": 200.00542490909092,
+    "pages_per_session": 1.6363636363636365,
+    "bounce_rate": 0.45454545454545453,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-21": {
+    "sessions": 55,
+    "users": 50,
+    "avg_duration": 55.8576124,
+    "pages_per_session": 1.2181818181818183,
+    "bounce_rate": 0.43636363636363634,
+    "key_events": 3,
+    "events": {
+     "Отправка формы": 3
+    }
+   },
+   "2026-08-22": {
+    "sessions": 135,
+    "users": 130,
+    "avg_duration": 107.74126882222222,
+    "pages_per_session": 2.1333333333333333,
+    "bounce_rate": 0.48148148148148145,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-23": {
+    "sessions": 57,
+    "users": 55,
+    "avg_duration": 28.550073245614037,
+    "pages_per_session": 1.2280701754385965,
+    "bounce_rate": 0.7192982456140351,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-24": {
+    "sessions": 58,
+    "users": 56,
+    "avg_duration": 93.77897387931034,
+    "pages_per_session": 1.5517241379310345,
+    "bounce_rate": 0.46551724137931033,
+    "key_events": 6,
+    "events": {
+     "Отправка формы": 4,
+     "lead_qualified": 2
+    }
+   },
+   "2026-08-25": {
+    "sessions": 29,
+    "users": 30,
+    "avg_duration": 120.43290110344829,
+    "pages_per_session": 1.5517241379310345,
+    "bounce_rate": 0.3793103448275862,
+    "key_events": 2,
+    "events": {
+     "lead_qualified": 2
+    }
+   },
+   "2026-08-26": {
+    "sessions": 3,
+    "users": 3,
+    "avg_duration": 40.94861733333333,
+    "pages_per_session": 2.3333333333333335,
+    "bounce_rate": 0.6666666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-27": {
+    "sessions": 14,
+    "users": 8,
+    "avg_duration": 113.88098307142857,
+    "pages_per_session": 1.8571428571428572,
+    "bounce_rate": 0.42857142857142855,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-28": {
+    "sessions": 7,
+    "users": 7,
+    "avg_duration": 42.767933000000006,
+    "pages_per_session": 1.7142857142857142,
+    "bounce_rate": 0.5714285714285714,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-29": {
+    "sessions": 3,
+    "users": 2,
+    "avg_duration": 139.79562133333334,
+    "pages_per_session": 2.3333333333333335,
+    "bounce_rate": 0.6666666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-31": {
+    "sessions": 15,
+    "users": 6,
+    "avg_duration": 730.3179091333333,
+    "pages_per_session": 3.2666666666666666,
+    "bounce_rate": 0.2,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-01": {
+    "sessions": 50,
+    "users": 46,
+    "avg_duration": 381.26018516,
+    "pages_per_session": 5.7,
+    "bounce_rate": 0.28,
+    "key_events": 1,
+    "events": {
+     "Отправка формы по партнерской программе": 1
+    }
+   },
+   "2026-09-02": {
+    "sessions": 140,
+    "users": 131,
+    "avg_duration": 132.7759310357143,
+    "pages_per_session": 2.2857142857142856,
+    "bounce_rate": 0.32142857142857145,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-09-03": {
+    "sessions": 67,
+    "users": 65,
+    "avg_duration": 75.13596262686568,
+    "pages_per_session": 1.6567164179104477,
+    "bounce_rate": 0.29850746268656714,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-04": {
+    "sessions": 32,
+    "users": 27,
+    "avg_duration": 130.49495053125,
+    "pages_per_session": 1.875,
+    "bounce_rate": 0.53125,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-05": {
+    "sessions": 20,
+    "users": 20,
+    "avg_duration": 38.9789829,
+    "pages_per_session": 1.2,
+    "bounce_rate": 0.45,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-06": {
+    "sessions": 59,
+    "users": 54,
+    "avg_duration": 46.986559440677965,
+    "pages_per_session": 1.1355932203389831,
+    "bounce_rate": 0.5423728813559322,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-09-07": {
+    "sessions": 75,
+    "users": 70,
+    "avg_duration": 97.47995028,
+    "pages_per_session": 1.4266666666666667,
+    "bounce_rate": 0.5066666666666667,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-08": {
+    "sessions": 39,
+    "users": 38,
+    "avg_duration": 64.98448507692308,
+    "pages_per_session": 1.2820512820512822,
+    "bounce_rate": 0.5384615384615384,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-09": {
+    "sessions": 92,
+    "users": 85,
+    "avg_duration": 67.25452485869565,
+    "pages_per_session": 1.358695652173913,
+    "bounce_rate": 0.4782608695652174,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-09-10": {
+    "sessions": 14,
+    "users": 12,
+    "avg_duration": 108.17238864285714,
+    "pages_per_session": 1.5,
+    "bounce_rate": 0.14285714285714285,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-11": {
+    "sessions": 9,
+    "users": 9,
+    "avg_duration": 222.90094522222222,
+    "pages_per_session": 1.2222222222222223,
+    "bounce_rate": 0.4444444444444444,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-12": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 7.659836,
+    "pages_per_session": 1.0,
+    "bounce_rate": 1.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-14": {
+    "sessions": 25,
+    "users": 18,
+    "avg_duration": 531.53412584,
+    "pages_per_session": 3.4,
+    "bounce_rate": 0.44,
+    "key_events": 3,
+    "events": {
+     "Отправка формы": 3
+    }
+   },
+   "2026-09-15": {
+    "sessions": 26,
+    "users": 22,
+    "avg_duration": 111.17585476923077,
+    "pages_per_session": 1.5,
+    "bounce_rate": 0.4230769230769231,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-16": {
+    "sessions": 18,
+    "users": 14,
+    "avg_duration": 205.7311366111111,
+    "pages_per_session": 1.8333333333333333,
+    "bounce_rate": 0.5,
+    "key_events": 1,
+    "events": {
+     "lead_qualified": 1
+    }
+   },
+   "2026-09-17": {
+    "sessions": 64,
+    "users": 45,
+    "avg_duration": 264.121161265625,
+    "pages_per_session": 2.28125,
+    "bounce_rate": 0.40625,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-18": {
+    "sessions": 45,
+    "users": 41,
+    "avg_duration": 153.5540392888889,
+    "pages_per_session": 1.711111111111111,
+    "bounce_rate": 0.5555555555555556,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-09-19": {
+    "sessions": 8,
+    "users": 7,
+    "avg_duration": 149.71447949999998,
+    "pages_per_session": 1.25,
+    "bounce_rate": 0.625,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-20": {
+    "sessions": 10,
+    "users": 7,
+    "avg_duration": 13.5102832,
+    "pages_per_session": 1.2,
+    "bounce_rate": 0.6,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-21": {
+    "sessions": 53,
+    "users": 46,
+    "avg_duration": 159.5290456981132,
+    "pages_per_session": 1.6603773584905661,
+    "bounce_rate": 0.3018867924528302,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 1,
+     "Отправка формы по партнерской программе": 1
+    }
+   },
+   "2026-09-22": {
+    "sessions": 40,
+    "users": 35,
+    "avg_duration": 226.17180555,
+    "pages_per_session": 1.975,
+    "bounce_rate": 0.15,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-23": {
+    "sessions": 34,
+    "users": 27,
+    "avg_duration": 371.8163262352941,
+    "pages_per_session": 3.0294117647058822,
+    "bounce_rate": 0.38235294117647056,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-09-24": {
+    "sessions": 50,
+    "users": 39,
+    "avg_duration": 312.03546653999996,
+    "pages_per_session": 2.78,
+    "bounce_rate": 0.32,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-25": {
+    "sessions": 39,
+    "users": 31,
+    "avg_duration": 228.40930279487182,
+    "pages_per_session": 2.2564102564102564,
+    "bounce_rate": 0.41025641025641024,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-26": {
+    "sessions": 50,
+    "users": 45,
+    "avg_duration": 147.68347758,
+    "pages_per_session": 1.56,
+    "bounce_rate": 0.44,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-27": {
+    "sessions": 36,
+    "users": 32,
+    "avg_duration": 172.00573972222222,
+    "pages_per_session": 1.8888888888888888,
+    "bounce_rate": 0.3611111111111111,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-28": {
+    "sessions": 26,
+    "users": 24,
+    "avg_duration": 122.89295319230769,
+    "pages_per_session": 1.1923076923076923,
+    "bounce_rate": 0.5384615384615384,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-29": {
+    "sessions": 31,
+    "users": 24,
+    "avg_duration": 111.26694329032259,
+    "pages_per_session": 1.6451612903225807,
+    "bounce_rate": 0.3225806451612903,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-30": {
+    "sessions": 27,
+    "users": 19,
+    "avg_duration": 63.35601577777778,
+    "pages_per_session": 2.037037037037037,
+    "bounce_rate": 0.5925925925925926,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-01": {
+    "sessions": 16,
+    "users": 11,
+    "avg_duration": 258.14199175,
+    "pages_per_session": 1.9375,
+    "bounce_rate": 0.3125,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-02": {
+    "sessions": 14,
+    "users": 12,
+    "avg_duration": 566.5722376428572,
+    "pages_per_session": 2.2142857142857144,
+    "bounce_rate": 0.5,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-03": {
+    "sessions": 3,
+    "users": 3,
+    "avg_duration": 157.575943,
+    "pages_per_session": 1.3333333333333333,
+    "bounce_rate": 0.6666666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-04": {
+    "sessions": 15,
+    "users": 12,
+    "avg_duration": 259.0978954,
+    "pages_per_session": 1.3333333333333333,
+    "bounce_rate": 0.6,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-05": {
+    "sessions": 23,
+    "users": 13,
+    "avg_duration": 283.41580795652175,
+    "pages_per_session": 1.6956521739130435,
+    "bounce_rate": 0.391304347826087,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-06": {
+    "sessions": 11,
+    "users": 10,
+    "avg_duration": 860.4315346363636,
+    "pages_per_session": 2.090909090909091,
+    "bounce_rate": 0.45454545454545453,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-07": {
+    "sessions": 24,
+    "users": 20,
+    "avg_duration": 171.2963620416667,
+    "pages_per_session": 1.0416666666666667,
+    "bounce_rate": 0.5,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-08": {
+    "sessions": 34,
+    "users": 24,
+    "avg_duration": 99.98158555882353,
+    "pages_per_session": 1.4411764705882353,
+    "bounce_rate": 0.4411764705882353,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-09": {
+    "sessions": 22,
+    "users": 16,
+    "avg_duration": 99.87816213636364,
+    "pages_per_session": 1.3181818181818181,
+    "bounce_rate": 0.36363636363636365,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-10": {
+    "sessions": 8,
+    "users": 8,
+    "avg_duration": 14.287489,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.875,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-11": {
+    "sessions": 7,
+    "users": 4,
+    "avg_duration": 36.708454,
+    "pages_per_session": 0.8571428571428571,
+    "bounce_rate": 0.5714285714285714,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-12": {
+    "sessions": 22,
+    "users": 21,
+    "avg_duration": 62.952935090909094,
+    "pages_per_session": 2.0454545454545454,
+    "bounce_rate": 0.18181818181818182,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-13": {
+    "sessions": 21,
+    "users": 20,
+    "avg_duration": 46.75692876190476,
+    "pages_per_session": 1.619047619047619,
+    "bounce_rate": 0.38095238095238093,
+    "key_events": 0,
+    "events": {}
+   }
+  },
+  "paid": {
+   "2026-07-01": {
+    "sessions": 10,
+    "users": 9,
+    "avg_duration": 21.5456078,
+    "pages_per_session": 1.1,
+    "bounce_rate": 0.7,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-02": {
+    "sessions": 11,
+    "users": 11,
+    "avg_duration": 18.757995636363635,
+    "pages_per_session": 1.0909090909090908,
+    "bounce_rate": 0.8181818181818182,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-03": {
+    "sessions": 5,
+    "users": 5,
+    "avg_duration": 175.04506139999998,
+    "pages_per_session": 2.2,
+    "bounce_rate": 0.8,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-04": {
+    "sessions": 8,
+    "users": 8,
+    "avg_duration": 62.552743125,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.625,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-05": {
+    "sessions": 6,
+    "users": 5,
+    "avg_duration": 33.9941205,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.5,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-06": {
+    "sessions": 25,
+    "users": 24,
+    "avg_duration": 16.81891364,
+    "pages_per_session": 1.04,
+    "bounce_rate": 0.72,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-07": {
+    "sessions": 14,
+    "users": 13,
+    "avg_duration": 110.72809428571429,
+    "pages_per_session": 1.2142857142857142,
+    "bounce_rate": 0.35714285714285715,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-08": {
+    "sessions": 8,
+    "users": 8,
+    "avg_duration": 184.23209025,
+    "pages_per_session": 2.375,
+    "bounce_rate": 0.125,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-09": {
+    "sessions": 9,
+    "users": 9,
+    "avg_duration": 180.92855877777777,
+    "pages_per_session": 1.7777777777777777,
+    "bounce_rate": 0.2222222222222222,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-10": {
+    "sessions": 13,
+    "users": 13,
+    "avg_duration": 77.627655,
+    "pages_per_session": 1.3846153846153846,
+    "bounce_rate": 0.38461538461538464,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-11": {
+    "sessions": 10,
+    "users": 10,
+    "avg_duration": 55.30716070000001,
+    "pages_per_session": 1.1,
+    "bounce_rate": 0.4,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-12": {
+    "sessions": 7,
+    "users": 7,
+    "avg_duration": 83.55679157142856,
+    "pages_per_session": 1.4285714285714286,
+    "bounce_rate": 0.2857142857142857,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-13": {
+    "sessions": 21,
+    "users": 19,
+    "avg_duration": 59.785913333333326,
+    "pages_per_session": 1.4285714285714286,
+    "bounce_rate": 0.3333333333333333,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-14": {
+    "sessions": 33,
+    "users": 29,
+    "avg_duration": 49.41138881818182,
+    "pages_per_session": 1.3333333333333333,
+    "bounce_rate": 0.48484848484848486,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-15": {
+    "sessions": 47,
+    "users": 47,
+    "avg_duration": 34.53099123404255,
+    "pages_per_session": 1.2340425531914894,
+    "bounce_rate": 0.46808510638297873,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-16": {
+    "sessions": 16,
+    "users": 15,
+    "avg_duration": 26.8399859375,
+    "pages_per_session": 1.1875,
+    "bounce_rate": 0.5625,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-17": {
+    "sessions": 37,
+    "users": 34,
+    "avg_duration": 197.47653254054052,
+    "pages_per_session": 1.3783783783783783,
+    "bounce_rate": 0.32432432432432434,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-18": {
+    "sessions": 8,
+    "users": 8,
+    "avg_duration": 232.518214,
+    "pages_per_session": 2.0,
+    "bounce_rate": 0.25,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-19": {
+    "sessions": 31,
+    "users": 30,
+    "avg_duration": 25.797231677419358,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.6129032258064516,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-20": {
+    "sessions": 14,
+    "users": 14,
+    "avg_duration": 30.199790357142856,
+    "pages_per_session": 1.1428571428571428,
+    "bounce_rate": 0.5714285714285714,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-21": {
+    "sessions": 4,
+    "users": 4,
+    "avg_duration": 162.49363725,
+    "pages_per_session": 1.75,
+    "bounce_rate": 0.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-22": {
+    "sessions": 16,
+    "users": 15,
+    "avg_duration": 41.12146575,
+    "pages_per_session": 1.3125,
+    "bounce_rate": 0.4375,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-23": {
+    "sessions": 18,
+    "users": 17,
+    "avg_duration": 73.98700155555555,
+    "pages_per_session": 1.1666666666666667,
+    "bounce_rate": 0.4444444444444444,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-24": {
+    "sessions": 21,
+    "users": 21,
+    "avg_duration": 98.57086442857141,
+    "pages_per_session": 1.9523809523809523,
+    "bounce_rate": 0.38095238095238093,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-25": {
+    "sessions": 54,
+    "users": 48,
+    "avg_duration": 26.00949333333333,
+    "pages_per_session": 1.1666666666666667,
+    "bounce_rate": 0.5185185185185185,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-26": {
+    "sessions": 10,
+    "users": 10,
+    "avg_duration": 115.90513849999999,
+    "pages_per_session": 2.4,
+    "bounce_rate": 0.2,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-27": {
+    "sessions": 17,
+    "users": 17,
+    "avg_duration": 216.80603070588236,
+    "pages_per_session": 1.1764705882352942,
+    "bounce_rate": 0.4117647058823529,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-28": {
+    "sessions": 22,
+    "users": 22,
+    "avg_duration": 208.09452077272726,
+    "pages_per_session": 1.7727272727272727,
+    "bounce_rate": 0.22727272727272727,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-29": {
+    "sessions": 79,
+    "users": 77,
+    "avg_duration": 112.63735599999998,
+    "pages_per_session": 1.5696202531645569,
+    "bounce_rate": 0.569620253164557,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-07-30": {
+    "sessions": 27,
+    "users": 26,
+    "avg_duration": 191.38785840740744,
+    "pages_per_session": 2.0,
+    "bounce_rate": 0.37037037037037035,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-07-31": {
+    "sessions": 78,
+    "users": 73,
+    "avg_duration": 124.73399794871794,
+    "pages_per_session": 1.8974358974358974,
+    "bounce_rate": 0.3333333333333333,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-01": {
+    "sessions": 110,
+    "users": 109,
+    "avg_duration": 57.59693886363636,
+    "pages_per_session": 1.6363636363636365,
+    "bounce_rate": 0.43636363636363634,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-08-02": {
+    "sessions": 84,
+    "users": 82,
+    "avg_duration": 49.65737463095239,
+    "pages_per_session": 1.2380952380952381,
+    "bounce_rate": 0.5238095238095238,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-03": {
+    "sessions": 43,
+    "users": 42,
+    "avg_duration": 90.90741155813953,
+    "pages_per_session": 1.3953488372093024,
+    "bounce_rate": 0.46511627906976744,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-08-04": {
+    "sessions": 21,
+    "users": 21,
+    "avg_duration": 21.525554476190475,
+    "pages_per_session": 1.2857142857142858,
+    "bounce_rate": 0.42857142857142855,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-05": {
+    "sessions": 14,
+    "users": 14,
+    "avg_duration": 201.17302821428572,
+    "pages_per_session": 2.2142857142857144,
+    "bounce_rate": 0.35714285714285715,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-06": {
+    "sessions": 17,
+    "users": 16,
+    "avg_duration": 33.40871076470588,
+    "pages_per_session": 1.411764705882353,
+    "bounce_rate": 0.29411764705882354,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-07": {
+    "sessions": 44,
+    "users": 43,
+    "avg_duration": 83.60316497727273,
+    "pages_per_session": 1.6136363636363635,
+    "bounce_rate": 0.45454545454545453,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-08": {
+    "sessions": 25,
+    "users": 25,
+    "avg_duration": 19.93992792,
+    "pages_per_session": 1.08,
+    "bounce_rate": 0.64,
+    "key_events": 3,
+    "events": {
+     "Отправка формы": 3
+    }
+   },
+   "2026-08-09": {
+    "sessions": 51,
+    "users": 49,
+    "avg_duration": 41.86257305882353,
+    "pages_per_session": 1.5686274509803921,
+    "bounce_rate": 0.49019607843137253,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-10": {
+    "sessions": 63,
+    "users": 63,
+    "avg_duration": 52.828385936507935,
+    "pages_per_session": 1.2857142857142858,
+    "bounce_rate": 0.4603174603174603,
+    "key_events": 4,
+    "events": {
+     "Отправка формы": 4
+    }
+   },
+   "2026-08-11": {
+    "sessions": 26,
+    "users": 24,
+    "avg_duration": 28.536106384615383,
+    "pages_per_session": 1.5,
+    "bounce_rate": 0.4230769230769231,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-12": {
+    "sessions": 30,
+    "users": 28,
+    "avg_duration": 28.588906833333336,
+    "pages_per_session": 1.2666666666666666,
+    "bounce_rate": 0.4,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-13": {
+    "sessions": 29,
+    "users": 28,
+    "avg_duration": 102.02008631034484,
+    "pages_per_session": 1.5862068965517242,
+    "bounce_rate": 0.20689655172413793,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-14": {
+    "sessions": 24,
+    "users": 23,
+    "avg_duration": 64.58733133333332,
+    "pages_per_session": 1.2083333333333333,
+    "bounce_rate": 0.5416666666666666,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-15": {
+    "sessions": 11,
+    "users": 11,
+    "avg_duration": 54.55889745454545,
+    "pages_per_session": 1.0909090909090908,
+    "bounce_rate": 0.09090909090909091,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-16": {
+    "sessions": 12,
+    "users": 12,
+    "avg_duration": 43.49354916666667,
+    "pages_per_session": 1.9166666666666667,
+    "bounce_rate": 0.25,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-17": {
+    "sessions": 5,
+    "users": 5,
+    "avg_duration": 56.93353040000001,
+    "pages_per_session": 1.8,
+    "bounce_rate": 0.2,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-18": {
+    "sessions": 5,
+    "users": 5,
+    "avg_duration": 64.9450238,
+    "pages_per_session": 1.8,
+    "bounce_rate": 0.2,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-19": {
+    "sessions": 13,
+    "users": 13,
+    "avg_duration": 313.6556463846154,
+    "pages_per_session": 1.9230769230769231,
+    "bounce_rate": 0.0,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-20": {
+    "sessions": 7,
+    "users": 7,
+    "avg_duration": 34.481325857142856,
+    "pages_per_session": 1.5714285714285714,
+    "bounce_rate": 0.42857142857142855,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-21": {
+    "sessions": 49,
+    "users": 46,
+    "avg_duration": 58.17832163265306,
+    "pages_per_session": 1.2857142857142858,
+    "bounce_rate": 0.42857142857142855,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-22": {
+    "sessions": 123,
+    "users": 120,
+    "avg_duration": 110.95578244715446,
+    "pages_per_session": 2.203252032520325,
+    "bounce_rate": 0.4878048780487805,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-08-23": {
+    "sessions": 53,
+    "users": 51,
+    "avg_duration": 30.364174264150943,
+    "pages_per_session": 1.2452830188679245,
+    "bounce_rate": 0.7169811320754716,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-24": {
+    "sessions": 50,
+    "users": 47,
+    "avg_duration": 98.82938877999999,
+    "pages_per_session": 1.66,
+    "bounce_rate": 0.44,
+    "key_events": 4,
+    "events": {
+     "Отправка формы": 4
+    }
+   },
+   "2026-08-25": {
+    "sessions": 21,
+    "users": 20,
+    "avg_duration": 73.57891757142858,
+    "pages_per_session": 1.1428571428571428,
+    "bounce_rate": 0.47619047619047616,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-26": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 0.0,
+    "pages_per_session": 1.0,
+    "bounce_rate": 1.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-28": {
+    "sessions": 2,
+    "users": 2,
+    "avg_duration": 0.0,
+    "pages_per_session": 1.0,
+    "bounce_rate": 1.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-29": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 0.0,
+    "pages_per_session": 1.0,
+    "bounce_rate": 1.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-08-31": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 113.099224,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-01": {
+    "sessions": 36,
+    "users": 36,
+    "avg_duration": 288.0668408888889,
+    "pages_per_session": 6.527777777777778,
+    "bounce_rate": 0.2777777777777778,
+    "key_events": 1,
+    "events": {
+     "Отправка формы по партнерской программе": 1
+    }
+   },
+   "2026-09-02": {
+    "sessions": 126,
+    "users": 123,
+    "avg_duration": 127.35157428571428,
+    "pages_per_session": 2.4206349206349205,
+    "bounce_rate": 0.30158730158730157,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-09-03": {
+    "sessions": 61,
+    "users": 60,
+    "avg_duration": 75.25684368852458,
+    "pages_per_session": 1.6065573770491803,
+    "bounce_rate": 0.32786885245901637,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-04": {
+    "sessions": 18,
+    "users": 18,
+    "avg_duration": 26.257644055555556,
+    "pages_per_session": 1.5,
+    "bounce_rate": 0.5555555555555556,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-05": {
+    "sessions": 19,
+    "users": 19,
+    "avg_duration": 41.030508315789476,
+    "pages_per_session": 1.2105263157894737,
+    "bounce_rate": 0.42105263157894735,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-06": {
+    "sessions": 48,
+    "users": 47,
+    "avg_duration": 27.79353516666667,
+    "pages_per_session": 1.1458333333333333,
+    "bounce_rate": 0.5208333333333334,
+    "key_events": 1,
+    "events": {
+     "Отправка формы": 1
+    }
+   },
+   "2026-09-07": {
+    "sessions": 67,
+    "users": 64,
+    "avg_duration": 94.95053811940298,
+    "pages_per_session": 1.4776119402985075,
+    "bounce_rate": 0.5223880597014925,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-08": {
+    "sessions": 31,
+    "users": 30,
+    "avg_duration": 64.38880848387097,
+    "pages_per_session": 1.2580645161290323,
+    "bounce_rate": 0.6451612903225806,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-09": {
+    "sessions": 79,
+    "users": 76,
+    "avg_duration": 46.64851618987342,
+    "pages_per_session": 1.2784810126582278,
+    "bounce_rate": 0.5189873417721519,
+    "key_events": 2,
+    "events": {
+     "Отправка формы": 2
+    }
+   },
+   "2026-09-10": {
+    "sessions": 8,
+    "users": 8,
+    "avg_duration": 64.92201262500001,
+    "pages_per_session": 1.375,
+    "bounce_rate": 0.25,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-11": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 59.996296,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-14": {
+    "sessions": 9,
+    "users": 8,
+    "avg_duration": 37.19817111111111,
+    "pages_per_session": 1.5555555555555556,
+    "bounce_rate": 0.4444444444444444,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-15": {
+    "sessions": 19,
+    "users": 17,
+    "avg_duration": 27.797389105263157,
+    "pages_per_session": 1.105263157894737,
+    "bounce_rate": 0.42105263157894735,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-16": {
+    "sessions": 10,
+    "users": 8,
+    "avg_duration": 19.5117415,
+    "pages_per_session": 0.9,
+    "bounce_rate": 0.7,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-17": {
+    "sessions": 15,
+    "users": 14,
+    "avg_duration": 65.02621846666666,
+    "pages_per_session": 1.2666666666666666,
+    "bounce_rate": 0.4,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-18": {
+    "sessions": 29,
+    "users": 28,
+    "avg_duration": 71.23684096551723,
+    "pages_per_session": 1.3448275862068966,
+    "bounce_rate": 0.6551724137931034,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-19": {
+    "sessions": 5,
+    "users": 5,
+    "avg_duration": 239.54316719999997,
+    "pages_per_session": 1.4,
+    "bounce_rate": 0.4,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-20": {
+    "sessions": 5,
+    "users": 5,
+    "avg_duration": 14.106456600000001,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.4,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-21": {
+    "sessions": 37,
+    "users": 34,
+    "avg_duration": 120.56581672972973,
+    "pages_per_session": 1.5405405405405406,
+    "bounce_rate": 0.3783783783783784,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-22": {
+    "sessions": 29,
+    "users": 26,
+    "avg_duration": 193.97556851724136,
+    "pages_per_session": 1.6206896551724137,
+    "bounce_rate": 0.1724137931034483,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-23": {
+    "sessions": 20,
+    "users": 20,
+    "avg_duration": 56.88735895,
+    "pages_per_session": 1.2,
+    "bounce_rate": 0.5,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-24": {
+    "sessions": 27,
+    "users": 27,
+    "avg_duration": 76.48524014814815,
+    "pages_per_session": 1.3703703703703705,
+    "bounce_rate": 0.4074074074074074,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-25": {
+    "sessions": 18,
+    "users": 18,
+    "avg_duration": 22.261128333333332,
+    "pages_per_session": 1.5,
+    "bounce_rate": 0.4444444444444444,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-26": {
+    "sessions": 43,
+    "users": 41,
+    "avg_duration": 104.87283427906975,
+    "pages_per_session": 1.5348837209302326,
+    "bounce_rate": 0.3953488372093023,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-27": {
+    "sessions": 31,
+    "users": 29,
+    "avg_duration": 198.73791577419354,
+    "pages_per_session": 2.032258064516129,
+    "bounce_rate": 0.2903225806451613,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-28": {
+    "sessions": 17,
+    "users": 16,
+    "avg_duration": 146.44821911764706,
+    "pages_per_session": 1.2941176470588236,
+    "bounce_rate": 0.47058823529411764,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-29": {
+    "sessions": 22,
+    "users": 19,
+    "avg_duration": 77.41697922727273,
+    "pages_per_session": 1.4090909090909092,
+    "bounce_rate": 0.2727272727272727,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-09-30": {
+    "sessions": 13,
+    "users": 11,
+    "avg_duration": 57.67596830769231,
+    "pages_per_session": 1.6153846153846154,
+    "bounce_rate": 0.6923076923076923,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-01": {
+    "sessions": 5,
+    "users": 3,
+    "avg_duration": 20.900141599999998,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.6,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-02": {
+    "sessions": 2,
+    "users": 2,
+    "avg_duration": 3.10503,
+    "pages_per_session": 1.0,
+    "bounce_rate": 1.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-03": {
+    "sessions": 2,
+    "users": 2,
+    "avg_duration": 236.3634315,
+    "pages_per_session": 1.5,
+    "bounce_rate": 0.5,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-04": {
+    "sessions": 6,
+    "users": 3,
+    "avg_duration": 621.8954458333334,
+    "pages_per_session": 1.6666666666666667,
+    "bounce_rate": 0.3333333333333333,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-05": {
+    "sessions": 3,
+    "users": 1,
+    "avg_duration": 433.1277883333333,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.3333333333333333,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-07": {
+    "sessions": 8,
+    "users": 7,
+    "avg_duration": 21.864200625000002,
+    "pages_per_session": 0.875,
+    "bounce_rate": 0.625,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-08": {
+    "sessions": 19,
+    "users": 14,
+    "avg_duration": 117.01372400000001,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.47368421052631576,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-09": {
+    "sessions": 15,
+    "users": 12,
+    "avg_duration": 81.718005,
+    "pages_per_session": 1.0666666666666667,
+    "bounce_rate": 0.3333333333333333,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-10": {
+    "sessions": 3,
+    "users": 3,
+    "avg_duration": 29.638099333333333,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.6666666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-11": {
+    "sessions": 6,
+    "users": 3,
+    "avg_duration": 22.937516666666667,
+    "pages_per_session": 0.8333333333333334,
+    "bounce_rate": 0.6666666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-12": {
+    "sessions": 15,
+    "users": 15,
+    "avg_duration": 60.812018066666674,
+    "pages_per_session": 2.066666666666667,
+    "bounce_rate": 0.2,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-13": {
+    "sessions": 16,
+    "users": 16,
+    "avg_duration": 29.723146,
+    "pages_per_session": 1.3125,
+    "bounce_rate": 0.4375,
+    "key_events": 0,
+    "events": {}
+   }
+  }
+ }
+}

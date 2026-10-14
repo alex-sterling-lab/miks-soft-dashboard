@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>МиксСофт — поведение на сайте</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5f7; --card:#fff; --ink:#10151c; --muted:#5d6876; --line:#dfe4ea; --grid:#eceff3;
+  --time:#0b6e99; --depth:#2f8f4e; --conv:#d9480f; --conv2:#f2a57a; --conv3:#7c2d12;
+  --focus:#10151c;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.45 'Onest',system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 16px 64px}
+header{display:flex;flex-wrap:wrap;gap:16px 24px;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+h1{font:700 26px/1.15 'Onest',sans-serif;margin:0 0 4px;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:13.5px}
+.ctrls{display:flex;flex-wrap:wrap;gap:10px}
+.seg{display:inline-flex;background:#e7ebef;border-radius:9px;padding:3px}
+.seg button{font:500 13.5px 'Onest',sans-serif;border:0;background:transparent;color:var(--muted);padding:7px 13px;border-radius:7px;cursor:pointer;transition:background-color .15s,color .15s}
+.seg button:hover{color:var(--ink)}
+.seg button:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.seg button:active{transform:translateY(1px)}
+.seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(16,21,28,.12)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;border-top:3px solid var(--c,var(--line))}
+.kpi .l{font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.kpi .v{font:500 28px/1.1 'IBM Plex Mono',monospace;letter-spacing:-.02em}
+.kpi .d{margin-top:6px;font-size:12.5px;color:var(--muted)}
+.d .up{color:#17803d;font-weight:600}.d .dn{color:#b42318;font-weight:600}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px 10px;margin-bottom:12px}
+.panel h2{font:600 15px/1.2 'Onest',sans-serif;margin:0}
+.panel .hint{font-size:12.5px;color:var(--muted);margin:3px 0 6px}
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.lg{display:flex;gap:14px;font-size:12.5px;color:var(--muted);margin:2px 0 4px;flex-wrap:wrap}
+.lg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:#fff;border-radius:8px;padding:8px 10px;font-size:12.5px;line-height:1.5;z-index:9;opacity:0;transition:opacity .1s;max-width:240px}
+#tip b{font-weight:600}#tip .m{font-family:'IBM Plex Mono',monospace}
+.note{font-size:12.5px;color:var(--muted);margin:14px 2px}
+.tblwrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:600;color:var(--muted);font-size:12.5px;background:var(--card);position:sticky;top:0}
+td{font-family:'IBM Plex Mono',monospace;font-size:13px}
+td:first-child{font-family:'Onest',sans-serif}
+tr.low td{color:#97a1ad}
+tr.part td:first-child::after{content:' · неполная';color:var(--muted);font-size:12px}
+#err{display:none;background:#fff1f0;border:1px solid #f4b6b0;color:#8a1c12;border-radius:10px;padding:12px 14px;margin-bottom:12px}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:22px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="sub"><a href="./" style="color:inherit">← Недельный отчёт по рекламе</a></div>
+      <h1>МиксСофт — поведение на сайте</h1>
+      <div class="sub" id="sub">miks-soft.com · GA4 · загрузка…</div>
+    </div>
+    <div class="ctrls">
+      <div class="seg" role="group" aria-label="Период">
+        <button type="button" data-gran="day" aria-pressed="true">По дням</button>
+        <button type="button" data-gran="week" aria-pressed="false">По неделям</button>
+      </div>
+      <div class="seg" role="group" aria-label="Трафик">
+        <button type="button" data-seg="all" aria-pressed="true">Весь сайт</button>
+        <button type="button" data-seg="paid" aria-pressed="false">Google Ads (cpc)</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="err"></div>
+  <section class="kpis" id="kpis"></section>
+
+  <section class="panel">
+    <h2>Время на сайте</h2>
+    <div class="hint">Среднее время сессии, секунды</div>
+    <div class="chart" id="c-time"></div>
+  </section>
+  <section class="panel">
+    <h2>Глубина просмотра</h2>
+    <div class="hint">Страниц за сессию</div>
+    <div class="chart" id="c-depth"></div>
+  </section>
+  <section class="panel">
+    <h2>Конверсии</h2>
+    <div class="hint">Ключевые события GA4 за период</div>
+    <div class="lg" id="lg-conv"></div>
+    <div class="chart" id="c-conv"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Таблица</h2>
+    <div class="tblwrap"><table id="tbl"></table></div>
+  </section>
+
+  <p class="note" id="note"></p>
+</div>
+<div id="tip" role="status"></div>
+
+<script>
+const EV = [
+  {k:'Отправка формы', label:'Отправка формы', c:'var(--conv)'},
+  {k:'Отправка формы по партнерской программе', label:'Форма партнёрской программы', c:'var(--conv2)'},
+  {k:'lead_qualified', label:'lead_qualified', c:'var(--conv3)'}
+];
+const MIN_SESS = 5;   // меньше сессий — день считаем шумом
+let RAW = null, seg = 'all', gran = 'day';
+
+const $ = s => document.querySelector(s);
+const iso = d => d.toISOString().slice(0,10);
+const addDays = (s,n) => { const d = new Date(s+'T00:00:00Z'); d.setUTCDate(d.getUTCDate()+n); return iso(d); };
+const mondayOf = s => { const d = new Date(s+'T00:00:00Z'); const w = (d.getUTCDay()+6)%7; d.setUTCDate(d.getUTCDate()-w); return iso(d); };
+const fmtD = s => { const [y,m,d] = s.split('-'); return d+'.'+m; };
+const fmtDur = v => v==null ? '—' : (v>=60 ? Math.floor(v/60)+':'+String(Math.round(v%60)).padStart(2,'0') : Math.round(v)+' с');
+const f1 = v => v==null ? '—' : v.toFixed(2).replace('.',',');
+
+function blank(){ return {sessions:0,users:0,durSum:0,ppsSum:0,ev:{}}; }
+function addDay(a,d){
+  a.sessions += d.sessions; a.users += d.users;
+  a.durSum += d.avg_duration*d.sessions; a.ppsSum += d.pages_per_session*d.sessions;
+  for (const [k,n] of Object.entries(d.events||{})) a.ev[k] = (a.ev[k]||0)+n;
+}
+function fin(a,label,start,end,partial){
+  const s = a.sessions;
+  return {label,start,end,partial,sessions:s,users:a.users,
+    dur: s? a.durSum/s : null, pps: s? a.ppsSum/s : null, ev:a.ev,
+    conv: EV.reduce((t,e)=>t+(a.ev[e.k]||0),0)};
+}
+function periods(){
+  const days = RAW.segments[seg], out = [];
+  const start = RAW.start, end = RAW.end;
+  if (gran === 'day'){
+    for (let d=start; d<=end; d=addDays(d,1)){
+      const a = blank(); if (days[d]) addDay(a,days[d]);
+      out.push(fin(a, fmtD(d), d, d, false));
+    }
+  } else {
+    for (let m=mondayOf(start); m<=end; m=addDays(m,7)){
+      const a = blank(); const e = addDays(m,6);
+      for (let d=m; d<=e && d<=end; d=addDays(d,1)) if (days[d]) addDay(a,days[d]);
+      out.push(fin(a, fmtD(m)+'–'+fmtD(e), m, e, e>end || m<start));
+    }
+  }
+  return out;
+}
+// скользящее среднее по 7 периодам, взвешенное сессиями
+function movAvg(ps, key){
+  return ps.map((_,i)=>{
+    let w=0,s=0;
+    for (let j=Math.max(0,i-6); j<=i; j++){ if (ps[j][key]!=null){ w+=ps[j].sessions; s+=ps[j][key]*ps[j].sessions; } }
+    return w? s/w : null;
+  });
+}
+
+function niceMax(v){ if(v<=0) return 1; const p = Math.pow(10,Math.floor(Math.log10(v))); const n = v/p; return ([1,1.5,2,2.5,3,4,5,6,8,10].find(k=>n<=k+1e-9))*p; }
+
+function drawLine(el, ps, key, color, unitFmt, withAvg){
+  const W = el.clientWidth || 800, H = 190, m = {l:44,r:10,t:8,b:24};
+  const iw = W-m.l-m.r, ih = H-m.t-m.b, n = ps.length;
+  const vals = ps.map(p=>p[key]);
+  const avg = withAvg ? movAvg(ps,key) : null;
+  const mx = niceMax(Math.max(...vals.filter(v=>v!=null), 0));
+  const x = i => m.l + (n===1? iw/2 : iw*i/(n-1));
+  const y = v => m.t + ih*(1 - v/mx);
+  let g = '';
+  for (let t=0;t<=4;t++){
+    const v = mx*t/4, yy = y(v);
+    g += `<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" stroke="var(--grid)"/><text x="${m.l-6}" y="${yy+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono">${unitFmt(v)}</text>`;
+  }
+  const step = Math.ceil(n/Math.max(2,Math.floor(iw/70)));
+  ps.forEach((p,i)=>{ if (i%step===0) g += `<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="var(--muted)">${p.label.split('–')[0]}</text>`; });
+  const seq = (arr, filt)=>{ let d='',pen=false; arr.forEach((v,i)=>{ if(v==null||(filt&&!filt(i))){pen=false;return;} d += (pen?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1); pen=true; }); return d; };
+  if (withAvg){
+    ps.forEach((p,i)=>{ if(p[key]!=null && p.sessions>=MIN_SESS) g += `<circle cx="${x(i)}" cy="${y(p[key])}" r="2.5" fill="${color}" opacity=".35"/>`; });
+    g += `<path d="${seq(avg)}" fill="none" stroke="${color}" stroke-width="2.4" stroke-linejoin="round"/>`;
+  } else {
+    g += `<path d="${seq(vals)}" fill="none" stroke="${color}" stroke-width="2.4" stroke-linejoin="round"/>`;
+    ps.forEach((p,i)=>{ if(p[key]!=null) g += `<circle cx="${x(i)}" cy="${y(p[key])}" r="3.2" fill="${color}"/>`; });
+  }
+  g += `<line class="cur" y1="${m.t}" y2="${m.t+ih}" stroke="var(--ink)" stroke-opacity=".35" style="display:none"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="График">${g}</svg>`;
+  hook(el, ps, x, m, iw);
+}
+
+function drawBars(el, ps){
+  const W = el.clientWidth || 800, H = 170, m = {l:44,r:10,t:8,b:24};
+  const iw = W-m.l-m.r, ih = H-m.t-m.b, n = ps.length;
+  const mx = Math.max(2, niceMax(Math.max(...ps.map(p=>p.conv),0)));
+  const bw = Math.max(2, Math.min(34, iw/n*0.72));
+  const x = i => m.l + (n===1? iw/2 : iw*i/(n-1));
+  const y = v => m.t + ih*(1 - v/mx);
+  let g = '';
+  const ticks = mx<=4 ? mx : 4;
+  for (let t=0;t<=ticks;t++){ const v = mx*t/ticks, yy=y(v);
+    g += `<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" stroke="var(--grid)"/><text x="${m.l-6}" y="${yy+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono">${Math.round(v)}</text>`; }
+  const step = Math.ceil(n/Math.max(2,Math.floor(iw/70)));
+  ps.forEach((p,i)=>{
+    if (i%step===0) g += `<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="var(--muted)">${p.label.split('–')[0]}</text>`;
+    let acc = 0;
+    EV.forEach(e=>{ const v = p.ev[e.k]||0; if(!v) return;
+      g += `<rect x="${x(i)-bw/2}" y="${y(acc+v)}" width="${bw}" height="${y(acc)-y(acc+v)}" fill="${e.c}" rx="1.5"/>`; acc += v; });
+  });
+  g += `<line class="cur" y1="${m.t}" y2="${m.t+ih}" stroke="var(--ink)" stroke-opacity=".35" style="display:none"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Конверсии">${g}</svg>`;
+  hook(el, ps, x, m, iw);
+}
+
+function hook(el, ps, x, m, iw){
+  const svg = el.querySelector('svg'), tip = $('#tip');
+  const move = ev => {
+    const r = svg.getBoundingClientRect(), px = ev.clientX - r.left;
+    let best = 0, bd = 1e9; ps.forEach((_,i)=>{ const d = Math.abs(x(i)-px); if(d<bd){bd=d;best=i;} });
+    const p = ps[best];
+    document.querySelectorAll('.cur').forEach(l=>{ l.style.display=''; l.setAttribute('x1',x(best)); l.setAttribute('x2',x(best)); });
+    const evs = EV.filter(e=>p.ev[e.k]).map(e=>`${e.label}: <span class="m">${p.ev[e.k]}</span>`).join('<br>') || 'Конверсий нет';
+    tip.innerHTML = `<b>${p.label}</b>${p.partial?' (неполная)':''}<br>Сессий: <span class="m">${p.sessions}</span><br>Время: <span class="m">${fmtDur(p.dur)}</span><br>Глубина: <span class="m">${f1(p.pps)}</span><br>${evs}`;
+    tip.style.opacity = 1;
+    const tx = Math.min(ev.clientX+14, innerWidth-250); tip.style.left = tx+'px'; tip.style.top = (ev.clientY+14)+'px';
+  };
+  svg.addEventListener('mousemove', move);
+  svg.addEventListener('mouseleave', ()=>{ tip.style.opacity=0; document.querySelectorAll('.cur').forEach(l=>l.style.display='none'); });
+}
+
+function kpis(){
+  // последние 7 и предыдущие 7 суток данных (не зависит от режима)
+  const days = RAW.segments[seg], end = RAW.end;
+  const agg = (from,to)=>{ const a=blank(); for(let d=from; d<=to; d=addDays(d,1)) if(days[d]) addDay(a,days[d]); return fin(a,'',from,to,false); };
+  const cur = agg(addDays(end,-6), end), prev = agg(addDays(end,-13), addDays(end,-7));
+  const delta = (c,p,inv)=>{ if(c==null||p==null||p===0) return '<span>нет базы для сравнения</span>';
+    const pc = (c-p)/p*100; const good = inv? pc<0 : pc>0;
+    return `<span class="${Math.abs(pc)<1?'':(good?'up':'dn')}">${pc>0?'+':''}${pc.toFixed(0)}%</span> к прошлым 7 дням (${p>=100? Math.round(p): f1(p)})`; };
+  const card = (label,val,d,c)=>`<div class="kpi" style="--c:${c}"><div class="l">${label}</div><div class="v">${val}</div><div class="d">${d}</div></div>`;
+  $('#kpis').innerHTML =
+    card('Время на сайте', fmtDur(cur.dur), delta(cur.dur,prev.dur), 'var(--time)') +
+    card('Глубина просмотра', f1(cur.pps), delta(cur.pps,prev.pps), 'var(--depth)') +
+    card('Конверсии', cur.conv, delta(cur.conv,prev.conv), 'var(--conv)') +
+    card('Сессий', cur.sessions, delta(cur.sessions,prev.sessions), 'var(--line)');
+}
+
+function table(ps){
+  const rows = ps.slice().reverse().map(p=>{
+    const cls = (p.sessions<MIN_SESS?'low ':'') + (p.partial?'part':'');
+    return `<tr class="${cls}"><td>${p.label}</td><td>${p.sessions}</td><td>${p.users}</td><td>${fmtDur(p.dur)}</td><td>${f1(p.pps)}</td>`+
+      EV.map(e=>`<td>${p.ev[e.k]||0}</td>`).join('')+`</tr>`; }).join('');
+  $('#tbl').innerHTML = `<thead><tr><th>${gran==='day'?'День':'Неделя (Пн–Вс)'}</th><th>Сессий</th><th>Пользователей</th><th>Время</th><th>Глубина</th>`+
+    EV.map(e=>`<th>${e.label}</th>`).join('')+`</tr></thead><tbody>${rows}</tbody>`;
+}
+
+function render(){
+  const ps = periods();
+  $('#sub').textContent = `miks-soft.com · GA4 property 353999593 · ${fmtD(RAW.start)}–${fmtD(RAW.end)}.${RAW.end.slice(0,4)} · ${seg==='all'?'весь трафик':'только medium = cpc'}`;
+  kpis();
+  const useAvg = gran==='day';
+  drawLine($('#c-time'), ps, 'dur', 'var(--time)', v=>Math.round(v)+' с', useAvg);
+  drawLine($('#c-depth'), ps, 'pps', 'var(--depth)', v=>v.toFixed(1).replace('.',','), useAvg);
+  drawBars($('#c-conv'), ps);
+  $('#lg-conv').innerHTML = EV.map(e=>`<span><i style="background:${e.c}"></i>${e.label}</span>`).join('');
+  table(ps);
+  $('#note').textContent = (useAvg ? 'По дням: точки — сами значения (дни с числом сессий меньше '+MIN_SESS+' не рисуются), линия — скользящее среднее за 7 дней, взвешенное сессиями. ' : '') +
+    'Недельные значения — среднее по сессиям, а не среднее из дневных. При малом числе сессий в день цифры скачут: смотрите на недели. Серые строки — меньше '+MIN_SESS+' сессий.';
+}
+
+document.querySelectorAll('[data-gran]').forEach(b=>b.addEventListener('click',()=>{
+  gran = b.dataset.gran; document.querySelectorAll('[data-gran]').forEach(x=>x.setAttribute('aria-pressed', x===b)); render(); }));
+document.querySelectorAll('[data-seg]').forEach(b=>b.addEventListener('click',()=>{
+  seg = b.dataset.seg; document.querySelectorAll('[data-seg]').forEach(x=>x.setAttribute('aria-pressed', x===b)); render(); }));
+let rt; addEventListener('resize',()=>{ clearTimeout(rt); rt = setTimeout(()=>RAW&&render(),150); });
+
+fetch('data/daily_ga4.json', {cache:'no-store'})
+  .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  .then(j=>{ RAW=j; render(); })
+  .catch(e=>{ const x=$('#err'); x.style.display='block'; x.textContent='Не удалось загрузить данные: '+e.message; $('#sub').textContent='miks-soft.com · нет данных'; });
+</script>
+</body>
+</html>
