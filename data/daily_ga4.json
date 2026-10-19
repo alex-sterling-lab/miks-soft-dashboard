@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-10-17",
+ "end": "2026-10-18",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1038,11 +1038,20 @@
     "events": {}
    },
    "2026-10-17": {
-    "sessions": 16,
-    "users": 15,
-    "avg_duration": 30.179940875,
-    "pages_per_session": 1.3125,
-    "bounce_rate": 0.625,
+    "sessions": 25,
+    "users": 24,
+    "avg_duration": 27.05858612,
+    "pages_per_session": 1.24,
+    "bounce_rate": 0.68,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-18": {
+    "sessions": 6,
+    "users": 6,
+    "avg_duration": 28.630335833333334,
+    "pages_per_session": 0.8333333333333334,
+    "bounce_rate": 0.3333333333333333,
     "key_events": 0,
     "events": {}
    }
@@ -2032,11 +2041,20 @@
     "events": {}
    },
    "2026-10-17": {
-    "sessions": 9,
-    "users": 8,
-    "avg_duration": 47.097194555555554,
-    "pages_per_session": 1.5555555555555556,
-    "bounce_rate": 0.4444444444444444,
+    "sessions": 16,
+    "users": 15,
+    "avg_duration": 38.591271875000004,
+    "pages_per_session": 1.375,
+    "bounce_rate": 0.5625,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-18": {
+    "sessions": 5,
+    "users": 5,
+    "avg_duration": 31.955136400000004,
+    "pages_per_session": 0.8,
+    "bounce_rate": 0.4,
     "key_events": 0,
     "events": {}
    }
