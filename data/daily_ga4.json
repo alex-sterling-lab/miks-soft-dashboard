@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-10-18",
+ "end": "2026-10-19",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1047,11 +1047,20 @@
     "events": {}
    },
    "2026-10-18": {
-    "sessions": 6,
-    "users": 6,
-    "avg_duration": 28.630335833333334,
-    "pages_per_session": 0.8333333333333334,
-    "bounce_rate": 0.3333333333333333,
+    "sessions": 21,
+    "users": 20,
+    "avg_duration": 33.61721504761905,
+    "pages_per_session": 1.1904761904761905,
+    "bounce_rate": 0.47619047619047616,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-19": {
+    "sessions": 13,
+    "users": 10,
+    "avg_duration": 453.6118113846154,
+    "pages_per_session": 2.5384615384615383,
+    "bounce_rate": 0.3076923076923077,
     "key_events": 0,
     "events": {}
    }
@@ -2050,11 +2059,20 @@
     "events": {}
    },
    "2026-10-18": {
+    "sessions": 19,
+    "users": 18,
+    "avg_duration": 35.56860584210526,
+    "pages_per_session": 1.2105263157894737,
+    "bounce_rate": 0.5263157894736842,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-19": {
     "sessions": 5,
     "users": 5,
-    "avg_duration": 31.955136400000004,
-    "pages_per_session": 0.8,
-    "bounce_rate": 0.4,
+    "avg_duration": 363.95583159999995,
+    "pages_per_session": 2.0,
+    "bounce_rate": 0.2,
     "key_events": 0,
     "events": {}
    }
