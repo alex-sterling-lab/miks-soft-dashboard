@@ -98,6 +98,15 @@ tr.part td:first-child::after{content:' · неполная';color:var(--muted);
   </section>
 
   <section class="panel">
+    <h2>Реклама Google (поиск): скролл и время</h2>
+    <div class="hint" id="ads-hint">Источник google, кампании «АК - Поиск (общий)» и ak-search (по имени кампании, не по medium). Не зависит от переключателя «Трафик». Серые столбики — число сессий.</div>
+    <div class="lg"><span><i style="background:var(--time)"></i>Доля сессий со скроллом 90%, %</span></div>
+    <div class="chart" id="c-ads-scroll"></div>
+    <div class="lg"><span><i style="background:var(--depth)"></i>Вовлечённое время на сессию, с</span><span><i style="background:var(--conv)"></i>Средняя длительность сессии, с</span></div>
+    <div class="chart" id="c-ads-time"></div>
+  </section>
+
+  <section class="panel">
     <h2>Таблица</h2>
     <div class="tblwrap"><table id="tbl"></table></div>
   </section>
@@ -255,6 +264,69 @@ function table(ps){
     EV.map(e=>`<th>${e.label}</th>`).join('')+`</tr></thead><tbody>${rows}</tbody>`;
 }
 
+// --- Реклама Google (поиск): скролл и время; срез ads, не зависит от seg ---
+const ADS_MARKS = [{d:'2026-10-12', t:'12.10 реклама → главная /ru'}, {d:'2026-10-22', t:'22.10 подмена H1 замечена на сайте'}];
+function adsPeriods(){
+  const days = (RAW.segments.ads)||{}, out = [];
+  const mk = (label,start,end)=>{
+    let s=0,sc=0,eng=0,dur=0;
+    for (let d=start; d<=end && d<=RAW.end; d=addDays(d,1)) if (days[d]){ const x=days[d];
+      s+=x.sessions; sc+=x.scroll_sessions||0; eng+=x.engagement_duration||0; dur+=x.avg_duration*x.sessions; }
+    return {label,start,end,sessions:s,scroll:s? sc/s*100:null,eng:s? eng/s:null,dur:s? dur/s:null,scN:sc};
+  };
+  if (gran==='day') for (let d=RAW.start; d<=RAW.end; d=addDays(d,1)) out.push(mk(fmtD(d),d,d));
+  else for (let m=mondayOf(RAW.start); m<=RAW.end; m=addDays(m,7)){ const e=addDays(m,6); const p=mk(fmtD(m)+'–'+fmtD(e),m,e); p.partial = e>RAW.end||m<RAW.start; out.push(p); }
+  return out;
+}
+function drawAds(el, ps, series, unitFmt){
+  const W = el.clientWidth || 800, H = 220, m = {l:44,r:10,t:16,b:24};
+  const iw = W-m.l-m.r, ih = H-m.t-m.b, n = ps.length, bh = 34;
+  const vals = series.flatMap(sr=>ps.map(p=>p[sr.key])).filter(v=>v!=null);
+  const mx = niceMax(Math.max(...vals,0)), pt = ih-bh-4;
+  const x = i => m.l + (n===1? iw/2 : iw*i/(n-1));
+  const y = v => m.t + pt*(1 - v/mx);
+  const maxS = Math.max(...ps.map(p=>p.sessions),1);
+  const bw = Math.max(2, Math.min(24, iw/n*0.72));
+  let g = '';
+  for (let t=0;t<=4;t++){ const v=mx*t/4, yy=y(v);
+    g += `<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" stroke="var(--grid)"/><text x="${m.l-6}" y="${yy+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono">${unitFmt(v)}</text>`; }
+  const step = Math.ceil(n/Math.max(2,Math.floor(iw/70)));
+  ps.forEach((p,i)=>{
+    if (i%step===0) g += `<text x="${x(i)}" y="${H-6}" text-anchor="middle" font-size="11" fill="var(--muted)">${p.label.split('–')[0]}</text>`;
+    const h = bh*p.sessions/maxS; g += `<rect x="${x(i)-bw/2}" y="${m.t+ih-h}" width="${bw}" height="${h}" fill="#c4ccd6" rx="1.5"/>`; });
+  const pos = d => { // дробный индекс периода для даты
+    if (gran==='day') return (Date.parse(d)-Date.parse(RAW.start))/864e5;
+    return (Date.parse(d)-Date.parse(ps[0].start))/864e5/7; };
+  ADS_MARKS.forEach((mk,k)=>{ let i = pos(mk.d); if (i>n-1 && i<=n) i = n-1; if (i<0||i>n-1) return; const xx = x(i);
+    g += `<line x1="${xx}" x2="${xx}" y1="${m.t}" y2="${m.t+ih}" stroke="#b42318" stroke-dasharray="4 3"/>`+
+         `<text x="${xx+(xx>W-170?-4:4)}" y="${m.t+10+k*12}" text-anchor="${xx>W-170?'end':'start'}" font-size="10.5" fill="#b42318">${mk.t}</text>`; });
+  series.forEach(sr=>{
+    const arr = gran==='day' ? movAvg(ps.map(p=>({...p, [sr.key]:p[sr.key]})), sr.key) : ps.map(p=>p[sr.key]);
+    if (gran==='day') ps.forEach((p,i)=>{ if(p[sr.key]!=null && p.sessions>=MIN_SESS) g += `<circle cx="${x(i)}" cy="${y(p[sr.key])}" r="2.5" fill="${sr.c}" opacity=".35"/>`; });
+    let d='',pen=false; arr.forEach((v,i)=>{ if(v==null){pen=false;return;} d += (pen?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1); pen=true; });
+    g += `<path d="${d}" fill="none" stroke="${sr.c}" stroke-width="2.4" stroke-linejoin="round"/>`;
+    if (gran!=='day') ps.forEach((p,i)=>{ if(p[sr.key]!=null) g += `<circle cx="${x(i)}" cy="${y(p[sr.key])}" r="3.2" fill="${sr.c}"/>`; });
+  });
+  g += `<line class="cur2" y1="${m.t}" y2="${m.t+ih}" stroke="var(--ink)" stroke-opacity=".35" style="display:none"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="График">${g}</svg>`;
+  const svg = el.querySelector('svg'), tip = $('#tip'), cur = svg.querySelector('.cur2');
+  svg.addEventListener('mousemove', ev=>{
+    const r = svg.getBoundingClientRect(), px = ev.clientX - r.left;
+    let best=0, bd=1e9; ps.forEach((_,i)=>{ const dd=Math.abs(x(i)-px); if(dd<bd){bd=dd;best=i;} });
+    const p = ps[best]; cur.style.display=''; cur.setAttribute('x1',x(best)); cur.setAttribute('x2',x(best));
+    tip.innerHTML = `<b>${p.label}</b>${p.partial?' (неполная)':''}<br>Сессий: <span class="m">${p.sessions}</span><br>`+
+      `Со скроллом 90%: <span class="m">${p.scroll==null?'—':p.scroll.toFixed(0)+'% ('+p.scN+')'}</span><br>`+
+      `Вовлечённое время: <span class="m">${fmtDur(p.eng)}</span><br>Длительность сессии: <span class="m">${fmtDur(p.dur)}</span>`;
+    tip.style.opacity = 1; tip.style.left = Math.min(ev.clientX+14, innerWidth-250)+'px'; tip.style.top = (ev.clientY+14)+'px'; });
+  svg.addEventListener('mouseleave', ()=>{ tip.style.opacity=0; cur.style.display='none'; });
+}
+function renderAds(){
+  if (!RAW.segments.ads){ $('#c-ads-scroll').textContent = 'В данных нет среза ads — перезапустите pull_daily.py'; return; }
+  const ps = adsPeriods();
+  drawAds($('#c-ads-scroll'), ps, [{key:'scroll', c:'var(--time)'}], v=>Math.round(v)+'%');
+  drawAds($('#c-ads-time'), ps, [{key:'eng', c:'var(--depth)'},{key:'dur', c:'var(--conv)'}], v=>Math.round(v)+' с');
+}
+
 function render(){
   const ps = periods();
   $('#sub').textContent = `miks-soft.com · GA4 property 353999593 · ${fmtD(RAW.start)}–${fmtD(RAW.end)}.${RAW.end.slice(0,4)} · ${seg==='all'?'весь трафик':'только medium = cpc'}`;
@@ -265,6 +337,7 @@ function render(){
   drawBars($('#c-conv'), ps);
   $('#lg-conv').innerHTML = EV.map(e=>`<span><i style="background:${e.c}"></i>${e.label}</span>`).join('');
   table(ps);
+  renderAds();
   $('#note').textContent = (useAvg ? 'По дням: точки — сами значения (дни с числом сессий меньше '+MIN_SESS+' не рисуются), линия — скользящее среднее за 7 дней, взвешенное сессиями. ' : '') +
     'Недельные значения — среднее по сессиям, а не среднее из дневных. При малом числе сессий в день цифры скачут: смотрите на недели. Серые строки — меньше '+MIN_SESS+' сессий.';
 }
