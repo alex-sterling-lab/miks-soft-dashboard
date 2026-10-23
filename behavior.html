@@ -44,6 +44,10 @@ h1{font:700 26px/1.15 'Onest',sans-serif;margin:0 0 4px;letter-spacing:-.01em}
 #tip b{font-weight:600}#tip .m{font-family:'IBM Plex Mono',monospace}
 .note{font-size:12.5px;color:var(--muted);margin:14px 2px}
 .tblwrap{overflow-x:auto}
+tr.wk td{font-weight:600;background:#f3f5f8}
+tr.wd td:first-child{padding-left:30px}
+.wkbtn{font:600 13px 'IBM Plex Mono',monospace;border:0;background:none;color:var(--ink);padding:0;cursor:pointer}
+.wkbtn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
 th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
@@ -99,7 +103,7 @@ tr.part td:first-child::after{content:' · неполная';color:var(--muted);
 
   <section class="panel">
     <h2>Реклама Google (поиск): скролл и время</h2>
-    <div class="hint" id="ads-hint">Источник google, кампании «АК - Поиск (общий)» и ak-search (по имени кампании, не по medium). Не зависит от переключателя «Трафик». Серые столбики — число сессий.</div>
+    <div class="hint" id="ads-hint">Источник google, кампании «АК - Поиск (общий)» и ak-search (по имени кампании, не по medium). Не зависит от переключателя «Трафик». Серые столбики — число сессий. Пустой кружок — неделя ещё не закончилась.</div>
     <div class="lg"><span><i style="background:var(--time)"></i>Доля сессий со скроллом 90%, %</span></div>
     <div class="chart" id="c-ads-scroll"></div>
     <div class="lg"><span><i style="background:var(--depth)"></i>Вовлечённое время на сессию, с</span><span><i style="background:var(--conv)"></i>Средняя длительность сессии, с</span></div>
@@ -109,6 +113,7 @@ tr.part td:first-child::after{content:' · неполная';color:var(--muted);
   <section class="panel">
     <h2>Таблица</h2>
     <div class="tblwrap"><table id="tbl"></table></div>
+    <button type="button" id="tbl-more" style="margin-top:10px;font:500 13.5px 'Onest',sans-serif;border:1px solid var(--grid);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:8px;cursor:pointer">Показать все</button>
   </section>
 
   <p class="note" id="note"></p>
@@ -255,17 +260,46 @@ function kpis(){
     card('Сессий', cur.sessions, delta(cur.sessions,prev.sessions), 'var(--line)');
 }
 
+const TBL_ROWS = 14, TBL_WEEKS = 6; let tblAll = false, tblPs = [], tblOpen = null;
+const trow = (p, cls, first) => `<tr class="${cls}"><td>${first}</td><td>${p.sessions}</td><td>${p.users}</td><td>${fmtDur(p.dur)}</td><td>${f1(p.pps)}</td>`+
+  EV.map(e=>`<td>${p.ev[e.k]||0}</td>`).join('')+`</tr>`;
+// По дням: строки сгруппированы по неделям (Пн–Вс) — строка недели с итогом, клик раскрывает дни.
+// По неделям: последние 14 недель. Кнопка «Показать все» — вся история.
 function table(ps){
-  const rows = ps.slice().reverse().map(p=>{
-    const cls = (p.sessions<MIN_SESS?'low ':'') + (p.partial?'part':'');
-    return `<tr class="${cls}"><td>${p.label}</td><td>${p.sessions}</td><td>${p.users}</td><td>${fmtDur(p.dur)}</td><td>${f1(p.pps)}</td>`+
-      EV.map(e=>`<td>${p.ev[e.k]||0}</td>`).join('')+`</tr>`; }).join('');
-  $('#tbl').innerHTML = `<thead><tr><th>${gran==='day'?'День':'Неделя (Пн–Вс)'}</th><th>Сессий</th><th>Пользователей</th><th>Время</th><th>Глубина</th>`+
+  tblPs = ps;
+  const btn = $('#tbl-more'); let rows = '', total;
+  if (gran === 'day'){
+    const weeks = [];
+    ps.forEach(p=>{ const m = mondayOf(p.start); let w = weeks[weeks.length-1];
+      if (!w || w.m !== m){ w = {m, days:[]}; weeks.push(w); } w.days.push(p); });
+    weeks.reverse(); total = weeks.length;
+    if (tblOpen === null) tblOpen = new Set([weeks[0].m]); // открыта последняя неделя
+    const days = RAW.segments[seg];
+    (tblAll ? weeks : weeks.slice(0, TBL_WEEKS)).forEach(w=>{
+      const a = blank(), e = addDays(w.m,6);
+      w.days.forEach(p=>{ if (days[p.start]) addDay(a, days[p.start]); });
+      const wp = fin(a, '', w.m, e, e>RAW.end || w.m<RAW.start), open = tblOpen.has(w.m);
+      rows += trow(wp, 'wk'+(wp.partial?' part':''), `<button type="button" class="wkbtn" data-wk="${w.m}" aria-expanded="${open}">${open?'▾':'▸'} ${fmtD(w.m)}–${fmtD(e)}</button>`);
+      if (open) w.days.slice().reverse().forEach(p=>{ rows += trow(p, 'wd'+(p.sessions<MIN_SESS?' low':''), p.label); });
+    });
+    btn.hidden = total <= TBL_WEEKS;
+    btn.textContent = tblAll ? 'Свернуть' : `Показать все недели (${total})`;
+  } else {
+    const all = ps.slice().reverse(); total = all.length;
+    (tblAll ? all : all.slice(0, TBL_ROWS)).forEach(p=>{ rows += trow(p, (p.sessions<MIN_SESS?'low ':'')+(p.partial?'part':''), p.label); });
+    btn.hidden = total <= TBL_ROWS;
+    btn.textContent = tblAll ? 'Свернуть' : `Показать все (${total})`;
+  }
+  $('#tbl').innerHTML = `<thead><tr><th>${gran==='day'?'Неделя / день':'Неделя (Пн–Вс)'}</th><th>Сессий</th><th>Пользователей</th><th>Время</th><th>Глубина</th>`+
     EV.map(e=>`<th>${e.label}</th>`).join('')+`</tr></thead><tbody>${rows}</tbody>`;
 }
+$('#tbl').addEventListener('click', ev=>{ const b = ev.target.closest('.wkbtn'); if (!b) return;
+  const m = b.dataset.wk; tblOpen.has(m) ? tblOpen.delete(m) : tblOpen.add(m); table(tblPs); });
+
+$('#tbl-more').addEventListener('click', ()=>{ tblAll = !tblAll; table(tblPs); });
 
 // --- Реклама Google (поиск): скролл и время; срез ads, не зависит от seg ---
-const ADS_MARKS = [{d:'2026-10-12', t:'12.10 реклама → главная /ru'}, {d:'2026-10-22', t:'22.10 подмена H1 замечена на сайте'}];
+const ADS_MARKS = [{d:'2026-10-12', t:'12.10: реклама → /ru'}, {d:'2026-10-22', t:'22.10: подмена H1'}];
 function adsPeriods(){
   const days = (RAW.segments.ads)||{}, out = [];
   const mk = (label,start,end)=>{
@@ -281,14 +315,19 @@ function adsPeriods(){
 function drawAds(el, ps, series, unitFmt){
   const W = el.clientWidth || 800, H = 220, m = {l:44,r:10,t:16,b:24};
   const iw = W-m.l-m.r, ih = H-m.t-m.b, n = ps.length, bh = 34;
-  const vals = series.flatMap(sr=>ps.map(p=>p[sr.key])).filter(v=>v!=null);
-  const mx = niceMax(Math.max(...vals,0)), pt = ih-bh-4;
+  // шкала только по периодам с ≥MIN_SESS сессий: единичные сессии июля давали выбросы до 1000 с
+  const vals = series.flatMap(sr=>ps.filter(p=>p.sessions>=MIN_SESS).map(p=>p[sr.key])).filter(v=>v!=null);
+  vals.sort((a,b)=>a-b); // и по 95-му перцентилю: редкие выбросы упираются в верх графика
+  const raw = vals.length? vals[Math.floor((vals.length-1)*0.95)] : 0;
+  const p10 = Math.pow(10, Math.floor(Math.log10(Math.max(raw,1)/4)));
+  const ystep = [1,2,5,10].map(k=>k*p10).find(st=>raw/st<=5); // круглые деления: 10/20/50…
+  const nt = Math.max(1, Math.ceil(raw/ystep)), mx = ystep*nt, pt = ih-bh-4;
   const x = i => m.l + (n===1? iw/2 : iw*i/(n-1));
-  const y = v => m.t + pt*(1 - v/mx);
+  const y = v => m.t + pt*(1 - Math.min(v,mx)/mx);
   const maxS = Math.max(...ps.map(p=>p.sessions),1);
   const bw = Math.max(2, Math.min(24, iw/n*0.72));
   let g = '';
-  for (let t=0;t<=4;t++){ const v=mx*t/4, yy=y(v);
+  for (let t=0;t<=nt;t++){ const v=ystep*t, yy=y(v);
     g += `<line x1="${m.l}" x2="${W-m.r}" y1="${yy}" y2="${yy}" stroke="var(--grid)"/><text x="${m.l-6}" y="${yy+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="IBM Plex Mono">${unitFmt(v)}</text>`; }
   const step = Math.ceil(n/Math.max(2,Math.floor(iw/70)));
   ps.forEach((p,i)=>{
@@ -299,13 +338,15 @@ function drawAds(el, ps, series, unitFmt){
     return (Date.parse(d)-Date.parse(ps[0].start))/864e5/7; };
   ADS_MARKS.forEach((mk,k)=>{ let i = pos(mk.d); if (i>n-1 && i<=n) i = n-1; if (i<0||i>n-1) return; const xx = x(i);
     g += `<line x1="${xx}" x2="${xx}" y1="${m.t}" y2="${m.t+ih}" stroke="#b42318" stroke-dasharray="4 3"/>`+
-         `<text x="${xx+(xx>W-170?-4:4)}" y="${m.t+10+k*12}" text-anchor="${xx>W-170?'end':'start'}" font-size="10.5" fill="#b42318">${mk.t}</text>`; });
+         `<text x="${xx-4}" y="${m.t+10+k*12}" text-anchor="end" font-size="10.5" fill="#b42318">${mk.t}</text>`; });
   series.forEach(sr=>{
     const arr = gran==='day' ? movAvg(ps.map(p=>({...p, [sr.key]:p[sr.key]})), sr.key) : ps.map(p=>p[sr.key]);
     if (gran==='day') ps.forEach((p,i)=>{ if(p[sr.key]!=null && p.sessions>=MIN_SESS) g += `<circle cx="${x(i)}" cy="${y(p[sr.key])}" r="2.5" fill="${sr.c}" opacity=".35"/>`; });
     let d='',pen=false; arr.forEach((v,i)=>{ if(v==null){pen=false;return;} d += (pen?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1); pen=true; });
     g += `<path d="${d}" fill="none" stroke="${sr.c}" stroke-width="2.4" stroke-linejoin="round"/>`;
-    if (gran!=='day') ps.forEach((p,i)=>{ if(p[sr.key]!=null) g += `<circle cx="${x(i)}" cy="${y(p[sr.key])}" r="3.2" fill="${sr.c}"/>`; });
+    if (gran!=='day') ps.forEach((p,i)=>{ if(p[sr.key]!=null) g += p.partial // неполная неделя — пустой кружок
+      ? `<circle cx="${x(i)}" cy="${y(p[sr.key])}" r="3.2" fill="var(--panel,#fff)" stroke="${sr.c}" stroke-width="1.8"/>`
+      : `<circle cx="${x(i)}" cy="${y(p[sr.key])}" r="3.2" fill="${sr.c}"/>`; });
   });
   g += `<line class="cur2" y1="${m.t}" y2="${m.t+ih}" stroke="var(--ink)" stroke-opacity=".35" style="display:none"/>`;
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="График">${g}</svg>`;
