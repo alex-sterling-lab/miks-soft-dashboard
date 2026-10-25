@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-10-23",
+ "end": "2026-10-24",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1100,13 +1100,22 @@
    "2026-10-23": {
     "sessions": 38,
     "users": 31,
-    "avg_duration": 267.6395059210526,
+    "avg_duration": 267.4277265789474,
     "pages_per_session": 1.894736842105263,
     "bounce_rate": 0.47368421052631576,
     "key_events": 1,
     "events": {
      "Отправка формы": 1
     }
+   },
+   "2026-10-24": {
+    "sessions": 14,
+    "users": 13,
+    "avg_duration": 88.9777632857143,
+    "pages_per_session": 1.6428571428571428,
+    "bounce_rate": 0.5714285714285714,
+    "key_events": 0,
+    "events": {}
    }
   },
   "paid": {
@@ -2150,11 +2159,20 @@
     "events": {}
    },
    "2026-10-23": {
-    "sessions": 12,
+    "sessions": 13,
+    "users": 12,
+    "avg_duration": 14.904126923076923,
+    "pages_per_session": 1.2307692307692308,
+    "bounce_rate": 0.6153846153846154,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-24": {
+    "sessions": 11,
     "users": 11,
-    "avg_duration": 16.1461375,
-    "pages_per_session": 1.25,
-    "bounce_rate": 0.5833333333333334,
+    "avg_duration": 10.251695454545454,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.6363636363636364,
     "key_events": 0,
     "events": {}
    }
@@ -3663,6 +3681,20 @@
     "engaged_time_per_session": 7.125,
     "scroll_sessions": 1,
     "scroll_share": 0.0625
+   },
+   "2026-10-24": {
+    "sessions": 10,
+    "users": 10,
+    "avg_duration": 7.917285,
+    "pages_per_session": 1.0,
+    "bounce_rate": 0.7,
+    "key_events": 0,
+    "events": {},
+    "engaged_sessions": 3,
+    "engagement_duration": 72.0,
+    "engaged_time_per_session": 7.2,
+    "scroll_sessions": 0,
+    "scroll_share": 0.0
    }
   }
  }
