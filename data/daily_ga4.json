@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-10-28",
+ "end": "2026-10-29",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1153,9 +1153,18 @@
    "2026-10-28": {
     "sessions": 20,
     "users": 18,
-    "avg_duration": 88.74512705,
+    "avg_duration": 74.24274184999999,
     "pages_per_session": 2.05,
-    "bounce_rate": 0.25,
+    "bounce_rate": 0.2,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-29": {
+    "sessions": 25,
+    "users": 22,
+    "avg_duration": 94.24912411999999,
+    "pages_per_session": 1.2,
+    "bounce_rate": 0.44,
     "key_events": 0,
     "events": {}
    }
@@ -2252,9 +2261,18 @@
    "2026-10-28": {
     "sessions": 17,
     "users": 16,
-    "avg_duration": 74.87486229411763,
+    "avg_duration": 74.19278564705883,
     "pages_per_session": 1.411764705882353,
-    "bounce_rate": 0.23529411764705882,
+    "bounce_rate": 0.17647058823529413,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-10-29": {
+    "sessions": 22,
+    "users": 19,
+    "avg_duration": 98.37729163636364,
+    "pages_per_session": 1.2727272727272727,
+    "bounce_rate": 0.45454545454545453,
     "key_events": 0,
     "events": {}
    }
@@ -3827,16 +3845,30 @@
    "2026-10-28": {
     "sessions": 17,
     "users": 16,
-    "avg_duration": 74.87486229411763,
+    "avg_duration": 74.19278564705883,
     "pages_per_session": 1.411764705882353,
-    "bounce_rate": 0.23529411764705882,
+    "bounce_rate": 0.17647058823529413,
     "key_events": 0,
     "events": {},
-    "engaged_sessions": 13,
-    "engagement_duration": 273.0,
-    "engaged_time_per_session": 16.058823529411764,
-    "scroll_sessions": 4,
-    "scroll_share": 0.23529411764705882
+    "engaged_sessions": 14,
+    "engagement_duration": 320.0,
+    "engaged_time_per_session": 18.823529411764707,
+    "scroll_sessions": 5,
+    "scroll_share": 0.29411764705882354
+   },
+   "2026-10-29": {
+    "sessions": 22,
+    "users": 19,
+    "avg_duration": 98.37729163636364,
+    "pages_per_session": 1.2727272727272727,
+    "bounce_rate": 0.45454545454545453,
+    "key_events": 0,
+    "events": {},
+    "engaged_sessions": 12,
+    "engagement_duration": 399.0,
+    "engaged_time_per_session": 18.136363636363637,
+    "scroll_sessions": 6,
+    "scroll_share": 0.2727272727272727
    }
   }
  }
