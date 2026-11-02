@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-10-31",
+ "end": "2026-11-01",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1185,6 +1185,15 @@
     "bounce_rate": 0.4117647058823529,
     "key_events": 0,
     "events": {}
+   },
+   "2026-11-01": {
+    "sessions": 20,
+    "users": 18,
+    "avg_duration": 105.90291744999999,
+    "pages_per_session": 1.35,
+    "bounce_rate": 0.55,
+    "key_events": 0,
+    "events": {}
    }
   },
   "paid": {
@@ -2309,6 +2318,15 @@
     "avg_duration": 47.91506826666667,
     "pages_per_session": 1.4,
     "bounce_rate": 0.3333333333333333,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-11-01": {
+    "sessions": 15,
+    "users": 15,
+    "avg_duration": 134.9196392,
+    "pages_per_session": 1.4,
+    "bounce_rate": 0.5333333333333333,
     "key_events": 0,
     "events": {}
    }
@@ -3933,6 +3951,20 @@
     "engaged_time_per_session": 32.53333333333333,
     "scroll_sessions": 6,
     "scroll_share": 0.4
+   },
+   "2026-11-01": {
+    "sessions": 16,
+    "users": 16,
+    "avg_duration": 126.48716175,
+    "pages_per_session": 1.375,
+    "bounce_rate": 0.5625,
+    "key_events": 0,
+    "events": {},
+    "engaged_sessions": 7,
+    "engagement_duration": 176.0,
+    "engaged_time_per_session": 11.0,
+    "scroll_sessions": 2,
+    "scroll_share": 0.125
    }
   }
  }
