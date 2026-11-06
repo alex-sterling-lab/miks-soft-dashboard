@@ -19,7 +19,7 @@
       "name": "Google Ads",
       "campaigns": [
         {
-          "campaign": "АК - Поиск (общий)(16.07 макс конв)",
+          "campaign": "АК - Поиск (общий)",
           "type": "SEARCH",
           "impressions": 1030,
           "clicks": 153,
