@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-11-05",
+ "end": "2026-11-06",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1227,9 +1227,18 @@
    "2026-11-05": {
     "sessions": 45,
     "users": 36,
-    "avg_duration": 393.398110288889,
+    "avg_duration": 384.7206003555556,
     "pages_per_session": 3.466666666666667,
     "bounce_rate": 0.3111111111111111,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-11-06": {
+    "sessions": 37,
+    "users": 34,
+    "avg_duration": 1509.1872636756755,
+    "pages_per_session": 6.108108108108108,
+    "bounce_rate": 0.4594594594594595,
     "key_events": 0,
     "events": {}
    }
@@ -2405,6 +2414,15 @@
     "bounce_rate": 0.15384615384615385,
     "key_events": 0,
     "events": {}
+   },
+   "2026-11-06": {
+    "sessions": 14,
+    "users": 14,
+    "avg_duration": 115.04287864285713,
+    "pages_per_session": 1.7857142857142858,
+    "bounce_rate": 0.2857142857142857,
+    "key_events": 0,
+    "events": {}
    }
   },
   "ads": {
@@ -2965,6 +2983,20 @@
     "engaged_sessions": 1,
     "engagement_duration": 17.0,
     "engaged_time_per_session": 2.4285714285714284,
+    "scroll_sessions": 0,
+    "scroll_share": 0.0
+   },
+   "2026-11-06": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 0.0,
+    "pages_per_session": 1.0,
+    "bounce_rate": 1.0,
+    "key_events": 0,
+    "events": {},
+    "engaged_sessions": 0,
+    "engagement_duration": 0.0,
+    "engaged_time_per_session": 0.0,
     "scroll_sessions": 0,
     "scroll_share": 0.0
    }
