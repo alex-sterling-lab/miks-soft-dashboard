@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-11-07",
+ "end": "2026-11-08",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1245,8 +1245,17 @@
    "2026-11-07": {
     "sessions": 3,
     "users": 3,
-    "avg_duration": 89.47352966666666,
+    "avg_duration": 55.31936133333334,
     "pages_per_session": 1.6666666666666667,
+    "bounce_rate": 0.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-11-08": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 118.685883,
+    "pages_per_session": 2.0,
     "bounce_rate": 0.0,
     "key_events": 0,
     "events": {}
@@ -2436,7 +2445,7 @@
    "2026-11-07": {
     "sessions": 2,
     "users": 2,
-    "avg_duration": 127.785732,
+    "avg_duration": 76.5544795,
     "pages_per_session": 2.0,
     "bounce_rate": 0.0,
     "key_events": 0,

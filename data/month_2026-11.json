@@ -2,7 +2,7 @@
   "month": "2026-11",
   "period": [
     "2026-11-01",
-    "2026-11-07"
+    "2026-11-08"
   ],
   "partial": true,
   "sources": {
@@ -34,7 +34,7 @@
           "users": 89,
           "bounce_rate": 0.2916666666666667,
           "pages_per_session": 1.8541666666666667,
-          "avg_session_duration": 134.32706971874998,
+          "avg_session_duration": 133.25975195833334,
           "form_submits": 1,
           "cost_per_form_usd": 362.81,
           "crm_leads_total": 0,
@@ -58,7 +58,7 @@
         "users": 92,
         "bounce_rate": 0.31683168316831684,
         "pages_per_session": 1.881188118811881,
-        "avg_session_duration": 130.77567588118814,
+        "avg_session_duration": 129.76119563366336,
         "form_submits": 1,
         "cost_per_form_usd": 362.81,
         "crm_leads_total": 0,
@@ -91,7 +91,7 @@
       "users": 92,
       "bounce_rate": 0.31683168316831684,
       "pages_per_session": 1.881188118811881,
-      "avg_session_duration": 130.77567588118814,
+      "avg_session_duration": 129.76119563366336,
       "form_submits": 0
     },
     {
@@ -117,11 +117,11 @@
     {
       "source": "google",
       "medium": "shop",
-      "sessions": 8,
+      "sessions": 9,
       "users": 1,
-      "bounce_rate": 0.125,
-      "pages_per_session": 4.125,
-      "avg_session_duration": 429.950554125,
+      "bounce_rate": 0.1111111111111111,
+      "pages_per_session": 3.888888888888889,
+      "avg_session_duration": 395.36559066666666,
       "form_submits": 0
     },
     {
@@ -185,16 +185,6 @@
       "form_submits": 0
     },
     {
-      "source": "(not set)",
-      "medium": "(not set)",
-      "sessions": 2,
-      "users": 2,
-      "bounce_rate": 1.0,
-      "pages_per_session": 0.0,
-      "avg_session_duration": 43.8166625,
-      "form_submits": 0
-    },
-    {
       "source": "google",
       "medium": "dev_sites",
       "sessions": 2,
@@ -212,6 +202,16 @@
       "bounce_rate": 1.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 0.0,
+      "form_submits": 0
+    },
+    {
+      "source": "(not set)",
+      "medium": "(not set)",
+      "sessions": 1,
+      "users": 1,
+      "bounce_rate": 1.0,
+      "pages_per_session": 0.0,
+      "avg_session_duration": 87.633325,
       "form_submits": 0
     },
     {
