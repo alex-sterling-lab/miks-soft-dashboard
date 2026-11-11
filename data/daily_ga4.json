@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-11-09",
+ "end": "2026-11-10",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1263,13 +1263,22 @@
    "2026-11-09": {
     "sessions": 29,
     "users": 18,
-    "avg_duration": 881.6855323103448,
+    "avg_duration": 814.0108363448276,
     "pages_per_session": 5.344827586206897,
-    "bounce_rate": 0.3448275862068966,
+    "bounce_rate": 0.3103448275862069,
     "key_events": 2,
     "events": {
      "Отправка формы": 2
     }
+   },
+   "2026-11-10": {
+    "sessions": 25,
+    "users": 14,
+    "avg_duration": 798.75039024,
+    "pages_per_session": 5.48,
+    "bounce_rate": 0.2,
+    "key_events": 0,
+    "events": {}
    }
   },
   "paid": {
@@ -2459,6 +2468,15 @@
     "avg_duration": 76.5544795,
     "pages_per_session": 2.0,
     "bounce_rate": 0.0,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-11-10": {
+    "sessions": 2,
+    "users": 2,
+    "avg_duration": 3.2466345,
+    "pages_per_session": 1.0,
+    "bounce_rate": 1.0,
     "key_events": 0,
     "events": {}
    }
