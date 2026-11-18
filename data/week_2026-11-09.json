@@ -90,32 +90,22 @@
     },
     {
       "source": "google",
+      "medium": "(not set)",
+      "sessions": 9,
+      "users": 6,
+      "bounce_rate": 0.2222222222222222,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 53.828454,
+      "form_submits": 0
+    },
+    {
+      "source": "google",
       "medium": "design",
       "sessions": 7,
       "users": 7,
       "bounce_rate": 1.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 1.9092935714285715,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "(not set)",
-      "sessions": 5,
-      "users": 5,
-      "bounce_rate": 0.2,
-      "pages_per_session": 1.4,
-      "avg_session_duration": 42.6930856,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "",
-      "sessions": 4,
-      "users": 1,
-      "bounce_rate": 0.25,
-      "pages_per_session": 0.5,
-      "avg_session_duration": 67.7476645,
       "form_submits": 0
     },
     {
