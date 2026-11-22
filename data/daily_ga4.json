@@ -1,7 +1,7 @@
 {
  "property": "properties/353999593",
  "start": "2026-07-01",
- "end": "2026-11-20",
+ "end": "2026-11-21",
  "segments": {
   "all": {
    "2026-07-01": {
@@ -1355,9 +1355,18 @@
    "2026-11-20": {
     "sessions": 18,
     "users": 11,
-    "avg_duration": 659.1177795555554,
+    "avg_duration": 645.9443485555555,
     "pages_per_session": 4.055555555555555,
     "bounce_rate": 0.16666666666666666,
+    "key_events": 0,
+    "events": {}
+   },
+   "2026-11-21": {
+    "sessions": 1,
+    "users": 1,
+    "avg_duration": 0.0,
+    "pages_per_session": 0.0,
+    "bounce_rate": 1.0,
     "key_events": 0,
     "events": {}
    }
