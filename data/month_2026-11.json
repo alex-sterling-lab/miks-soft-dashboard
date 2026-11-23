@@ -2,7 +2,7 @@
   "month": "2026-11",
   "period": [
     "2026-11-01",
-    "2026-11-21"
+    "2026-11-22"
   ],
   "partial": true,
   "sources": {
@@ -255,6 +255,16 @@
       "form_submits": 0
     },
     {
+      "source": "openaiads",
+      "medium": "(not set)",
+      "sessions": 2,
+      "users": 1,
+      "bounce_rate": 0.5,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 60.1224445,
+      "form_submits": 0
+    },
+    {
       "source": "awwwards.com",
       "medium": "referral",
       "sessions": 1,
@@ -262,6 +272,16 @@
       "bounce_rate": 0.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 113.076223,
+      "form_submits": 0
+    },
+    {
+      "source": "google",
+      "medium": "",
+      "sessions": 1,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 10.559542,
       "form_submits": 0
     },
     {
@@ -302,26 +322,6 @@
       "bounce_rate": 1.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 6.520675,
-      "form_submits": 0
-    },
-    {
-      "source": "openaiads",
-      "medium": "",
-      "sessions": 1,
-      "users": 1,
-      "bounce_rate": 1.0,
-      "pages_per_session": 0.0,
-      "avg_session_duration": 0.0,
-      "form_submits": 0
-    },
-    {
-      "source": "openaiads",
-      "medium": "(not set)",
-      "sessions": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "pages_per_session": 2.0,
-      "avg_session_duration": 120.244889,
       "form_submits": 0
     },
     {
