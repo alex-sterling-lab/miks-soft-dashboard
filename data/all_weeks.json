@@ -4566,6 +4566,16 @@
         },
         {
           "source": "google",
+          "medium": "(not set)",
+          "sessions": 2,
+          "users": 2,
+          "bounce_rate": 0.0,
+          "pages_per_session": 1.0,
+          "avg_session_duration": 62.366175,
+          "form_submits": 0
+        },
+        {
+          "source": "google",
           "medium": "studio",
           "sessions": 2,
           "users": 1,
@@ -4602,26 +4612,6 @@
           "bounce_rate": 0.0,
           "pages_per_session": 1.0,
           "avg_session_duration": 113.076223,
-          "form_submits": 0
-        },
-        {
-          "source": "google",
-          "medium": "",
-          "sessions": 1,
-          "users": 1,
-          "bounce_rate": 0.0,
-          "pages_per_session": 1.0,
-          "avg_session_duration": 10.559542,
-          "form_submits": 0
-        },
-        {
-          "source": "google",
-          "medium": "(not set)",
-          "sessions": 1,
-          "users": 1,
-          "bounce_rate": 0.0,
-          "pages_per_session": 1.0,
-          "avg_session_duration": 114.172808,
           "form_submits": 0
         },
         {
@@ -6273,7 +6263,7 @@
       "month": "2026-11",
       "period": [
         "2026-11-01",
-        "2026-11-22"
+        "2026-11-23"
       ],
       "partial": true,
       "sources": {
@@ -6358,11 +6348,11 @@
         {
           "source": "(direct)",
           "medium": "(none)",
-          "sessions": 132,
+          "sessions": 138,
           "users": 66,
-          "bounce_rate": 0.3484848484848485,
-          "pages_per_session": 2.757575757575758,
-          "avg_session_duration": 420.52387108333335,
+          "bounce_rate": 0.36231884057971014,
+          "pages_per_session": 2.6884057971014492,
+          "avg_session_duration": 403.9571098695652,
           "form_submits": 0
         },
         {
@@ -6398,11 +6388,11 @@
         {
           "source": "google",
           "medium": "(not set)",
-          "sessions": 15,
-          "users": 10,
-          "bounce_rate": 0.2,
+          "sessions": 16,
+          "users": 11,
+          "bounce_rate": 0.1875,
           "pages_per_session": 1.0,
-          "avg_session_duration": 52.137813066666666,
+          "avg_session_duration": 49.539171125,
           "form_submits": 0
         },
         {
@@ -6416,6 +6406,16 @@
           "form_submits": 0
         },
         {
+          "source": "imedia24.atlassian.net",
+          "medium": "referral",
+          "sessions": 8,
+          "users": 3,
+          "bounce_rate": 0.0,
+          "pages_per_session": 22.25,
+          "avg_session_duration": 4052.9961541250004,
+          "form_submits": 0
+        },
+        {
           "source": "google",
           "medium": "design",
           "sessions": 7,
@@ -6423,16 +6423,6 @@
           "bounce_rate": 1.0,
           "pages_per_session": 1.0,
           "avg_session_duration": 1.9092935714285715,
-          "form_submits": 0
-        },
-        {
-          "source": "imedia24.atlassian.net",
-          "medium": "referral",
-          "sessions": 7,
-          "users": 3,
-          "bounce_rate": 0.0,
-          "pages_per_session": 25.0,
-          "avg_session_duration": 4628.3514511428575,
           "form_submits": 0
         },
         {
@@ -6547,16 +6537,6 @@
         },
         {
           "source": "google",
-          "medium": "",
-          "sessions": 1,
-          "users": 1,
-          "bounce_rate": 0.0,
-          "pages_per_session": 1.0,
-          "avg_session_duration": 10.559542,
-          "form_submits": 0
-        },
-        {
-          "source": "google",
           "medium": "digital",
           "sessions": 1,
           "users": 1,
@@ -6608,5 +6588,5 @@
       ]
     }
   ],
-  "generated_at": "2026-11-23T10:30:49.132343"
+  "generated_at": "2026-11-24T10:33:33.703972"
 }

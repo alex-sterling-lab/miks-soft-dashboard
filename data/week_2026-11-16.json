@@ -90,6 +90,16 @@
     },
     {
       "source": "google",
+      "medium": "(not set)",
+      "sessions": 2,
+      "users": 2,
+      "bounce_rate": 0.0,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 62.366175,
+      "form_submits": 0
+    },
+    {
+      "source": "google",
       "medium": "studio",
       "sessions": 2,
       "users": 1,
@@ -126,26 +136,6 @@
       "bounce_rate": 0.0,
       "pages_per_session": 1.0,
       "avg_session_duration": 113.076223,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "",
-      "sessions": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 10.559542,
-      "form_submits": 0
-    },
-    {
-      "source": "google",
-      "medium": "(not set)",
-      "sessions": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 114.172808,
       "form_submits": 0
     },
     {
