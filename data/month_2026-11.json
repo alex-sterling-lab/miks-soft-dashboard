@@ -2,7 +2,7 @@
   "month": "2026-11",
   "period": [
     "2026-11-01",
-    "2026-11-24"
+    "2026-11-25"
   ],
   "partial": true,
   "sources": {
@@ -11,8 +11,8 @@
     "yandex_direct": "нет доступа",
     "crm_sheet": "gid=1092315723 (клиентский лист «Лиды»)",
     "usd_rub": {
-      "rate": 82.1488,
-      "date": "2026-11-24",
+      "rate": 82.1664,
+      "date": "2026-11-25",
       "source": "CBR"
     }
   },
@@ -26,8 +26,8 @@
           "impressions": 1025,
           "clicks": 129,
           "ctr_pct": 12.585365853658537,
-          "cost_rub": 29804.41,
-          "cpc_rub": 231.04,
+          "cost_rub": 29810.79,
+          "cpc_rub": 231.09,
           "cost_usd": 362.81,
           "cpc_usd": 2.81,
           "sessions": 97,
@@ -50,10 +50,10 @@
         "impressions": 1025,
         "clicks": 129,
         "cost_usd": 362.81,
-        "cost_rub": 29804.41,
+        "cost_rub": 29810.79,
         "ctr_pct": 12.585365853658537,
         "cpc_usd": 2.81,
-        "cpc_rub": 231.04,
+        "cpc_rub": 231.09,
         "sessions": 104,
         "users": 95,
         "bounce_rate": 0.33653846153846156,
@@ -91,7 +91,7 @@
       "users": 76,
       "bounce_rate": 0.3959731543624161,
       "pages_per_session": 2.5704697986577183,
-      "avg_session_duration": 377.9095165369128,
+      "avg_session_duration": 377.90951653691275,
       "form_submits": 0
     },
     {
@@ -107,11 +107,11 @@
     {
       "source": "google",
       "medium": "organic",
-      "sessions": 57,
+      "sessions": 58,
       "users": 12,
-      "bounce_rate": 0.3684210526315789,
-      "pages_per_session": 5.017543859649122,
-      "avg_session_duration": 710.3150886491228,
+      "bounce_rate": 0.3620689655172414,
+      "pages_per_session": 4.948275862068965,
+      "avg_session_duration": 698.6027889655172,
       "form_submits": 0
     },
     {
@@ -215,6 +215,16 @@
       "form_submits": 0
     },
     {
+      "source": "awwwards.com",
+      "medium": "referral",
+      "sessions": 2,
+      "users": 1,
+      "bounce_rate": 0.0,
+      "pages_per_session": 1.0,
+      "avg_session_duration": 113.70656650000001,
+      "form_submits": 0
+    },
+    {
       "source": "chatgpt.com",
       "medium": "ai-assistant",
       "sessions": 2,
@@ -262,16 +272,6 @@
       "bounce_rate": 0.5,
       "pages_per_session": 1.0,
       "avg_session_duration": 60.1224445,
-      "form_submits": 0
-    },
-    {
-      "source": "awwwards.com",
-      "medium": "referral",
-      "sessions": 1,
-      "users": 1,
-      "bounce_rate": 0.0,
-      "pages_per_session": 1.0,
-      "avg_session_duration": 113.076223,
       "form_submits": 0
     },
     {
